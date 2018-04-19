@@ -1,0 +1,22 @@
+{
+  "name": "ruben.codes",
+  "version": "2.0.0",
+  "description": "Website for ruben.codes.",
+  "now": {
+    "name": "ruben.codes",
+    "alias": "ruben.codes"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "npm run build && now --regions bru && now alias"
+  },
+  "author": "Ruben Martinez Jr. <ruben.martinez93@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^5.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}
