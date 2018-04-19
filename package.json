@@ -10,7 +10,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "deploy": "npm run build && now --regions bru && now alias"
+    "deploy": "npm run build && now -e STATIC_MAPS_API_KEY=@staticmapsapikey && now alias"
   },
   "author": "Ruben Martinez Jr. <ruben.martinez93@gmail.com>",
   "license": "MIT",
