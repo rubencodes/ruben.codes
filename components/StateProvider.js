@@ -55,7 +55,7 @@ const StateProvider = ({ children }) => children({
 		{
 			name: 'OkCupid',
 			location: 'New York, New York',
-			detail: 'Lead Frontend Eng',
+			detail: 'Software Engineer',
 			startDate: 'June 2018',
 			endDate: 'Present',
 			text: 'I work on the web and iOS teams at OkCupid. Recently, I was in charge of rewriting the entire OkCupid desktop messenger to bring it up to date from home-rolled vanilla JS to modern React JS standards.'
