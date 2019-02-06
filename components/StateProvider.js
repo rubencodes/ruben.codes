@@ -3,7 +3,7 @@ import React from 'react';
 const StateProvider = ({ children }) => children({
 	name: 'Ruben Martinez Jr.',
 	title: 'Developer, Entrepreneur, Technologist',
-	about: `Hi! I'm Ruben. I'm a designer and developer interested in using art and technology to improve people's lives, as well as in designing new ways for people to interact with information. I work at WELL Health Inc, a Techstars-funded startup dedicated to improving the patient healthcare experience. My job has been to design, build, maintain, and improve WELL's Progressive Web App. I have overseen the rollout of our product from zero users to the several hundred thousand users we now see on a monthly basis. When I'm not working, I love to make cool stuff, like art, apps, or even, sometimes, furniture. I graduated from Bowdoin College in 2015 with a degree in Computer Science and Visual Arts. That summer, I was selected to attend WWDC as a Student Scholar. I also helped write a book on building Swift apps for WatchOS. For more information about me, feel free to reach out via any of the links listed in the sidebar.`,
+	about: `Hi! I'm Ruben. I'm a designer/developer interested in the intersection of art and technology. I like to build new ways for people to interact with information. I currently work at OkCupid in NYC, where I contribute to the web and iOS teams, and help come up with new and interesting ways for people to get to know each other online. Previously, I worked at WELL Health Inc, a Techstars-funded startup dedicated to improving the patient healthcare experience, where my job was to design, build, and improve WELL's Progressive Web App. I oversaw the rollout of WELL from zero users to several hundred thousand MAU that were being seen in mid-2018. When I'm not working, I love to make cool stuff, like art, apps, or even, sometimes, furniture. I graduated from Bowdoin College in 2015 with a degree in Computer Science and Visual Arts. That summer, I was selected to attend WWDC as a Student Scholar. I also helped write a book on building Swift apps for WatchOS. For more information about me, feel free to reach out via any of the links listed in the sidebar.`,
 	info: {
 		phoneNumber: '(210) 860-0656',
 		emailAddress: 'ruben.martinez93@gmail.com'
@@ -53,11 +53,19 @@ const StateProvider = ({ children }) => children({
 	],
 	experience: [
 		{
+			name: 'OkCupid',
+			location: 'New York, New York',
+			detail: 'Lead Frontend Eng',
+			startDate: 'June 2018',
+			endDate: 'Present',
+			text: 'I work on the web and iOS teams at OkCupid. Recently, I was in charge of rewriting the entire OkCupid desktop messenger to bring it up to date from home-rolled vanilla JS to modern React JS standards.'
+		},
+		{
 			name: 'Well Health Inc',
 			location: 'San Francisco, CA',
 			detail: 'Lead Frontend Eng',
 			startDate: 'September 2015',
-			endDate: 'Present',
+			endDate: 'June 2018',
 			text: 'Designed and built a HIPAA-compliant encrypted messaging web app with real-time push notifications & offline support, that allows hospitals and clinics to communicate securely and reliably with their patients.'
 		},
 		{
