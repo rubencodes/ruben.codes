@@ -1,5 +1,12 @@
 {
     "version": 2,
     "name": "ruben.codes",
-    "alias": "ruben.codes"
+    "alias": "ruben.codes",
+    "env": {
+        "STATIC_MAPS_API_KEY": "@staticmapsapikey"
+    },
+    "github": {
+      "enabled": true,
+      "autoAlias": false
+    }
 }
