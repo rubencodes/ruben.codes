@@ -6,7 +6,6 @@
         "STATIC_MAPS_API_KEY": "@staticmapsapikey"
     },
     "github": {
-      "enabled": true,
       "autoAlias": false
     }
 }
