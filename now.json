@@ -2,6 +2,6 @@
     "version": 2,
     "name": "ruben.codes",
     "env": {
-      "STATIC_MAPS_API_KEY": "@staticmapsapikey"
+      "STATIC_MAPS_API_KEY": "@static-maps-api-key"
     }
 }
