@@ -37,7 +37,7 @@ export const state = {
 		{ title: "Instagram", href: "https://instagram.com/rubencodes" },
 		{ title: "Resume", href: "/static/docs/resume.pdf" }
 	],
-	cities: process.env.STATIC_MAPS_API_KEY && [
+	cities: [
 		{ name: "San Antonio, TX", coordinates: ["29.4241", "-98.4936"] },
 		{ name: "Brownsville, TX", coordinates: ["25.9017", "-97.4975"] },
 		{ name: "Brunswick, ME", coordinates: ["43.9140", "-69.9670"] },
@@ -693,3 +693,5 @@ export const state = {
 		}
 	}
 };
+
+export const STATIC_MAPS_API_KEY = "AIzaSyDQFdy_CXGQOVvcClcZfMA0waK2QTIJnt0";
