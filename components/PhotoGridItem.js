@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import classnames from "classnames";
 
 import styles from "./PhotoGridItem.module.css";
 
@@ -32,7 +33,7 @@ const PhotoGridItem = ({ imageUrl, caption, onClick, customStyles, span = 1 }) =
 	const elementRef = useLazyLoad(imageUrl);
 
 	return (
-		<button className={`${styles.photoGridItem} ${styles[`photoGridItemSpan${span}`]}`} onClick={onClick}>
+		<button className={classnames(styles.photoGridItem, styles[`photoGridItemSpan${span}`])} onClick={onClick}>
 			<div
 				ref={elementRef}
 				className={styles.photoGridItem__Inner}

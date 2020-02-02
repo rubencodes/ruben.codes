@@ -1,40 +1,53 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import classnames from "classnames";
 
 import styles from "./Gallery.module.css";
 
 const Selected = ({ phase, direction, src }) => (
-	<div className={`${styles.selected} ${phase ? `${styles[`selected--${phase}`]} ${styles[`selected--moving-${direction}`]}` : ""}`}>
+	<div
+		className={classnames(styles.selected, {
+			[styles[`selected--${phase}`]]: phase,
+			[styles[`selected--moving-${direction}`]]: phase,
+		})}
+	>
 		<div className={styles.selected__image}  style={{backgroundImage: `url(${src})`}}/>
 	</div>
 );
 
 const Thumb = ({ offset, index, src, select }) => (
-	<div className={`${styles.thumb} ${styles[`thumb--offset${offset}`]}`} onClick={() => select(index, offset)}>
+	<div className={classnames(styles.thumb, styles[`thumb--offset${offset}`])} onClick={() => select(index, offset)}>
 		<div className={styles.thumb__inner} style={{ backgroundImage: `url(${src})` }}/>
 	</div>
 );
 
-const Thumbs = ({ phase, direction, images, select, active }) => (
-	<div className={`${styles.thumbs} ${phase ? `${styles[`thumbs--${phase}`]} ${styles[`thumbs--moving-${direction}`]}` : ""}`}>
-    {images.map((src, index) => {
-      const count = images.length;
-      let offset = index - active
-      if (offset > count/2) {
-				offset -= count
-			} else if (offset < -count/2) {
-				offset += count
-			}
+function calculateOffset(count, index, active) {
+	let offset = index - active;
 
-      return (
-        <Thumb
-          src={src}
-          key={index}
-          index={index}
-          offset={offset}
-          select={select}
-				/>
-      );
-    })}
+	if (offset > count / 2) {
+		offset -= count;
+	} else if (offset < -count / 2) {
+		offset += count;
+	}
+
+	return offset;
+}
+
+const Thumbs = ({ phase, direction, images, select, active }) => (
+	<div
+		className={classnames(styles.thumbs, {
+			[styles[`thumbs--${phase}`]]: phase,
+			[styles[`thumbs--moving-${direction}`]]: phase,
+		})}
+	>
+    {images.map((src, index) => (
+			<Thumb
+				src={src}
+				key={index}
+				index={index}
+				offset={calculateOffset(images.length, index, active)}
+				select={select}
+			/>
+		))}
   </div>
 );
 
