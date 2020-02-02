@@ -7,6 +7,8 @@ const CityMap = ({ cities }) => {
 	url += cities.map(({ coordinates }) => "&markers=color:red%7C" + coordinates.join(",")).join("");
 	url += `&key=${process.env.STATIC_MAPS_API_KEY}`;
 
+	console.log(process.env);
+
 	return (
 		<img className={styles.cityMap} src={url} />
 	);
