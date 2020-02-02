@@ -1,6 +1,5 @@
 export const state = {
 	name: 'Ruben Martinez Jr.',
-	title: 'Developer, Entrepreneur, Technologist',
 	about: `Hi! I'm Ruben. I'm a designer/developer interested in the intersection of art and technology. I like to build new ways for people to interact with information. I currently work at OkCupid in NYC, where I contribute to the web and iOS teams, and help come up with new and interesting ways for people to get to know each other online. Previously, I worked at WELL Health Inc, a Techstars-funded startup dedicated to improving the patient healthcare experience, where my job was to design, build, and improve WELL's Progressive Web App. I oversaw the rollout of WELL from zero users to several hundred thousand MAU that were being seen in mid-2018. When I'm not working, I love to make cool stuff, like art, apps, or even, sometimes, furniture. I graduated from Bowdoin College in 2015 with a degree in Computer Science and Visual Arts. That summer, I was selected to attend WWDC as a Student Scholar. I also helped write a book on building Swift apps for WatchOS. For more information about me, feel free to reach out via any of the links listed in the sidebar.`,
 	info: {
 		phoneNumber: '(210) 860-0656',

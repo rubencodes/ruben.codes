@@ -5,11 +5,9 @@ import Gallery from "./Gallery";
 
 import styles from "./Main.module.css";
 
-const Main = ({ name, title, about, art, design, experience, education, projects }) => (
+const Main = ({ name, about, art, design, experience, education, projects }) => (
 	<div className={styles.mainContainer}>
 		<h1 className="heading">{name}</h1>
-		<p className="text large">{title}</p>
-		<br />
 		{about && (
 			<>
 				<b className="subheading">About</b>

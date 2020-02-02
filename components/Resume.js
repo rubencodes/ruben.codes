@@ -10,7 +10,6 @@ const Resume = () => (
 	<div className={styles.resumeContainer}>
 		<Main
 			name={state.name}
-			title={state.title}
 			about={state.about}
 			art={state.art}
 			design={state.design}
