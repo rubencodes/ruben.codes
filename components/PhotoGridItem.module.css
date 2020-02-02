@@ -7,11 +7,24 @@
 	padding: 0;
 	margin: 0;
 	cursor: pointer;
+	text-align: left;
 
 	will-change: transform;
 	transform: scale(1);
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photoGridItemSpan1 {
+	grid-column: span 1;
+}
+
+.photoGridItemSpan2 {
+	grid-column: span 2;
+}
+
+.photoGridItemSpan3 {
+	grid-column: span 3;
 }
 
 .photoGridItem__Inner {
@@ -47,4 +60,17 @@
 	position: absolute;
 	bottom: 16px;
 	left: 16px;
+}
+
+@media(max-width: 767px) {
+  .photoGridItemSpan3 {
+		grid-column: span 2;
+	}
+}
+
+@media(max-width: 400px) {
+  .photoGridItemSpan3,
+  .photoGridItemSpan2 {
+		grid-column: span 1;
+	}
 }

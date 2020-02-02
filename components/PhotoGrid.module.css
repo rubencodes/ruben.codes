@@ -4,3 +4,15 @@
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-auto-flow: dense;
 }
+
+@media(max-width: 767px) {
+  .photoGrid {
+		grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 400px) {
+  .photoGrid {
+		grid-template-columns: 1fr;
+  }
+}

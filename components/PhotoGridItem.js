@@ -32,7 +32,7 @@ const PhotoGridItem = ({ imageUrl, caption, onClick, customStyles, span = 1 }) =
 	const elementRef = useLazyLoad(imageUrl);
 
 	return (
-		<button className={styles.photoGridItem} style={{ gridColumn: `span ${span}` }} onClick={onClick}>
+		<button className={`${styles.photoGridItem} ${styles[`photoGridItemSpan${span}`]}`} onClick={onClick}>
 			<div
 				ref={elementRef}
 				className={styles.photoGridItem__Inner}

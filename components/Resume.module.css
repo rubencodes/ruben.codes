@@ -10,6 +10,7 @@
 
 @media(max-width: 767px) {
   .resumeContainer {
+  	padding: 28px;
     margin: 0;
     grid-template-columns: 1fr;
   }

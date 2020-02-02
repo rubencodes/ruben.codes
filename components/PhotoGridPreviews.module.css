@@ -1,6 +1,8 @@
 .photoGridPreviews {
-	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-auto-flow: dense;
+	display: flex;
+	flex-direction: column;
+}
+
+.photoGridPreviews > * + * {
+	margin-top: 20px;
 }
