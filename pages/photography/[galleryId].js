@@ -8,7 +8,7 @@ import styles from "./index.module.css";
 
 const Gallery = () => {
 	const router = useRouter();
-	const { gallery_id: galleryId } = router.query
+	const { galleryId } = router.query
 	const selectedGallery = state.photography.galleries[galleryId];
 
 	if (!selectedGallery) {
