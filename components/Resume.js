@@ -1,8 +1,8 @@
 import React from "react";
 
-import Main from './Main';
-import Sidebar from './Sidebar';
-import { state } from '../util/constants';
+import Main from "./Main";
+import Sidebar from "./Sidebar";
+import { state } from "../util/constants";
 
 import styles from "./Resume.module.css";
 

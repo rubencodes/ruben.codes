@@ -32,7 +32,7 @@
 }
 .selected:before,
 .selected:after {
-	content: '';
+	content: "";
 	background: white;
 	position: absolute;
 	top: -2%;

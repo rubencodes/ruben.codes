@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import MainItem from './MainItem';
-import Gallery from './Gallery';
+import MainItem from "./MainItem";
+import Gallery from "./Gallery";
 
 import styles from "./Main.module.css";
 
@@ -51,7 +51,7 @@ const Main = ({ name, title, about, art, design, experience, education, projects
 		{design && (
 			<>
 				<b className="subheading">Design</b>
-				<p className="time">Examples of apps and promotional materials I've designed.</p>
+				<p className="time">Examples of apps and promotional materials I"ve designed.</p>
 				<div className={styles.imageGalleryContainer}>
 					<Gallery {...design} />
 				</div>

@@ -11,7 +11,7 @@ html, body, #__next {
 }
 
 h1.heading {
-	font-family: 'IBM Plex Serif', serif;
+	font-family: "IBM Plex Serif", serif;
 	font-weight: 700;
 	font-size: 2.5em;
 	margin: 0;
@@ -20,7 +20,7 @@ h1.heading {
 
 b.subheading {
 	color: #69F;
-	font-family: 'IBM Plex Sans', sans;
+	font-family: "IBM Plex Sans", sans;
 	font-weight: bold;
 	font-size: small;
 	text-transform: uppercase;
@@ -29,7 +29,7 @@ b.subheading {
 }
 
 p.text {
-	font-family: 'IBM Plex Serif', serif;
+	font-family: "IBM Plex Serif", serif;
 	font-size: 14px;
 	font-weight: 400;
 	margin: 0;
@@ -49,7 +49,7 @@ p.text.small {
 }
 
 p.time {
-	font-family: 'IBM Plex Sans', sans;
+	font-family: "IBM Plex Sans", sans;
 	font-weight: 300;
 	font-size: small;
 	text-transform: uppercase;
@@ -59,7 +59,7 @@ p.time {
 }
 
 ul.list {
-	font-family: 'IBM Plex Serif', serif;
+	font-family: "IBM Plex Serif", serif;
 	font-weight: 400;
 	padding-left: 0;
 	list-style: none;
@@ -71,7 +71,7 @@ ul.list>li {
 }
 
 a {
-	font-family: 'IBM Plex Sans', sans;
+	font-family: "IBM Plex Sans", sans;
 	text-decoration: none;
 	background: #69F;
 	color: white;

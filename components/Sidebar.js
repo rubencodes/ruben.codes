@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import CityMap from './CityMap';
+import CityMap from "./CityMap";
 
 import styles from "./Sidebar.module.css";
 
@@ -20,7 +20,7 @@ const Sidebar = ({ info, skills, languages, links, cities }) => (
 			<>
 				<b className="subheading">Skills</b>
 				<p className="text light">
-					{skills.join(' • ')}
+					{skills.join(" • ")}
 				</p>
 				<br />
 			</>
@@ -29,7 +29,7 @@ const Sidebar = ({ info, skills, languages, links, cities }) => (
 			<>
 				<b className="subheading">Languages</b>
 				<p className="text light">
-					{languages.join(' • ')}
+					{languages.join(" • ")}
 				</p>
 				<br />
 			</>
@@ -37,7 +37,7 @@ const Sidebar = ({ info, skills, languages, links, cities }) => (
 		{cities && (
 			<>
 				<b className="subheading">Cities</b>
-				<p className="time">Places I've Called Home</p>
+				<p className="time">Places I"ve Called Home</p>
 				<CityMap cities={cities} />
 			</>
 		)}

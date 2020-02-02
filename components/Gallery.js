@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
 import styles from "./Gallery.module.css";
 
 const Selected = ({ phase, direction, src }) => (
-	<div className={`${styles.selected} ${phase ? `${styles[`selected--${phase}`]} ${styles[`selected--moving-${direction}`]}` : ''}`}>
+	<div className={`${styles.selected} ${phase ? `${styles[`selected--${phase}`]} ${styles[`selected--moving-${direction}`]}` : ""}`}>
 		<div className={styles.selected__image}  style={{backgroundImage: `url(${src})`}}/>
 	</div>
 );
@@ -15,7 +15,7 @@ const Thumb = ({ offset, index, src, select }) => (
 );
 
 const Thumbs = ({ phase, direction, images, select, active }) => (
-	<div className={`${styles.thumbs} ${phase ? `${styles[`thumbs--${phase}`]} ${styles[`thumbs--moving-${direction}`]}` : ''}`}>
+	<div className={`${styles.thumbs} ${phase ? `${styles[`thumbs--${phase}`]} ${styles[`thumbs--moving-${direction}`]}` : ""}`}>
     {images.map((src, index) => {
       const count = images.length;
       let offset = index - active
@@ -48,7 +48,7 @@ export default class Gallery extends Component {
 			active: 0,
 			showing: 0,
 			phase: null,
-			direction: 'left',
+			direction: "left",
 			loopedImages
 		}
 	}
@@ -63,15 +63,15 @@ export default class Gallery extends Component {
 		if (!this.state.phase && offset !== 0){
 			this.setState({
 				active: index,
-				phase: 'entering',
-				direction: offset >= 0  ? 'left' : 'right'
+				phase: "entering",
+				direction: offset >= 0  ? "left" : "right"
 			});
 
 			setTimeout(() => {
 				this.setState({
 					changing: false,
 					showing: index,
-					phase: 'exiting'
+					phase: "exiting"
 				});
 				setTimeout(() => {
 					this.setState({phase: null});
@@ -82,9 +82,9 @@ export default class Gallery extends Component {
 
 	render() {
 		const {
-			baseURL='',
-			largePrefix='',
-			thumbPrefix=''
+			baseURL="",
+			largePrefix="",
+			thumbPrefix=""
 		} = this.props;
 		const {
 			loopedImages,

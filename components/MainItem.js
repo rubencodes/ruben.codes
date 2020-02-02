@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const MainItem = ({ name, location, detail, startDate, endDate, text }) => (
 	<>
 		<p className="text large">
 			<b>{name}</b>
-			{location ? ', ' + location : ''}
-			{detail ? ' — ' + detail : ''}
+			{location ? ", " + location : ""}
+			{detail ? " — " + detail : ""}
 		</p>
 		{startDate && endDate && (
 			<p className="time">
