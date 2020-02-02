@@ -1,0 +1,10 @@
+.resumeContainer {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  box-sizing: content-box;
+}

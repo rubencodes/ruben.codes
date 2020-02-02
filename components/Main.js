@@ -1,82 +1,62 @@
 import React from 'react';
-import css from 'styled-jsx/css';
 
-import Entry from './Entry.js';
-import Gallery from './Gallery.js';
+import MainItem from './MainItem';
+import Gallery from './Gallery';
 
-const main = css`
-div#Main {
-	padding: 20px;
-	
-	display: flex;
-	flex-direction: column;
-}
-@media(max-width: 767px) {
-	div#Main {
-		padding: 0;
-	}
-}
-`;
-const imageGallery = css`div.ImageGallery {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-}`;
+import styles from "./Main.module.css";
 
 const Main = ({ name, title, about, art, design, experience, education, projects }) => (
-	<div id="Main">
-		<style jsx>{ main }</style>
-		<style jsx>{ imageGallery }</style>
-		<h1 className="heading">{ name }</h1>
-		<p className="text large">{ title }</p>
+	<div className={styles.mainContainer}>
+		<h1 className="heading">{name}</h1>
+		<p className="text large">{title}</p>
 		<br />
-		{ about ? (
-			<React.Fragment>
+		{about && (
+			<>
 				<b className="subheading">About</b>
-				<p className="text light">{ about }</p>
-			</React.Fragment>
-		) : null }
-		{ art ? (
-			<React.Fragment>
+				<p className="text light">{about}</p>
+			</>
+		)}
+		{art && (
+			<>
 				<b className="subheading">Art</b>
-				<div className="ImageGallery">
+				<div className={styles.imageGalleryContainer}>
 					<Gallery {...art} />
 				</div>
-			</React.Fragment>
-		) : null }
-		{ experience ? (
-			<React.Fragment>
+			</>
+		)}
+		{experience && (
+			<>
 				<b className="subheading">Work</b>
 				{ experience.map((props, i) => (
-					<Entry key={ i } { ...props } />
+					<MainItem key={i} {...props} />
 				)) }
-			</React.Fragment>
-		) : null }
-		{ education ? (
-			<React.Fragment>
+			</>
+		)}
+		{education && (
+			<>
 				<b className="subheading">Education</b>
 				{ education.map((props, i) => (
-					<Entry key={ i } { ...props } />
+					<MainItem key={i} {...props} />
 				)) }
-			</React.Fragment>
-		) : null }
-		{ projects ? (
-			<React.Fragment>
+			</>
+		)}
+		{projects && (
+			<>
 				<b className="subheading">Projects</b>
 				{ projects.map((props, i) => (
-					<Entry key={ i } { ...props } />
+					<MainItem key={i} {...props} />
 				)) }
-			</React.Fragment>
-		) : null }
-		{ design ? (
-			<React.Fragment>
+			</>
+		)}
+		{design && (
+			<>
 				<b className="subheading">Design</b>
 				<p className="time">Examples of apps and promotional materials I've designed.</p>
-				<div className="ImageGallery">
+				<div className={styles.imageGalleryContainer}>
 					<Gallery {...design} />
 				</div>
-			</React.Fragment>
-		) : null }
+			</>
+		)}
 	</div>
 );
 

@@ -1,0 +1,18 @@
+.mainContainer {
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.imageGalleryContainer {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media(max-width: 767px) {
+	.mainContainer {
+		padding: 0;
+	}
+}
