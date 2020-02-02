@@ -10,8 +10,8 @@
   "author": "Ruben Martinez Jr. <ruben.martinez93@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "next": "^5.1.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "next": "^9.2.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   }
 }
