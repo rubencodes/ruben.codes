@@ -1,0 +1,50 @@
+.photoGridItem {
+	position: relative;
+	height: 280px;
+	background-color: #CCC;
+	border: none;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+
+	will-change: transform;
+	transform: scale(1);
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photoGridItem__Inner {
+	width: 100%;
+	height: 100%;
+	background-color: #CCC;
+	background-size: cover;
+	background-position: top center;
+	will-change: transform;
+	transform: scale(1.05);
+	transition: transform 0.3s;
+}
+
+.photoGridItem__Inner:hover {
+	will-change: transform;
+	transform: scale(1);
+	transition: transform 0.3s;
+}
+
+.photoGridItem:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 1);
+	z-index: 1;
+}
+
+.photoGridItem__Caption {
+	font-family: "IBM Plex Serif", serif;
+	font-weight: 700;
+	font-size: 2.5em;
+	user-select: none;
+	color: white;
+
+	position: absolute;
+	bottom: 16px;
+	left: 16px;
+}
