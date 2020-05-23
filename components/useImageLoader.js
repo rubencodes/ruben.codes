@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 function useImageLoader(src) {
 	const [imageSource, setImageSource] = useState(null);
 	const [imageSize, setImageSize] = useState(null);
-	const isLoading = source === null;
+	const isLoading = imageSource === null;
 	useEffect(() => {
 		const image = new Image();
 		image.onload = function() {

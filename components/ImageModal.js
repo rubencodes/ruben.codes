@@ -18,14 +18,17 @@ function fitSizeWithinSize(innerRectangle, outerRectangle) {
 		return innerRectangle;
 	}
 
+	// Width constrained.
 	const innerAspectRatio = innerRectangle.width / innerRectangle.height;
-	if (innerAspectRatio > 1) {
+	const outerAspectRatio = outerRectangle.width / outerRectangle.height;
+	if (innerAspectRatio > outerAspectRatio) {
 		return {
 			width: outerRectangle.width,
 			height: outerRectangle.width / innerAspectRatio,
 		};
 	}
 
+	// Height constrained.
 	return {
 		width: outerRectangle.height * innerAspectRatio,
 		height: outerRectangle.height,
