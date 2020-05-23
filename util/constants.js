@@ -221,6 +221,7 @@ export const state = {
 			"kitty_k",
 			"odette_coquette",
 			"morgana",
+			"nina",
 			"miscellaneous",
 		],
 		galleries: {
@@ -687,6 +688,210 @@ export const state = {
 					},
 					{
 						path: "portraits/morgana/42.jpg",
+						customStyles: {}
+					},
+				]
+			},
+
+			/* Nina */
+			"nina": {
+				caption: "Nina",
+				previewImage: {
+					path: "portraits/nina/26.jpg",
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				images: [
+					{
+						path: "portraits/nina/1.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/2.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/3.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/5.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 30%"
+						}
+					},
+					{
+						path: "portraits/nina/6.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/9.jpg",
+						customStyles: {
+						}
+					},
+					{
+						path: "portraits/nina/4.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 10%"
+						}
+					},
+					{
+						path: "portraits/nina/7.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/11.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/8.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/14.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 10%"
+						}
+					},
+					{
+						path: "portraits/nina/12.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/10.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/13.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 20%"
+						}
+					},
+					{
+						path: "portraits/nina/16.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/17.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/18.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/15.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/19.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/20.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/21.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/22.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center center"
+						}
+					},
+					{
+						path: "portraits/nina/23.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 10%"
+						}
+					},
+					{
+						path: "portraits/nina/24.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/25.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/26.jpg",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/27.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center center"
+						}
+					},
+					{
+						path: "portraits/nina/28.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/30.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/29.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 15%"
+						}
+					},
+					{
+						path: "portraits/nina/32.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/33.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/34.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/31.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 25%"
+						}
+					},
+					{
+						path: "portraits/nina/35.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/37.jpg",
+						customStyles: {}
+					},
+					{
+						path: "portraits/nina/38.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 10%"
+						}
+					},
+					{
+						path: "portraits/nina/36.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 35%"
+						}
+					},
+					{
+						path: "portraits/nina/39.jpg",
 						customStyles: {}
 					},
 				]
