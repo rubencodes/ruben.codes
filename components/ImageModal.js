@@ -1,22 +1,64 @@
-import React, { useEffect } from "react";
+import React from "react";
+
+import Loader from "./Loader";
+import useWindowSize from "./useWindowSize";
+import useImageLoader from "./useImageLoader";
+import useBodyClassList from "./useBodyClassList";
 
 import styles from "./ImageModal.module.css";
 
-function useBodyClassList(...classList) {
-	useEffect(() => {
-		document.body.classList.add(...classList);
+function fitSizeWithinSize(innerRectangle, outerRectangle) {
+	// Use the outer rectangle if we don't have an inner one.
+	if (!innerRectangle) {
+		return outerRectangle;
+	}
 
-		return () => document.body.classList.remove(...classList);
-	}, [classList]);
+	// Use the inner rectangle if it's smaller than the outer rectangle.
+	if (innerRectangle.width <= outerRectangle.width && innerRectangle.height <= outerRectangle.height) {
+		return innerRectangle;
+	}
+
+	const innerAspectRatio = innerRectangle.width / innerRectangle.height;
+	if (innerAspectRatio > 1) {
+		return {
+			width: outerRectangle.width,
+			height: outerRectangle.width / innerAspectRatio,
+		};
+	}
+
+	return {
+		width: outerRectangle.height * innerAspectRatio,
+		height: outerRectangle.height,
+	};
 }
 
 const ImageModal = ({ src, close }) => {
+	const {
+		imageSource,
+		imageSize,
+		isLoading,
+	} = useImageLoader(src);
 	useBodyClassList("no_scroll");
+	const windowSize = useWindowSize();
+	const modalSize = fitSizeWithinSize(imageSize, {
+		width: (windowSize.width * 0.9),
+		height: (windowSize.height * 0.9),
+	});
 
 	return (
 		<div className={styles.imageModal} onClick={close}>
-			<div className={styles.imageModal__Inner} onClick={(e) => e.preventDefault() || e.stopPropagation()}>
-				<img className={styles.imageModal__Image} src={src} />
+			<div
+				className={styles.imageModal__Inner}
+				onClick={(e) => e.preventDefault() || e.stopPropagation()}
+				style={modalSize}
+			>
+				{isLoading ? (
+					<div className={styles.imageModal__Loading}>
+						<Loader />
+					</div>
+				) : (
+					<img className={styles.imageModal__Image} src={imageSource} />
+				)}
 			</div>
 		</div>
 	);
