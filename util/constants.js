@@ -220,7 +220,8 @@ export const state = {
 			"cat_ross",
 			"kitty_k",
 			"odette_coquette",
-			"morgana"
+			"morgana",
+			"miscellaneous",
 		],
 		galleries: {
 			/* Cat Ross */
@@ -689,7 +690,305 @@ export const state = {
 						customStyles: {}
 					},
 				]
-			}
+			},
+
+			"miscellaneous": {
+				caption: "Miscellaneous",
+				previewImage: {
+					path: "landscapes/1.jpg",
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				images: [
+					{
+						path: "landscapes/1.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/2.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/7.png",
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/3.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/4.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/8.png",
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/6.png",
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/5.png",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/9.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/10.jpg",
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/11.jpg",
+						span: 3,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/12.jpg",
+						customStyles: {
+							backgroundPosition: "left center"
+						}
+					},
+					{
+						path: "landscapes/13.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/31.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/30.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/33.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/34.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center top"
+						}
+					},
+					{
+						path: "landscapes/35.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/24.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/29.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/26.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/14.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/16.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/32.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/17.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/19.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/20.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/21.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/22.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/23.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/18.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/28.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/27.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/DSC04868.jpg",
+						span: 3,
+						customStyles: {
+							backgroundPosition: "center 20%"
+						}
+					},
+					{
+						path: "landscapes/DSC04714.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/DSC04668.jpg",
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/DSC04652.jpg",
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/DSC04655.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/DSC04683.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/DSC04711.jpg",
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "landscapes/DSC04977.jpg",
+						span: 1,
+						customStyles: {
+							backgroundPosition: "center 10%"
+						}
+					},
+					{
+						path: "landscapes/DSC04709.jpg",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+				].reverse()
+			},
 		}
 	}
 };
