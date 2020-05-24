@@ -18,7 +18,7 @@ const removeKeysInUrl = (object, url) => {
 };
 
 function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
-	const { query: queryParams, pathname, push } = useRouter();
+	const { query: queryParams, pathname, replace } = useRouter();
 	const { [queryParamName]: state, ...otherQueryParams } = queryParams;
 	const setState = (newValue) => {
 		// Do nothing if value hasn't changed.
@@ -28,7 +28,7 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 
 		// Remove it if value is nullish.
 		if (newValue === null || newValue === undefined) {
-			push({
+			replace({
 				pathname,
 				query: otherQueryParams,
 			}, {
@@ -45,7 +45,7 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 			...otherQueryParams,
 			[queryParamName]: newValue
 		};
-		push({
+		replace({
 			pathname,
 			query: nextQueryParams,
 		}, {

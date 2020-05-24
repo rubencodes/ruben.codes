@@ -72,19 +72,25 @@ ul.list {
 	font-family: "IBM Plex Serif", serif;
 	font-weight: 400;
 	padding-left: 0;
+	margin: 0;
 	list-style: none;
 }
 
-ul.list>li {
+ul.list > li {
 	margin: 0 0 5px;
 	height: 25px;
 }
 
-a {
+button, a {
+	border: none;
 	font-family: "IBM Plex Sans", sans;
+	font-weight: bold;
+	font-size: small;
+	text-transform: uppercase;
 	text-decoration: none;
 	background: #69F;
 	color: white;
+	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 	padding: 2px 10px;
 	user-select: none;
@@ -93,5 +99,19 @@ a {
 @media(max-width: 767px) {
 	html, body, #__next {
 		background: white;
+	}
+}
+
+@media(max-width: 500px) {
+	h1.heading {
+		font-size: 2.08em;
+		margin-bottom: 0;
+		text-align: center;
+	}
+
+	b.subheading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 }

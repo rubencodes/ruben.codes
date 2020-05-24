@@ -8,9 +8,27 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
 }
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 98px;
+  max-width: 880px;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+
 @media(max-width: 767px) {
   .photography {
   	padding: 28px;
     margin: 0;
+  }
+
+  .buttonContainer {
+    padding: 18px 38px;
   }
 }

@@ -16,6 +16,11 @@ const PhotoGrid = ({ baseUrl, images }) => {
 		: null;
 
 	useKeydownEvent((event) => {
+		// Don't do anything if there's no image.
+		if (!Number.isInteger(selectedImageIndex)) {
+			return;
+		}
+
 		switch (event.key) {
 			case "ArrowLeft": {
 				setSelectedImageIndex(Math.max(selectedImageIndex - 1, 0));

@@ -3,16 +3,18 @@
 	height: 280px;
 	background-color: #CCC;
 	border: none;
+	border-radius: 0;
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
 	cursor: pointer;
 	text-align: left;
+	font-weight: normal;
+	text-transform: none;
 
 	will-change: transform;
 	transform: scale(1);
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	transition: transform 0.3s, box-shadow 0.3s;
+	transition: transform 0.3s;
 }
 
 .photoGridItem:disabled {
@@ -50,7 +52,6 @@
 
 .photoGridItem:hover:not(:disabled) {
 	transform: scale(1.1);
-	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 1);
 	z-index: 1;
 }
 
