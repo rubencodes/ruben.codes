@@ -9,7 +9,7 @@ const PhotoGridPreviews = ({ baseUrl, galleryOrder, galleries, onSelect }) => (
 		{galleryOrder.map((key) => galleries[key]).map(({ previewImage, caption }, i) => (
 			<PhotoGridItem
 				key={i}
-				imageUrl={`${baseUrl}${previewImage.path}`}
+				imageUrl={`${baseUrl}${previewImage.thumbnailPath}`}
 				customStyles={previewImage.customStyles}
 				caption={caption}
 				onClick={() => onSelect(galleryOrder[i])}

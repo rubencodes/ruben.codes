@@ -28,7 +28,7 @@ const Gallery = () => {
 			</b>
 			<div className="hero">
 				<PhotoGridItem
-					imageUrl={`${baseUrl}${selectedGallery.previewImage.path}`}
+					imageUrl={`${baseUrl}${selectedGallery.previewImage.thumbnailPath}`}
 					customStyles={selectedGallery.previewImage.customStyles}
 					caption={selectedGallery.caption}
 					span={3}
