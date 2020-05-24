@@ -222,6 +222,7 @@ export const state = {
 			"odette_coquette",
 			"morgana",
 			"nina",
+			"savannah",
 			"miscellaneous",
 		],
 		galleries: {
@@ -895,6 +896,381 @@ export const state = {
 						customStyles: {}
 					},
 				]
+			},
+
+			/* Savannah */
+			"savannah": {
+				caption: "Savannah",
+				previewImage: {
+					path: "portraits/savannah/78.JPG",
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				images: [
+					{
+						path: "portraits/savannah/1.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/3.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/4.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/5.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/7.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/8.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/9.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/10.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/11.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/12.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/13.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/14.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/15.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/16.JPG",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 50%"
+						}
+					},
+					{
+						path: "portraits/savannah/17.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/18.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/19.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/20.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/21.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/22.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/23.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/24.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/25.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/26.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/27.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/28.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/29.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/30.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/31.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/32.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/33.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/34.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/35.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/36.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/37.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/38.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/39.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/40.JPG",
+						span: 3,
+						customStyles: {
+							backgroundPosition: "center 30%"
+						}
+					},
+					{
+						path: "portraits/savannah/41.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/42.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/43.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/44.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/45.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/46.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/47.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/48.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/49.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/50.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/51.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/52.JPG",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 40%"
+						}
+					},
+					{
+						path: "portraits/savannah/53.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/54.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/55.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/56.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/57.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/58.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/59.JPG",
+						span: 3,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "portraits/savannah/60.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/61.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/62.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/63.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/64.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/65.JPG",
+						span: 3,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "portraits/savannah/66.JPG",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center"
+						}
+					},
+					{
+						path: "portraits/savannah/67.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/68.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/69.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/70.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/71.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/72.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/73.JPG",
+						span: 2,
+						customStyles: {
+							backgroundPosition: "center 35%"
+						}
+					},
+					{
+						path: "portraits/savannah/74.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/75.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/76.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/77.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/78.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/79.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/80.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/81.JPG",
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/82.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/83.JPG",
+						span: 2,
+						customStyles: {}
+					},
+					{
+						path: "portraits/savannah/84.JPG",
+						customStyles: {}
+					},
+				],
 			},
 
 			"miscellaneous": {
