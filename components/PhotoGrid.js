@@ -4,12 +4,40 @@ import PhotoGridItem from "./PhotoGridItem";
 import ImageModal from "./ImageModal";
 import useKeydownEvent from "./useKeydownEvent";
 import useQueryStringState from "./useQueryStringState";
+import useRandomCycleThroughItems from "./useRandomCycleThroughItems";
 
 import styles from "./PhotoGrid.module.css";
 
-const toIntOrNull = (val) => val ? parseInt(val, 10) : null;
+const COLORS = [
+	"blue",
+	"red",
+	"yellow",
+	"forestgreen",
+	"orange",
+	"pink",
+	"rebeccapurple",
+];
+const CYCLE_TIMEOUT = 300;
+const toIntArray = (val) => {
+	if (!val) {
+		return [];
+	}
+
+	const arr = Array.isArray(val) ? val : val.split(",");
+	return arr
+		.map((i) => parseInt(i, 10))
+		.filter((n) => !Number.isNaN(n));
+};
+const toIntOrNull = (val) => {
+	return val && !Number.isNaN(parseInt(val, 10))
+		? parseInt(val, 10)
+		: null
+};
 
 const PhotoGrid = ({ baseUrl, images }) => {
+	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
+	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
+
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
 	const selectedImagePath = Number.isInteger(selectedImageIndex)
 		? images[selectedImageIndex].path
@@ -48,6 +76,11 @@ const PhotoGrid = ({ baseUrl, images }) => {
 						key={index}
 						imageUrl={`${baseUrl}${thumbnailPath}`}
 						customStyles={customStyles}
+						customContainerStyles={(highlightedImageIndices.includes(index) ? {
+							borderColor: highlightedColor,
+							borderWidth: 4,
+							borderStyle: "solid",
+						} : {})}
 						onClick={() => setSelectedImageIndex(index)}
 						span={span}
 					/>
