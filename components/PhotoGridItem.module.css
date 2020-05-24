@@ -15,6 +15,10 @@
 	transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.photoGridItem:disabled {
+	cursor: default;
+}
+
 .photoGridItemSpan1 {
 	grid-column: span 1;
 }
@@ -38,13 +42,13 @@
 	transition: transform 0.3s;
 }
 
-.photoGridItem__Inner:hover {
+.photoGridItem:hover:not(:disabled) .photoGridItem__Inner {
 	will-change: transform;
 	transform: scale(1);
 	transition: transform 0.3s;
 }
 
-.photoGridItem:hover {
+.photoGridItem:hover:not(:disabled) {
 	transform: scale(1.1);
 	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 1);
 	z-index: 1;

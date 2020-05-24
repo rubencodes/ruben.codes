@@ -32,6 +32,12 @@ b.subheading {
 	margin-bottom: 10px;
 }
 
+div.hero {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
 p.text {
 	font-family: "IBM Plex Serif", serif;
 	font-size: 14px;
