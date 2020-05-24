@@ -38,10 +38,10 @@ const PhotoGrid = ({ baseUrl, images }) => {
 	return (
 		<>
 			<div className={styles.photoGrid}>
-				{images.map(({ path, span, customStyles }, index) => (
+				{images.map(({ thumbnailPath, span, customStyles }, index) => (
 					<PhotoGridItem
 						key={index}
-						imageUrl={`${baseUrl}${path}`}
+						imageUrl={`${baseUrl}${thumbnailPath}`}
 						customStyles={customStyles}
 						onClick={() => setSelectedImageIndex(index)}
 						span={span}
