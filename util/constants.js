@@ -1270,7 +1270,7 @@ export const state = {
 						path: "portraits/savannah/84.JPG",
 						customStyles: {}
 					},
-				],
+				]
 			},
 
 			"miscellaneous": {
