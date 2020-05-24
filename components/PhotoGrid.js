@@ -33,7 +33,7 @@ const PhotoGrid = ({ baseUrl, images }) => {
 				return;
 			}
 		}
-	}, [images]);
+	}, [images, selectedImageIndex]);
 
 	return (
 		<>
