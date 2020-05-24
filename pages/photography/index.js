@@ -13,7 +13,7 @@ const Photography = () => {
 	return (
 		<div className={styles.photography}>
 			<h1 className="heading">{state.name}</h1>
-			<b className="subheading">Photo Galleries</b>
+			<b className="subheading">Photography</b>
 			<PhotoGridPreviews {...state.photography} onSelect={onSelect} />
 		</div>
 	);

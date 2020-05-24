@@ -25,6 +25,8 @@ const Gallery = () => {
 				<Link href={"/photography"}>
 					{"< Go Back"}
 				</Link>
+				&nbsp;
+				Photography
 			</b>
 			<div className="hero">
 				<PhotoGridItem
