@@ -2,6 +2,7 @@ import React from "react";
 
 import Loader from "./Loader";
 import useWindowSize from "./useWindowSize";
+import useCache from "./useCache";
 import useImageLoader from "./useImageLoader";
 import useBodyClassList from "./useBodyClassList";
 
@@ -42,8 +43,9 @@ const ImageModal = ({ src, close }) => {
 		isLoading,
 	} = useImageLoader(src);
 	useBodyClassList("no_scroll");
+	const imageSizeCached = useCache(imageSize, imageSize === null);
 	const windowSize = useWindowSize();
-	const modalSize = fitSizeWithinSize(imageSize, {
+	const modalSize = fitSizeWithinSize(imageSizeCached, {
 		width: (windowSize.width * 0.9),
 		height: (windowSize.height * 0.9),
 	});
@@ -53,7 +55,10 @@ const ImageModal = ({ src, close }) => {
 			<div
 				className={styles.imageModal__Inner}
 				onClick={(e) => e.preventDefault() || e.stopPropagation()}
-				style={modalSize}
+				style={{
+					width: Math.floor(modalSize.width),
+					height: Math.floor(modalSize.height),
+				}}
 			>
 				{isLoading ? (
 					<div className={styles.imageModal__Loading}>
