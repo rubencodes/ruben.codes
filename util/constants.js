@@ -1476,7 +1476,9 @@ export const state = {
 						path: "portraits/savannah/82.JPG",
 						thumbnailPath: "portraits_small/savannah/82.JPG",
 						span: 2,
-						customStyles: {}
+						customStyles: {
+							backgroundPosition: "center bottom",
+						}
 					},
 					{
 						path: "portraits/savannah/83.JPG",
