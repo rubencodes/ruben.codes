@@ -1,29 +1,33 @@
-import React, { useState } from "react";
+import React, { memo } from "react";
 
 import PhotoGridItem from "./PhotoGridItem";
 import ImageModal from "./ImageModal";
 import useKeydownEvent from "./useKeydownEvent";
+import useQueryStringState from "./useQueryStringState";
 
 import styles from "./PhotoGrid.module.css";
 
+const toIntOrNull = (val) => val ? parseInt(val, 10) : null;
+
 const PhotoGrid = ({ baseUrl, images }) => {
-	const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-	const selectedImagePath = selectedImageIndex !== null
+	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
+	const selectedImagePath = Number.isInteger(selectedImageIndex)
 		? images[selectedImageIndex].path
 		: null;
 
 	useKeydownEvent((event) => {
 		switch (event.key) {
 			case "ArrowLeft": {
-				setSelectedImageIndex((index) => Math.max(index - 1, 0));
+				setSelectedImageIndex(Math.max(selectedImageIndex - 1, 0));
 				return;
 			}
 			case "ArrowRight": {
-				setSelectedImageIndex((index) => Math.min(index + 1, images.length - 1));
+				setSelectedImageIndex(Math.min(selectedImageIndex + 1, images.length - 1));
 				return;
 			}
 			case "Escape": {
 				setSelectedImageIndex(null);
+				return;
 			}
 			default: {
 				return;
@@ -54,4 +58,4 @@ const PhotoGrid = ({ baseUrl, images }) => {
 	)
 };
 
-export default PhotoGrid;
+export default memo(PhotoGrid);
