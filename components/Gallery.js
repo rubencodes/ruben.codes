@@ -1,4 +1,4 @@
-import React, { memo, useLayoutEffect, useRef, useCallback } from "react";
+import React, { useLayoutEffect, useRef, useCallback } from "react";
 
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
@@ -47,7 +47,7 @@ function isElementInViewport(el) {
 const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	const highlightedImageElementsRef = useRef({});
 	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
-	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
+	const highlightedColor = "blue";// useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
 	useLayoutEffect(() => {
 		const firstHighlighted = highlightedImageIndices.sort()[0];
 		const element = highlightedImageElementsRef.current[firstHighlighted];
@@ -80,7 +80,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 				return;
 			}
 			case "Escape": {
-				setSelectedImageIndex(null);
+				clearSelectedImageIndex();
 				return;
 			}
 			default: {
@@ -125,4 +125,4 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	)
 };
 
-export default memo(PhotoGridGallery);
+export default PhotoGridGallery;

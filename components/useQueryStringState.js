@@ -1,3 +1,4 @@
+import { useCallback, useRef } from "react";
 import { useRouter } from "next/router";
 
 const DO_NOTHING = (i) => i;
@@ -19,10 +20,11 @@ const removeKeysInUrl = (object, url) => {
 
 function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 	const { query: queryParams, pathname, replace } = useRouter();
-	const { [queryParamName]: state, ...otherQueryParams } = queryParams;
-	const setState = (newValue) => {
+	const { [queryParamName]: value = null, ...otherQueryParams } = queryParams;
+	const setStateRef = useRef();
+	setStateRef.current = useCallback((newValue) => {
 		// Do nothing if value hasn't changed.
-		if (newValue === processValue(state)) {
+		if (newValue === processValue(value)) {
 			return;
 		}
 
@@ -54,9 +56,9 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 		}, {
 			shallow: true,
 		});
-	}
+	}, [queryParamName, processValue(value)]);
 
-	return [processValue(state), setState];
+	return [processValue(value), setStateRef.current];
 }
 
 export default useQueryStringState;
