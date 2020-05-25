@@ -6,7 +6,16 @@ function useRandomCycleThroughItems(items, milliseconds) {
 	const timeoutRef = useRef();
 	useEffect(() => {
 		setRandomItem(getRandomItem(items));
-		timeoutRef.current = setInterval(() => setRandomItem(getRandomItem(items)), milliseconds);
+		timeoutRef.current = setInterval(() => {
+			setRandomItem((currentRandomItem) => {
+				let newRandomItem = getRandomItem(items);
+				while (items.length > 1 && currentRandomItem === newRandomItem) {
+					newRandomItem = getRandomItem(items)
+				}
+
+				return newRandomItem;
+			});
+		}, milliseconds);
 
 		return () => clearInterval(timeoutRef.current);
 	}, [...items, milliseconds]);
