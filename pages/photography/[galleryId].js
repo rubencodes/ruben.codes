@@ -9,16 +9,24 @@ import { state } from "../../util/constants";
 
 import styles from "./index.module.css";
 
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 const Gallery = () => {
-	const router = useRouter();
-	const { galleryId } = router.query
+	const { query: { galleryId } } = useRouter();
 	const baseUrl = state.photography.baseUrl;
 	const selectedGallery = state.photography.galleries[galleryId];
-	const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 	if (!selectedGallery) {
 		return null;
 	}
+
+	const {
+		path,
+		thumbnailPath,
+		previewImage = {},
+		images,
+	} = selectedGallery || {};
+	const imageUrl = `${baseUrl}${thumbnailPath}${previewImage.fileName}`;
 
 	return (
 		<div className={styles.photography}>
@@ -30,13 +38,18 @@ const Gallery = () => {
 			</b>
 			<div className="hero">
 				<PhotoGridItem
-					imageUrl={`${baseUrl}${selectedGallery.previewImage.thumbnailPath}`}
-					customStyles={selectedGallery.previewImage.customStyles}
-					caption={selectedGallery.caption}
+					imageUrl={imageUrl}
+					customStyles={previewImage.customStyles}
+					caption={previewImage.caption}
 					span={3}
 				/>
 			</div>
-			<PhotoGrid baseUrl={baseUrl} {...selectedGallery} />
+			<PhotoGrid
+				baseUrl={baseUrl}
+				path={path}
+				thumbnailPath={thumbnailPath}
+				images={images}
+			/>
 			<div className={styles.buttonContainer}>
 				<Link href="/photography">
 					← Go Back

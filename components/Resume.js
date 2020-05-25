@@ -6,22 +6,26 @@ import { state } from "../util/constants";
 
 import styles from "./Resume.module.css";
 
+const { home } = state;
+
 const Resume = () => (
 	<div className={styles.resumeContainer}>
 		<Main
 			name={state.name}
-			about={state.about}
-			art={state.art}
-			design={state.design}
-			experience={state.experience}
-			education={state.education}
-			projects={state.projects} />
+			about={home.about}
+			art={home.art}
+			design={home.design}
+			experience={home.experience}
+			education={home.education}
+			projects={home.projects}
+		/>
 		<Sidebar
-			info={state.info}
-			skills={state.skills}
-			languages={state.languages}
-			links={state.links}
-			cities={state.cities} />
+			info={home.info}
+			skills={home.skills}
+			languages={home.languages}
+			links={home.links}
+			cities={home.cities}
+		/>
 	</div>
 );
 

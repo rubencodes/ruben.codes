@@ -34,13 +34,13 @@ const toIntOrNull = (val) => {
 		: null
 };
 
-const PhotoGrid = ({ baseUrl, images }) => {
+const PhotoGrid = ({ baseUrl, path, thumbnailPath, images }) => {
 	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
 	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
 
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
-	const selectedImagePath = Number.isInteger(selectedImageIndex)
-		? images[selectedImageIndex].path
+	const selectedImageFileName = Number.isInteger(selectedImageIndex)
+		? images[selectedImageIndex].fileName
 		: null;
 
 	useKeydownEvent((event) => {
@@ -71,10 +71,10 @@ const PhotoGrid = ({ baseUrl, images }) => {
 	return (
 		<>
 			<div className={styles.photoGrid}>
-				{images.map(({ thumbnailPath, span, customStyles }, index) => (
+				{images.map(({ fileName, span, customStyles }, index) => (
 					<PhotoGridItem
 						key={index}
-						imageUrl={`${baseUrl}${thumbnailPath}`}
+						imageUrl={`${baseUrl}${thumbnailPath}${fileName}`}
 						customStyles={customStyles}
 						customContainerStyles={(highlightedImageIndices.includes(index) ? {
 							borderColor: highlightedColor,
@@ -86,9 +86,9 @@ const PhotoGrid = ({ baseUrl, images }) => {
 					/>
 				))}
 			</div>
-			{selectedImagePath && (
+			{selectedImageFileName && (
 				<ImageModal
-					src={`${baseUrl}${selectedImagePath}`}
+					src={`${baseUrl}${path}${selectedImageFileName}`}
 					close={() => setSelectedImageIndex(null)}
 				/>
 			)}
