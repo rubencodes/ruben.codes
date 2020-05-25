@@ -7,6 +7,7 @@ export default {
 		"morgana",
 		"nina",
 		"savannah",
+		"fyre",
 		"miscellaneous",
 	],
 	galleries: {
@@ -1066,6 +1067,194 @@ export default {
 				},
 				{
 					fileName: "84.JPG",
+					customStyles: {}
+				},
+			]
+		},
+
+		/* Fyre photoshoot */
+		"fyre": {
+			path: "portraits/fyre/",
+			thumbnailPath: "portraits_small/fyre/",
+			previewImage: {
+				caption: "Fyre 02/20",
+				fileName: "2.jpg",
+				customStyles: {
+					backgroundPosition: "center 20%"
+				}
+			},
+			images: [
+				{
+					fileName: "1.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "2.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 20%"
+					}
+				},
+				{
+					fileName: "6.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 30%"
+					}
+				},
+				{
+					fileName: "3.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "4.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "5.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 10%"
+					}
+				},
+				{
+					fileName: "7.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "9.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "8.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "12.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center 20%"
+					}
+				},
+				{
+					fileName: "10.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "11.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "13.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "14.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 20%"
+					}
+				},
+				{
+					fileName: "15.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "16.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "17.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "18.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "21.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center 30%"
+					}
+				},
+				{
+					fileName: "19.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "20.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "22.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "23.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "24.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "25.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "26.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 20%"
+					}
+				},
+				{
+					fileName: "27.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "28.jpg",
+					span: 1,
+					customStyles: {}
+				},
+				{
+					fileName: "29.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 20%"
+					}
+				},
+				{
+					fileName: "30.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 20%"
+					}
+				},
+				{
+					fileName: "31.jpg",
+					span: 1,
 					customStyles: {}
 				},
 			]
