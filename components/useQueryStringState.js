@@ -19,8 +19,16 @@ const removeKeysInUrl = (object, url) => {
 };
 
 function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
-	const { query: queryParams, pathname, replace } = useRouter();
-	const { [queryParamName]: value = null, ...otherQueryParams } = queryParams;
+	const {
+		pathname,
+		query: {
+			[queryParamName]: value = null,
+			...otherQueryParams
+		},
+		replace,
+	} = useRouter();
+
+	// This is stored in a ref so it's referentially stable.
 	const setStateRef = useRef();
 	setStateRef.current = useCallback((newValue) => {
 		// Do nothing if value hasn't changed.
