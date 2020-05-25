@@ -1,134 +1,98 @@
-import React, { Component } from "react";
-import classnames from "classnames";
+import React, { memo } from "react";
 
-import styles from "./Gallery.module.css";
+import PhotoGrid from "./PhotoGrid";
+import PhotoGridItem from "./PhotoGridItem";
+import ImageModal from "./ImageModal";
+import useKeydownEvent from "./useKeydownEvent";
+import useQueryStringState from "./useQueryStringState";
+import useRandomCycleThroughItems from "./useRandomCycleThroughItems";
 
-const Selected = ({ phase, direction, src }) => (
-	<div
-		className={classnames(styles.selected, {
-			[styles[`selected--${phase}`]]: phase,
-			[styles[`selected--moving-${direction}`]]: phase,
-		})}
-	>
-		<div className={styles.selected__image}  style={{backgroundImage: `url(${src})`}}/>
-	</div>
-);
-
-const Thumb = ({ offset, index, src, select }) => (
-	<div className={classnames(styles.thumb, styles[`thumb--offset${offset}`])} onClick={() => select(index, offset)}>
-		<div className={styles.thumb__inner} style={{ backgroundImage: `url(${src})` }}/>
-	</div>
-);
-
-function calculateOffset(count, index, active) {
-	let offset = index - active;
-
-	if (offset > count / 2) {
-		offset -= count;
-	} else if (offset < -count / 2) {
-		offset += count;
+const COLORS = [
+	"blue",
+	"red",
+	"yellow",
+	"forestgreen",
+	"orange",
+	"pink",
+	"rebeccapurple",
+];
+const CYCLE_TIMEOUT = 300;
+const toIntArray = (val) => {
+	if (!val) {
+		return [];
 	}
 
-	return offset;
-}
+	const arr = Array.isArray(val) ? val : val.split(",");
+	return arr
+		.map((i) => parseInt(i, 10))
+		.filter((n) => !Number.isNaN(n));
+};
+const toIntOrNull = (val) => {
+	return val && !Number.isNaN(parseInt(val, 10))
+		? parseInt(val, 10)
+		: null
+};
 
-const Thumbs = ({ phase, direction, images, select, active }) => (
-	<div
-		className={classnames(styles.thumbs, {
-			[styles[`thumbs--${phase}`]]: phase,
-			[styles[`thumbs--moving-${direction}`]]: phase,
-		})}
-	>
-    {images.map((src, index) => (
-			<Thumb
-				src={src}
-				key={index}
-				index={index}
-				offset={calculateOffset(images.length, index, active)}
-				select={select}
-			/>
-		))}
-  </div>
-);
+const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
+	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
+	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
 
-export default class Gallery extends Component {
-	constructor(props) {
-		super(props);
-		let loopedImages = props.images;
-		while(loopedImages.length < 13)
-			loopedImages = loopedImages.concat(props.images)
-		this.state = {
-			active: 0,
-			showing: 0,
-			phase: null,
-			direction: "left",
-			loopedImages
+	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
+	const selectedImageFileName = Number.isInteger(selectedImageIndex)
+		? images[selectedImageIndex].fileName
+		: null;
+
+	useKeydownEvent((event) => {
+		// Don't do anything if there's no image.
+		if (!Number.isInteger(selectedImageIndex)) {
+			return;
 		}
-	}
 
-	componentDidMount() {
-		setTimeout(() => {
-			this.selectImage(1,1);
-		}, 1000);
-	}
-
-	selectImage(index, offset) {
-		if (!this.state.phase && offset !== 0){
-			this.setState({
-				active: index,
-				phase: "entering",
-				direction: offset >= 0  ? "left" : "right"
-			});
-
-			setTimeout(() => {
-				this.setState({
-					changing: false,
-					showing: index,
-					phase: "exiting"
-				});
-				setTimeout(() => {
-					this.setState({phase: null});
-				}, 300);
-			}, 400)
+		switch (event.key) {
+			case "ArrowLeft": {
+				setSelectedImageIndex(Math.max(selectedImageIndex - 1, 0));
+				return;
+			}
+			case "ArrowRight": {
+				setSelectedImageIndex(Math.min(selectedImageIndex + 1, images.length - 1));
+				return;
+			}
+			case "Escape": {
+				setSelectedImageIndex(null);
+				return;
+			}
+			default: {
+				return;
+			}
 		}
-	}
+	}, [images, selectedImageIndex]);
 
-	render() {
-		const {
-			baseURL="",
-			largePrefix="",
-			thumbPrefix=""
-		} = this.props;
-		const {
-			loopedImages,
-			active,
-			showing,
-			phase,
-			direction
-		} = this.state;
-
-		const selected = `${baseURL}${largePrefix}${loopedImages[showing]}`;
-		const thumbs = loopedImages.map((file) => `${baseURL}${thumbPrefix}${file}`);
-
-		return (
-			<div className={styles.gallery}>
-				<div className={styles.gallery__selected}>
-					<Selected
-						src={selected}
-						phase={phase}
-						direction={direction}
+	return (
+		<>
+			<PhotoGrid>
+				{images.map(({ fileName, span, customStyles }, index) => (
+					<PhotoGridItem
+						key={index}
+						imageUrl={`${baseUrl}${thumbnailPath}${fileName}`}
+						customStyles={customStyles}
+						customContainerStyles={(highlightedImageIndices.includes(index) ? {
+							borderColor: highlightedColor,
+							borderWidth: 4,
+							borderStyle: "solid",
+						} : {})}
+						span={span}
+						onClick={() => setSelectedImageIndex(index)}
 					/>
-				</div>
-				<div className={styles.gallery__thumbs}>
-					<Thumbs
-						images={thumbs}
-						active={active}
-						select={this.selectImage.bind(this)}
-						phase={phase}
-						direction={direction}
-					/>
-				</div>
-			</div>
-		)
-	}
-}
+				))}
+			</PhotoGrid>
+			{selectedImageFileName && (
+				<ImageModal
+					src={`${baseUrl}${path}${selectedImageFileName}`}
+					close={() => setSelectedImageIndex(null)}
+				/>
+			)}
+		</>
+	)
+};
+
+export default memo(PhotoGridGallery);

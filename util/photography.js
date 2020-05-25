@@ -8,7 +8,7 @@ export default {
 		"nina",
 		"savannah",
 		"fyre",
-		"miscellaneous",
+		"more",
 	],
 	galleries: {
 		/* Cat Ross */
@@ -21,6 +21,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center 18%"
 				},
+				span: 2
 			},
 			images: [
 				{
@@ -82,6 +83,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center 18%"
 				},
+				span: 1
 			},
 			images: [
 				{
@@ -184,7 +186,8 @@ export default {
 				fileName: "12.png",
 				customStyles: {
 					backgroundPosition: "center 10%"
-				}
+				},
+				span: 3
 			},
 			images: [
 				{
@@ -352,7 +355,8 @@ export default {
 				fileName: "38.jpg",
 				customStyles: {
 					backgroundPosition: "center"
-				}
+				},
+				span: 2
 			},
 			images: [
 				{
@@ -496,7 +500,8 @@ export default {
 				fileName: "26.jpg",
 				customStyles: {
 					backgroundPosition: "center"
-				}
+				},
+				span: 1
 			},
 			images: [
 				{
@@ -702,7 +707,8 @@ export default {
 				fileName: "78.JPG",
 				customStyles: {
 					backgroundPosition: "center"
-				}
+				},
+				span: 3
 			},
 			images: [
 				{
@@ -1081,7 +1087,8 @@ export default {
 				fileName: "2.jpg",
 				customStyles: {
 					backgroundPosition: "center 20%"
-				}
+				},
+				span: 2
 			},
 			images: [
 				{
@@ -1260,15 +1267,16 @@ export default {
 			]
 		},
 
-		"miscellaneous": {
+		"more": {
 			path: "landscapes/",
 			thumbnailPath: "landscapes_small/",
 			previewImage: {
-				caption: "Miscellaneous",
+				caption: "More...",
 				fileName: "1.jpg",
 				customStyles: {
 					backgroundPosition: "center"
-				}
+				},
+				span: 1
 			},
 			images: [
 				{

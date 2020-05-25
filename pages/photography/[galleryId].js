@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
-import PhotoGrid from "../../components/PhotoGrid";
+import Gallery from "../../components/Gallery";
 import PhotoGridItem from "../../components/PhotoGridItem";
 import { state } from "../../util/constants";
 
@@ -11,7 +11,7 @@ import styles from "./index.module.css";
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const Gallery = () => {
+const GalleryPage = () => {
 	const { query: { galleryId } } = useRouter();
 	const baseUrl = state.photography.baseUrl;
 	const selectedGallery = state.photography.galleries[galleryId];
@@ -44,7 +44,7 @@ const Gallery = () => {
 					span={3}
 				/>
 			</div>
-			<PhotoGrid
+			<Gallery
 				baseUrl={baseUrl}
 				path={path}
 				thumbnailPath={thumbnailPath}
@@ -62,4 +62,4 @@ const Gallery = () => {
 	);
 };
 
-export default Gallery;
+export default GalleryPage;

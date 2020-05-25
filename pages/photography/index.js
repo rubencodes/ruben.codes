@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
-import PhotoGridPreviews from "../../components/PhotoGridPreviews";
+import GalleryPreviews from "../../components/GalleryPreviews";
 import { state } from "../../util/constants";
 
 import styles from "./index.module.css";
@@ -19,7 +19,7 @@ const Photography = () => {
 				&nbsp;
 				<InstagramLink />
 			</b>
-			<PhotoGridPreviews {...state.photography} onSelect={onSelect} />
+			<GalleryPreviews {...state.photography} onSelect={onSelect} />
 		</div>
 	);
 };

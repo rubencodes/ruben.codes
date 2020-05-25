@@ -1,11 +1,10 @@
 import React from "react";
 
+import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
 
-import styles from "./PhotoGridPreviews.module.css";
-
-const PhotoGridPreviews = ({ baseUrl, galleryOrder, galleries, onSelect }) => (
-	<div className={styles.photoGridPreviews}>
+const GalleryPreviews = ({ baseUrl, galleryOrder, galleries, onSelect }) => (
+	<PhotoGrid>
 		{galleryOrder
 			.map((key) => galleries[key])
 			.map(({ thumbnailPath, previewImage }, i) => {
@@ -17,12 +16,12 @@ const PhotoGridPreviews = ({ baseUrl, galleryOrder, galleries, onSelect }) => (
 						imageUrl={imageUrl}
 						customStyles={previewImage.customStyles}
 						caption={previewImage.caption}
+						span={previewImage.span}
 						onClick={() => onSelect(galleryOrder[i])}
-						span={3}
 					/>
 				);
 			})}
-	</div>
+	</PhotoGrid>
 );
 
-export default PhotoGridPreviews;
+export default GalleryPreviews;

@@ -1,8 +1,0 @@
-.photoGridPreviews {
-	display: flex;
-	flex-direction: column;
-}
-
-.photoGridPreviews > * + * {
-	margin-top: 20px;
-}
