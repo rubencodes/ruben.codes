@@ -1,7 +1,7 @@
 import React from "react";
 
 import MainItem from "./MainItem";
-import Gallery from "./Gallery";
+import InlineGallery from "./InlineGallery";
 
 import styles from "./Main.module.css";
 
@@ -18,7 +18,7 @@ const Main = ({ name, about, art, design, experience, education, projects }) => 
 			<>
 				<b className="subheading">Art</b>
 				<div className={styles.imageGalleryContainer}>
-					<Gallery {...art} />
+					<InlineGallery {...art} />
 				</div>
 			</>
 		)}
@@ -51,7 +51,7 @@ const Main = ({ name, about, art, design, experience, education, projects }) => 
 				<b className="subheading">Design</b>
 				<p className="time">Examples of apps and promotional materials I"ve designed.</p>
 				<div className={styles.imageGalleryContainer}>
-					<Gallery {...design} />
+					<InlineGallery {...design} />
 				</div>
 			</>
 		)}
