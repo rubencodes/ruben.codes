@@ -714,7 +714,9 @@ export default {
 				{
 					fileName: "1.JPG",
 					span: 2,
-					customStyles: {}
+					customStyles: {
+						backgroundPosition: "center 40%"
+					}
 				},
 				{
 					fileName: "3.JPG",
@@ -917,7 +919,7 @@ export default {
 					fileName: "50.JPG",
 					span: 2,
 					customStyles: {
-						"backgroundPosition": "center 30%"
+						backgroundPosition: "center 30%"
 					}
 				},
 				{
@@ -970,7 +972,7 @@ export default {
 					fileName: "61.JPG",
 					span: 2,
 					customStyles: {
-						"backgroundPosition": "center 50%"
+						backgroundPosition: "center 50%"
 					}
 				},
 				{
