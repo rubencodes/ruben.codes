@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useLayoutEffect, useRef, useCallback } from "react";
 
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
@@ -33,11 +33,33 @@ const toIntOrNull = (val) => {
 		: null
 };
 
+function isElementInViewport(el) {
+	const rect = el.getBoundingClientRect();
+
+	return (
+		rect.top >= 0 &&
+		rect.left >= 0 &&
+		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+}
+
 const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
+	const highlightedImageElementsRef = useRef({});
 	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
 	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
+	useLayoutEffect(() => {
+		const firstHighlighted = highlightedImageIndices.sort()[0];
+		const element = highlightedImageElementsRef.current[firstHighlighted];
+		const needsScroll = element && !isElementInViewport(element);
+		if (needsScroll) {
+			setTimeout(() => element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" }), 100);
+		}
+	}, [...highlightedImageIndices]);
 
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
+	const updateSelectedImageIndex = useCallback((index) => setSelectedImageIndex(index), []);
+	const clearSelectedImageIndex = useCallback(() => setSelectedImageIndex(null), []);
 	const selectedImageFileName = Number.isInteger(selectedImageIndex)
 		? images[selectedImageIndex].fileName
 		: null;
@@ -70,25 +92,33 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	return (
 		<>
 			<PhotoGrid>
-				{images.map(({ fileName, span, customStyles }, index) => (
-					<PhotoGridItem
-						key={index}
-						imageUrl={`${baseUrl}${thumbnailPath}${fileName}`}
-						customStyles={customStyles}
-						customContainerStyles={(highlightedImageIndices.includes(index) ? {
-							borderColor: highlightedColor,
-							borderWidth: 4,
-							borderStyle: "solid",
-						} : {})}
-						span={span}
-						onClick={() => setSelectedImageIndex(index)}
-					/>
-				))}
+				{images.map(({ fileName, span, customStyles }, index) => {
+					const isHighlighted = highlightedImageIndices.includes(index);
+					const highlightedRef = (ref) => highlightedImageElementsRef.current[index] = ref;
+					const highlightedStyle = {
+						borderColor: highlightedColor,
+						borderWidth: 4,
+						borderStyle: "solid",
+					};
+
+					return (
+						<PhotoGridItem
+							key={index}
+							index={index}
+							ref={isHighlighted ? highlightedRef : undefined}
+							customContainerStyles={isHighlighted ? highlightedStyle : undefined}
+							imageUrl={`${baseUrl}${thumbnailPath}${fileName}`}
+							customStyles={customStyles}
+							span={span}
+							onClick={updateSelectedImageIndex}
+						/>
+					);
+				})}
 			</PhotoGrid>
 			{selectedImageFileName && (
 				<ImageModal
 					src={`${baseUrl}${path}${selectedImageFileName}`}
-					close={() => setSelectedImageIndex(null)}
+					close={clearSelectedImageIndex}
 				/>
 			)}
 		</>

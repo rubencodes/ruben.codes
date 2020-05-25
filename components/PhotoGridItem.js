@@ -1,24 +1,26 @@
-import React from "react";
+import React, { forwardRef, memo } from "react";
 import classnames from "classnames";
 
 import useLazyLoad from "./useLazyLoad";
 
 import styles from "./PhotoGridItem.module.css";
 
-const PhotoGridItem = ({
+const PhotoGridItem = forwardRef(({
+	index,
 	imageUrl,
 	caption,
 	onClick,
 	customContainerStyles,
 	customStyles,
 	span = 1,
-}) => {
+}, ref) => {
 	const elementRef = useLazyLoad(imageUrl);
 
 	return (
 		<button
+			ref={ref}
 			className={classnames(styles.photoGridItem, styles[`photoGridItemSpan${span}`])}
-			onClick={onClick}
+			onClick={() => onClick(index)}
 			disabled={!onClick}
 			style={customContainerStyles}
 		>
@@ -32,6 +34,6 @@ const PhotoGridItem = ({
 			</div>
 		</button>
 	);
-};
+});
 
-export default PhotoGridItem;
+export default memo(PhotoGridItem);
