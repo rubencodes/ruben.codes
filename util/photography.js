@@ -174,6 +174,48 @@ export default {
 					fileName: "19.jpg",
 					customStyles: {}
 				},
+				{
+					fileName: "20.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "22.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "24.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "21.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "23.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "25.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "26.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "27.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "29.jpg",
+					customStyles: {}
+				},
 			]
 		},
 
