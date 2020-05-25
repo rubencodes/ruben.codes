@@ -8,7 +8,7 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
 }
 
-@media(max-width: 767px) {
+@media(max-width: 880px) {
   .resumeContainer {
   	padding: 28px;
     margin: 0;

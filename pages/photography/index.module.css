@@ -22,13 +22,19 @@
   z-index: 1;
 }
 
-@media(max-width: 767px) {
+@media(max-width: 880px) {
   .photography {
-  	padding: 28px;
+  	padding: 16px;
     margin: 0;
   }
 
   .buttonContainer {
     padding: 18px 38px;
+  }
+}
+
+@media(max-width: 440px) {
+  .photography {
+  	padding: 12px;
   }
 }

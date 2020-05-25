@@ -68,13 +68,13 @@
 	left: 16px;
 }
 
-@media(max-width: 767px) {
+@media(max-width: 880px) {
   .photoGridItemSpan3 {
 		grid-column: span 2;
 	}
 }
 
-@media(max-width: 400px) {
+@media(max-width: 440px) {
   .photoGridItemSpan3,
   .photoGridItemSpan2 {
 		grid-column: span 1;
