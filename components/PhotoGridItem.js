@@ -27,7 +27,9 @@ const PhotoGridItem = ({
 				className={styles.photoGridItem__Inner}
 				style={customStyles}
 			/>
-			<div className={styles.photoGridItem__Caption}>{caption}</div>
+			<div className={styles.photoGridItem__Caption}>
+				{caption}
+			</div>
 		</button>
 	);
 };

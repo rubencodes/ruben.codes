@@ -23,13 +23,15 @@ h1.heading {
 }
 
 b.subheading {
-	color: #69F;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #0357ff;
 	font-family: "IBM Plex Sans", sans;
 	font-weight: bold;
 	font-size: small;
 	text-transform: uppercase;
-	margin-top: 20px;
-	margin-bottom: 10px;
+	margin: 16px 0 8px;
 }
 
 div.hero {
@@ -82,13 +84,16 @@ ul.list > li {
 }
 
 button, a {
-	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 24px;
 	font-family: "IBM Plex Sans", sans;
 	font-weight: bold;
 	font-size: small;
 	text-transform: uppercase;
 	text-decoration: none;
-	background: #69F;
+	background: #0357ff;
 	color: white;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
