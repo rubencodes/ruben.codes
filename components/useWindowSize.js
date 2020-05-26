@@ -5,13 +5,15 @@ const DEFAULT_SIZE = {
 	height: 250,
 };
 
+const getWindowSize = () => ({
+	width: window.innerWidth,
+	height: window.innerHeight,
+});
+
 function useWindowSize() {
 	const [size, setSize] = useState(DEFAULT_SIZE);
 	useEffect(() => {
-		const onResize = () => setSize({
-			width: window.innerWidth,
-			height: window.innerHeight,
-		});
+		const onResize = () => setSize(getWindowSize());
 
 		onResize(); // Set for initial render.
 		window.addEventListener("resize", onResize);

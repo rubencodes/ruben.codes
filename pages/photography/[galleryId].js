@@ -41,7 +41,7 @@ const GalleryPage = () => {
 				<b className="subheading">
 					Photography
 					&nbsp;
-			<InstagramLink />
+					<InstagramLink />
 				</b>
 				<div className="hero">
 					<PhotoGridItem

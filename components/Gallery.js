@@ -96,39 +96,37 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	}, [images, selectedImageIndex]);
 
 	return (
-		<>
-			<PhotoGrid>
-				{images.map(({ fileName, span, customStyles }, index) => {
-					const isHighlighted = highlightedImageIndices.includes(index);
-					const highlightedRef = (ref) => highlightedImageElementsRef.current[index] = ref;
-					const highlightedStyle = {
-						borderColor: highlightedColor,
-						borderWidth: 4,
-						borderStyle: "solid",
-					};
-					const imageUrl = `${baseUrl}${thumbnailPath}${fileName}`;
+		<PhotoGrid>
+			{images.map(({ fileName, span, customStyles }, index) => {
+				const isHighlighted = highlightedImageIndices.includes(index);
+				const highlightedRef = (ref) => highlightedImageElementsRef.current[index] = ref;
+				const highlightedStyle = {
+					borderColor: highlightedColor,
+					borderWidth: 4,
+					borderStyle: "solid",
+				};
+				const imageUrl = `${baseUrl}${thumbnailPath}${fileName}`;
 
-					return (
-						<PhotoGridItem
-							key={index}
-							index={index}
-							ref={isHighlighted ? highlightedRef : undefined}
-							customContainerStyles={isHighlighted ? highlightedStyle : undefined}
-							imageUrl={imageUrl}
-							customStyles={customStyles}
-							span={span}
-							onClick={updateSelectedImageIndex}
-						/>
-					);
-				})}
-			</PhotoGrid>
+				return (
+					<PhotoGridItem
+						key={index}
+						index={index}
+						ref={isHighlighted ? highlightedRef : undefined}
+						customContainerStyles={isHighlighted ? highlightedStyle : undefined}
+						imageUrl={imageUrl}
+						customStyles={customStyles}
+						span={span}
+						onClick={updateSelectedImageIndex}
+					/>
+				);
+			})}
 			{selectedImageUrl && (
 				<ImageModal
 					src={selectedImageUrl}
 					close={clearSelectedImageIndex}
 				/>
 			)}
-		</>
+		</PhotoGrid>
 	)
 };
 
