@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useCallback } from "react";
-import Head from "next/head";
 
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
@@ -98,11 +97,6 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 
 	return (
 		<>
-			{selectedImageIndex !== null && (
-				<Head>
-					<meta key="image" property="og:image" content={selectedImageUrl} />
-				</Head>
-			)}
 			<PhotoGrid>
 				{images.map(({ fileName, span, customStyles }, index) => {
 					const isHighlighted = highlightedImageIndices.includes(index);

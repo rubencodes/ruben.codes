@@ -1,6 +1,8 @@
 import React from "react";
+import Head from "next/head";
 
 import Loader from "./Loader";
+import ImageLicenseData from "./ImageLicenseData";
 import useWindowSize from "./useWindowSize";
 import useCache from "./useCache";
 import useImageLoader from "./useImageLoader";
@@ -52,6 +54,9 @@ const ImageModal = ({ src, close }) => {
 
 	return (
 		<div className={styles.imageModal} onClick={close}>
+			<Head>
+				<meta key="image" property="og:image" content={src} />
+			</Head>
 			<ImageLicenseData imageUrl={src} />
 			<div
 				className={styles.imageModal__Inner}
