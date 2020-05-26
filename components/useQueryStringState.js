@@ -1,5 +1,5 @@
-import { useCallback, useRef } from "react";
 import { useRouter } from "next/router";
+import queryString from "query-string";
 
 const DO_NOTHING = (i) => i;
 
@@ -18,11 +18,17 @@ const removeKeysInUrl = (object, url) => {
 	return copy;
 };
 
+const getFallbackValue = (path, queryParamName) => {
+	const queryParams = queryString.parse(path.slice(path.indexOf("?")));
+	return queryParams[queryParamName] ?? null;
+};
+
 function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 	const {
+		asPath,
 		pathname,
 		query: {
-			[queryParamName]: value = null,
+			[queryParamName]: value = getFallbackValue(asPath, queryParamName),
 			...otherQueryParams
 		},
 		replace,

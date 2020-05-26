@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
@@ -11,7 +12,8 @@ import styles from "./index.module.css";
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const GalleryPage = ({ params: { galleryId } }) => {
+const GalleryPage = () => {
+	const { query: { galleryId } } = useRouter();
 	const {
 		baseUrl,
 		galleries: { [galleryId]: selectedGallery }
@@ -29,10 +31,10 @@ const GalleryPage = ({ params: { galleryId } }) => {
 		<>
 			<Head>
 				<title>{state.photography.metaTitle} - {previewImage.caption}</title>
-				<meta property="og:title" content={`${state.photography.metaTitle} - ${previewImage.caption}`} />
-				<meta property="og:description" content={state.photography.metaDescription} />
-				<meta property="og:url" content={`${state.photography.metaUrl}/${galleryId}`} />
-				<meta property="og:image" content={`${state.photography.baseUrl}${thumbnailPath}${previewImage.fileName}`} />
+				<meta key="title" property="og:title" content={`${state.photography.metaTitle} - ${previewImage.caption}`} />
+				<meta key="description" property="og:description" content={state.photography.metaDescription} />
+				<meta key="url" property="og:url" content={`${state.photography.metaUrl}/${galleryId}`} />
+				<meta key="image" property="og:image" content={`${state.photography.baseUrl}${thumbnailPath}${previewImage.fileName}`} />
 			</Head>
 			<div className={styles.photography}>
 				<h1 className="heading">{state.name}</h1>
@@ -57,11 +59,11 @@ const GalleryPage = ({ params: { galleryId } }) => {
 				/>
 				<div className={styles.buttonContainer}>
 					<Link href="/photography">
-						← Go Back
-			</Link>
+						<a>← Go Back</a>
+					</Link>
 					<button onClick={scrollToTop}>
 						↑ Scroll to Top
-			</button>
+					</button>
 				</div>
 			</div>
 		</>

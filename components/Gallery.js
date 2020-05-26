@@ -1,4 +1,5 @@
-import React, { useLayoutEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
+import Head from "next/head";
 
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
@@ -48,7 +49,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	const highlightedImageElementsRef = useRef({});
 	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
 	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const firstHighlighted = highlightedImageIndices.sort()[0];
 		const element = highlightedImageElementsRef.current[firstHighlighted];
 		const needsScroll = element && !isElementInViewport(element);
@@ -66,8 +67,8 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
 	const updateSelectedImageIndex = useCallback((index) => setSelectedImageIndex(index), [setSelectedImageIndex]);
 	const clearSelectedImageIndex = useCallback(() => setSelectedImageIndex(null), [setSelectedImageIndex]);
-	const selectedImageFileName = Number.isInteger(selectedImageIndex)
-		? images[selectedImageIndex].fileName
+	const selectedImageUrl = Number.isInteger(selectedImageIndex)
+		? `${baseUrl}${path}${images[selectedImageIndex].fileName}`
 		: null;
 
 	useKeydownEvent((event) => {
@@ -97,6 +98,11 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 
 	return (
 		<>
+			{selectedImageIndex !== null && (
+				<Head>
+					<meta key="image" property="og:image" content={selectedImageUrl} />
+				</Head>
+			)}
 			<PhotoGrid>
 				{images.map(({ fileName, span, customStyles }, index) => {
 					const isHighlighted = highlightedImageIndices.includes(index);
@@ -106,6 +112,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 						borderWidth: 4,
 						borderStyle: "solid",
 					};
+					const imageUrl = `${baseUrl}${thumbnailPath}${fileName}`;
 
 					return (
 						<PhotoGridItem
@@ -113,7 +120,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 							index={index}
 							ref={isHighlighted ? highlightedRef : undefined}
 							customContainerStyles={isHighlighted ? highlightedStyle : undefined}
-							imageUrl={`${baseUrl}${thumbnailPath}${fileName}`}
+							imageUrl={imageUrl}
 							customStyles={customStyles}
 							span={span}
 							onClick={updateSelectedImageIndex}
@@ -121,9 +128,9 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 					);
 				})}
 			</PhotoGrid>
-			{selectedImageFileName && (
+			{selectedImageUrl && (
 				<ImageModal
-					src={`${baseUrl}${path}${selectedImageFileName}`}
+					src={selectedImageUrl}
 					close={clearSelectedImageIndex}
 				/>
 			)}

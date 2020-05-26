@@ -16,10 +16,10 @@ const Photography = () => {
 		<>
 			<Head>
 				<title>{state.photography.metaTitle}</title>
-				<meta property="og:title" content={state.photography.metaTitle} />
-				<meta property="og:description" content={state.photography.metaDescription} />
-				<meta property="og:url" content={state.photography.metaUrl} />
-				<meta property="og:image" content={state.photography.metaImage} />
+				<meta key="title" property="og:title" content={state.photography.metaTitle} />
+				<meta key="description" property="og:description" content={state.photography.metaDescription} />
+				<meta key="url" property="og:url" content={state.photography.metaUrl} />
+				<meta key="image" property="og:image" content={state.photography.metaImage} />
 			</Head>
 			<div className={styles.photography}>
 				<h1 className="heading">{state.name}</h1>
