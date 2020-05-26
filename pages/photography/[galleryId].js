@@ -78,7 +78,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 	const paths = state.photography.galleryOrder.map((galleryId) => ({
-		params: { galleryId: "kitty_k" }
+		params: { galleryId }
 	}));
 
 	return {
