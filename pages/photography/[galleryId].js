@@ -70,23 +70,12 @@ const GalleryPage = () => {
 	);
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 	return {
 		props: {
 			params: context.params
 		},
 	};
-}
-
-export async function getStaticPaths() {
-	const paths = state.photography.galleryOrder.map((galleryId) => ({
-		params: { galleryId }
-	}));
-
-	return {
-		paths: paths,
-		fallback: false,
-  };
 }
 
 export default GalleryPage;
