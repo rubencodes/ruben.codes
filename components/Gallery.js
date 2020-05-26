@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
@@ -47,6 +48,7 @@ function isElementInViewport(el) {
 }
 
 const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
+	const router = useRouter();
 	const highlightedImageElementsRef = useRef({});
 	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
 	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
@@ -134,7 +136,11 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 					/>
 				</>
 			) : (
-				<span style={{ display: "none" }}>No selected image.</span>
+				<span style={{ display: "none" }}>
+					asPath: {router.asPath}<br />
+					pathname: {router.pathname}<br />
+					query: {JSON.stringify(router.query)}
+				</span>
 			)}
 		</PhotoGrid>
 	)
