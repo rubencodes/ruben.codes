@@ -1,11 +1,10 @@
-import App from "next/app";
 import Head from "next/head";
 
 import { state } from "../util/constants";
 
 import "./_app.css";
 
-const AppContainer = (props) => (
+const AppContainer = ({ Component, pageProps }) => (
 	<>
 		<Head>
 			<title>{state.metaTitle}</title>
@@ -19,7 +18,7 @@ const AppContainer = (props) => (
 			<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700" rel="stylesheet" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
 		</Head>
-		<App {...props} />
+		<Component {...pageProps} />
 	</>
 );
 

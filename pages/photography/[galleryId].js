@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
@@ -12,16 +11,11 @@ import styles from "./index.module.css";
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const GalleryPage = () => {
-	const { query: { galleryId } } = useRouter();
+const GalleryPage = ({ params: { galleryId } }) => {
 	const {
 		baseUrl,
 		galleries: { [galleryId]: selectedGallery }
 	} = state.photography;
-
-	if (!selectedGallery) {
-		return null;
-	}
 
 	const {
 		path,
@@ -38,14 +32,14 @@ const GalleryPage = () => {
 				<meta property="og:title" content={`${state.photography.metaTitle} - ${previewImage.caption}`} />
 				<meta property="og:description" content={state.photography.metaDescription} />
 				<meta property="og:url" content={`${state.photography.metaUrl}/${galleryId}`} />
-				<meta property="og:image" content={imageUrl} />
+				<meta property="og:image" content={`${state.photography.baseUrl}${thumbnailPath}${previewImage.fileName}`} />
 			</Head>
 			<div className={styles.photography}>
 				<h1 className="heading">{state.name}</h1>
 				<b className="subheading">
 					Photography
 					&nbsp;
-				<InstagramLink />
+			<InstagramLink />
 				</b>
 				<div className="hero">
 					<PhotoGridItem
@@ -64,14 +58,33 @@ const GalleryPage = () => {
 				<div className={styles.buttonContainer}>
 					<Link href="/photography">
 						← Go Back
-				</Link>
+			</Link>
 					<button onClick={scrollToTop}>
 						↑ Scroll to Top
-				</button>
+			</button>
 				</div>
 			</div>
 		</>
 	);
 };
+
+export async function getStaticProps(context) {
+	return {
+		props: {
+			params: context.params
+		},
+	};
+}
+
+export async function getStaticPaths() {
+	const paths = state.photography.galleryOrder.map((galleryId) => ({
+		params: { galleryId: "kitty_k" }
+	}));
+
+	return {
+		paths: paths,
+		fallback: false,
+  };
+}
 
 export default GalleryPage;
