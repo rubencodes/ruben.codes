@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useCallback } from "react";
+import Head from "next/head";
 
+import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
 import ImageModal from "./ImageModal";
@@ -121,10 +123,16 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 				);
 			})}
 			{selectedImageUrl && (
-				<ImageModal
-					src={selectedImageUrl}
-					close={clearSelectedImageIndex}
-				/>
+				<>
+					<Head>
+						<meta key="image" property="og:image" content={selectedImageUrl} />
+					</Head>
+					<ImageLicenseData imageUrl={selectedImageUrl} />
+					<ImageModal
+						src={selectedImageUrl}
+						close={clearSelectedImageIndex}
+					/>
+				</>
 			)}
 		</PhotoGrid>
 	)
