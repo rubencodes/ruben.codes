@@ -52,6 +52,7 @@ const ImageModal = ({ src, close }) => {
 
 	return (
 		<div className={styles.imageModal} onClick={close}>
+			<ImageLicenseData imageUrl={src} />
 			<div
 				className={styles.imageModal__Inner}
 				onClick={(e) => e.preventDefault() || e.stopPropagation()}

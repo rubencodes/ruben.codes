@@ -2,6 +2,7 @@ import React, { forwardRef, memo } from "react";
 import classnames from "classnames";
 
 import useLazyLoad from "./useLazyLoad";
+import ImageLicenseData from "./ImageLicenseData";
 
 import styles from "./PhotoGridItem.module.css";
 
@@ -24,6 +25,7 @@ const PhotoGridItem = forwardRef(({
 			disabled={!onClick}
 			style={customContainerStyles}
 		>
+			<ImageLicenseData imageUrl={imageUrl} />
 			<div
 				ref={elementRef}
 				className={styles.photoGridItem__Inner}
