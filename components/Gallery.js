@@ -124,7 +124,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 					/>
 				);
 			})}
-			{selectedImageUrl ? (
+			{selectedImageUrl && (
 				<>
 					<Head>
 						<meta key="image" property="og:image" content={selectedImageUrl} />
@@ -135,12 +135,6 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 						close={clearSelectedImageIndex}
 					/>
 				</>
-			) : (
-				<span style={{ display: "none" }}>
-					asPath: {router.asPath}<br />
-					pathname: {router.pathname}<br />
-					query: {JSON.stringify(router.query)}
-				</span>
 			)}
 		</PhotoGrid>
 	)
