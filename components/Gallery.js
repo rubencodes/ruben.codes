@@ -47,19 +47,25 @@ function isElementInViewport(el) {
 const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	const highlightedImageElementsRef = useRef({});
 	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
-	const highlightedColor = "blue";// useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
+	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
 	useLayoutEffect(() => {
 		const firstHighlighted = highlightedImageIndices.sort()[0];
 		const element = highlightedImageElementsRef.current[firstHighlighted];
 		const needsScroll = element && !isElementInViewport(element);
 		if (needsScroll) {
-			setTimeout(() => element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" }), 100);
+			setTimeout(() => {
+				element.scrollIntoView({
+					behavior: "smooth",
+					block: "center",
+					inline: "nearest"
+				})
+			}, 100);
 		}
 	}, [...highlightedImageIndices]);
 
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
-	const updateSelectedImageIndex = useCallback((index) => setSelectedImageIndex(index), []);
-	const clearSelectedImageIndex = useCallback(() => setSelectedImageIndex(null), []);
+	const updateSelectedImageIndex = useCallback((index) => setSelectedImageIndex(index), [setSelectedImageIndex]);
+	const clearSelectedImageIndex = useCallback(() => setSelectedImageIndex(null), [setSelectedImageIndex]);
 	const selectedImageFileName = Number.isInteger(selectedImageIndex)
 		? images[selectedImageIndex].fileName
 		: null;

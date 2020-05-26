@@ -28,9 +28,7 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 		replace,
 	} = useRouter();
 
-	// This is stored in a ref so it's referentially stable.
-	const setStateRef = useRef();
-	setStateRef.current = useCallback((newValue) => {
+	const setValue = (newValue) => {
 		// Do nothing if value hasn't changed.
 		if (newValue === processValue(value)) {
 			return;
@@ -64,9 +62,9 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 		}, {
 			shallow: true,
 		});
-	}, [queryParamName, processValue(value)]);
+	};
 
-	return [processValue(value), setStateRef.current];
+	return [processValue(value), setValue];
 }
 
 export default useQueryStringState;
