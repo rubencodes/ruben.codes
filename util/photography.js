@@ -1554,60 +1554,60 @@ export default {
 					}
 				},
 				{
-					fileName: "DSC04868.jpg",
+					fileName: "43.jpg",
 					span: 3,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
-					fileName: "DSC04714.jpg",
+					fileName: "42.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "DSC04668.jpg",
+					fileName: "38.jpg",
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "DSC04652.jpg",
+					fileName: "36.jpg",
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "DSC04655.jpg",
+					fileName: "37.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "DSC04683.jpg",
+					fileName: "39.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "DSC04711.jpg",
+					fileName: "41.jpg",
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "DSC04977.jpg",
+					fileName: "44.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
 				},
 				{
-					fileName: "DSC04709.jpg",
+					fileName: "40.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
