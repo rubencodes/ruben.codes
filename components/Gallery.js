@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 
 import ImageLicenseData from "./ImageLicenseData";
@@ -8,6 +8,7 @@ import ImageModal from "./ImageModal";
 import useKeydownEvent from "./useKeydownEvent";
 import useQueryStringState from "./useQueryStringState";
 import useRandomCycleThroughItems from "./useRandomCycleThroughItems";
+import useArrayNavigator from "./useArrayNavigator";
 import useSwipeDetector from "./useSwipeDetector";
 
 const COLORS = [
@@ -69,8 +70,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 
 	// Selected image state for the image modal.
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
-	const updateSelectedImageIndex = useCallback((index) => setSelectedImageIndex(index), [setSelectedImageIndex]);
-	const clearSelectedImageIndex = useCallback(() => setSelectedImageIndex(null), [setSelectedImageIndex]);
+	const { decrement, increment, clear } = useArrayNavigator(selectedImageIndex, setSelectedImageIndex, images.length);
 	const selectedImageUrl = Number.isInteger(selectedImageIndex)
 		? `${baseUrl}${path}${images[selectedImageIndex].fileName}`
 		: null;
@@ -84,29 +84,29 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 
 		switch (event.key) {
 			case "ArrowLeft": {
-				setSelectedImageIndex(Math.max(selectedImageIndex - 1, 0));
+				decrement();
 				return;
 			}
 			case "ArrowRight": {
-				setSelectedImageIndex(Math.min(selectedImageIndex + 1, images.length - 1));
+				increment();
 				return;
 			}
 			case "Escape": {
-				clearSelectedImageIndex();
+				clear();
 				return;
 			}
 			default: {
 				return;
 			}
 		}
-	}, [images, selectedImageIndex]);
+	}, [selectedImageIndex, decrement, increment, clear]);
 
 	// Add swipe navigation for the modal.
 	const swipeTargetRef = useSwipeDetector({
-		onLeftSwipe: () => setSelectedImageIndex(Math.max(selectedImageIndex - 1, 0)),
-		onRightSwipe: () => setSelectedImageIndex(Math.min(selectedImageIndex + 1, images.length - 1)),
-		onUpSwipe: clearSelectedImageIndex,
-		onDownSwipe: clearSelectedImageIndex,
+		onLeftSwipe: decrement,
+		onRightSwipe: increment,
+		onUpSwipe: clear,
+		onDownSwipe: clear,
 	});
 
 	return (
@@ -130,7 +130,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 						imageUrl={imageUrl}
 						customStyles={customStyles}
 						span={span}
-						onClick={updateSelectedImageIndex}
+						onClick={setSelectedImageIndex}
 					/>
 				);
 			})}
@@ -143,7 +143,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 					<ImageModal
 						ref={swipeTargetRef}
 						src={selectedImageUrl}
-						close={clearSelectedImageIndex}
+						close={clear}
 					/>
 				</>
 			)}

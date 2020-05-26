@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useRouter } from "next/router";
 
 const DO_NOTHING = (i) => i;
@@ -27,7 +28,7 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 		replace,
 	} = useRouter();
 
-	const setValue = (newValue) => {
+	const setValue = useCallback((newValue) => {
 		// Do nothing if value hasn't changed.
 		if (newValue === processValue(value)) {
 			return;
@@ -61,7 +62,7 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 		}, {
 			shallow: true,
 		});
-	};
+	}, [queryParamName, processValue, value]);
 
 	return [processValue(value), setValue];
 }
