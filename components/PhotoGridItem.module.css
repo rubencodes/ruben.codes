@@ -1,5 +1,6 @@
 .photoGridItem {
 	position: relative;
+	display: block;
 	height: 240px;
 	background-color: #CCC;
 	border: none;
