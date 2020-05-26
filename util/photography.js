@@ -1,4 +1,9 @@
 export default {
+	metaTitle: "Ruben Martinez Jr. - Photography",
+	metaDescription: "Explore photo galleries by New York City photographer Ruben Martinez Jr.",
+	metaUrl: "https://ruben.codes/photography",
+	metaImage: "https://ruben.codes/static/photography/landscapes/46.jpg",
+
 	baseUrl: "/static/photography/",
 	galleryOrder: [
 		"cat_ross",

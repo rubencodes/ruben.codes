@@ -1,4 +1,9 @@
 export default {
+	metaTitle: "Ruben Martinez Jr. - Artist, Developer, Technologist",
+	metaDescription: "Hi! I'm Ruben. I'm a designer, developer, and artist passionate about building cool stuff.",
+	metaUrl: "https://ruben.codes/",
+	metaImage: "https://ruben.codes/static/photography/landscapes/43.jpg",
+
 	about: `Hi! I'm Ruben. I'm a designer, developer, and artist passionate about building cool stuff. I currently work at Slack, in New York City, where I work on the frontend team creating insightful data visualizations for our enterprise customers. Previously, I worked on the OkCupid web and iOS teams, helping come up with new and interesting ways for people to get to know each other online. I got the opportunity to work on several major projects, including reworking the web experience into a Single Page App, and rewriting OkCupid's instant messenger using React. Prior to that, I designed and built the Progressive Web App frontend for WELL Health Inc, a Techstars-funded startup dedicated to improving the patient healthcare experience. I oversaw the rollout of WELL from zero users to several hundred thousand MAU that were being seen in mid-2018. When I'm not working, I love to make art, apps, and sometimes, even furniture. I graduated from Bowdoin College in 2015 with a degree in Computer Science and Visual Arts. That summer, I was selected to attend WWDC as a Student Scholar. I also helped write a book on building Swift apps for WatchOS. For more information about me, feel free to reach out to me via any of the links listed in the sidebar.`,
 	info: {
 		phoneNumber: "(210) 860-0656",

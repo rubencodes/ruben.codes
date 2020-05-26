@@ -14,8 +14,10 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const GalleryPage = () => {
 	const { query: { galleryId } } = useRouter();
-	const baseUrl = state.photography.baseUrl;
-	const selectedGallery = state.photography.galleries[galleryId];
+	const {
+		baseUrl,
+		galleries: { [galleryId]: selectedGallery }
+	} = state.photography;
 
 	if (!selectedGallery) {
 		return null;
@@ -32,12 +34,11 @@ const GalleryPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Ruben Martinez Jr. - Photography - {previewImage.caption}</title>
-				<meta property="og:title" content={`Ruben Martinez Jr. - Photography - ${previewImage.caption}`} />
-				<meta property="og:description" content="Explore photo galleries by New York City photographer Ruben Martinez Jr." />
+				<title>{state.photography.metaTitle} - {previewImage.caption}</title>
+				<meta property="og:title" content={`${state.photography.metaTitle} - ${previewImage.caption}`} />
+				<meta property="og:description" content={state.photography.metaDescription} />
+				<meta property="og:url" content={`${state.photography.metaUrl}/${galleryId}`} />
 				<meta property="og:image" content={imageUrl} />
-				<meta property="og:url" content={`https://ruben.codes/photography/${galleryId}`} />
-				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
 			<div className={styles.photography}>
 				<h1 className="heading">{state.name}</h1>

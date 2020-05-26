@@ -15,11 +15,11 @@ const Photography = () => {
 	return (
 		<>
 			<Head>
-				<title>Ruben Martinez Jr. - Photography</title>
-				<meta property="og:title" content="Ruben Martinez Jr. - Photography" />
-				<meta property="og:description" content="Explore photo galleries by New York City photographer Ruben Martinez Jr." />
-				<meta property="og:image" content="https://ruben.codes/static/photography/landscapes/46.jpg" />
-				<meta property="og:url" content="https://ruben.codes/photography" />
+				<title>{state.photography.metaTitle}</title>
+				<meta property="og:title" content={state.photography.metaTitle} />
+				<meta property="og:description" content={state.photography.metaDescription} />
+				<meta property="og:url" content={state.photography.metaUrl} />
+				<meta property="og:image" content={state.photography.metaImage} />
 			</Head>
 			<div className={styles.photography}>
 				<h1 className="heading">{state.name}</h1>
