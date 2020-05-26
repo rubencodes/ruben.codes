@@ -35,9 +35,9 @@ function useSwipeDetector({
 
 			if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
 				if (xDiff > 0) {
-					if (onLeftSwipe) onLeftSwipe();
-				} else {
 					if (onRightSwipe) onRightSwipe();
+				} else {
+					if (onLeftSwipe) onLeftSwipe();
 				}
 			} else {
 				if (yDiff > 0) {
