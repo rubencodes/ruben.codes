@@ -8,7 +8,7 @@ const AppContainer = (props) => (
 		<Head>
 			<title>Ruben Martinez Jr - Developer, Entrepreneur, Technologist</title>
 			<meta charset="utf-8" />
-			<link rel="icon" type="image/png" href="http://ruben.codes/favicon.png" />
+			<link rel="icon" type="image/png" href="https://ruben.codes/favicon.png" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 			<meta name="theme-color" content="#000000" />
 			<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,700" rel="stylesheet" />
