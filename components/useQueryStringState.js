@@ -19,7 +19,6 @@ const removeKeysInUrl = (object, url) => {
 
 function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 	const {
-		asPath,
 		pathname,
 		query: {
 			[queryParamName]: value = null,
