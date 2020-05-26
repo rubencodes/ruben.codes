@@ -122,7 +122,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 					/>
 				);
 			})}
-			{selectedImageUrl && (
+			{selectedImageUrl ? (
 				<>
 					<Head>
 						<meta key="image" property="og:image" content={selectedImageUrl} />
@@ -133,6 +133,8 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 						close={clearSelectedImageIndex}
 					/>
 				</>
+			) : (
+				<span style={{ display: "none" }}>No selected image.</span>
 			)}
 		</PhotoGrid>
 	)
