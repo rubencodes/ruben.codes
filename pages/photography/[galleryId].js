@@ -3,7 +3,6 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import SocialMetaTags from "../../components/SocialMetaTags";
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
 import PhotoGridItem from "../../components/PhotoGridItem";
@@ -34,12 +33,11 @@ const GalleryPage = () => {
 		<>
 			<Head>
 				<title>Ruben Martinez Jr. - Photography - {previewImage.caption}</title>
-				<SocialMetaTags
-					title={`Ruben Martinez Jr. - Photography - ${previewImage.caption}`}
-					description="Explore photo galleries by New York City photographer Ruben Martinez Jr."
-					pageUrl={`https://ruben.codes/photography/${galleryId}`}
-					imageUrl={imageUrl}
-				/>
+				<meta property="og:title" content={`Ruben Martinez Jr. - Photography - ${previewImage.caption}`} />
+				<meta property="og:description" content="Explore photo galleries by New York City photographer Ruben Martinez Jr." />
+				<meta property="og:image" content={imageUrl} />
+				<meta property="og:url" content={`https://ruben.codes/photography/${galleryId}`} />
+				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
 			<div className={styles.photography}>
 				<h1 className="heading">{state.name}</h1>
