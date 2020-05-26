@@ -2,10 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 // Based on https://stackoverflow.com/a/23230280
 function useSwipeDetector({
+	// Event listeners.
 	onLeftSwipe,
 	onRightSwipe,
 	onUpSwipe,
 	onDownSwipe,
+
+	// Threshold to detect swipe.
+	verticalSwipeThreshold = 50,
+	horizontalSwipeThreshold = 30,
 }) {
 	const [domRef, setDomRef] = useState(null);
 	const xDown = useRef(null);
@@ -34,32 +39,35 @@ function useSwipeDetector({
 			const yDiff = yDown.current - yUp;
 
 			if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
-				if (xDiff > 0) {
+				if (xDiff > horizontalSwipeThreshold) {
 					if (onRightSwipe) onRightSwipe();
-				} else {
+				} else if (xDiff < -horizontalSwipeThreshold) {
 					if (onLeftSwipe) onLeftSwipe();
 				}
 			} else {
-				if (yDiff > 0) {
+				if (yDiff > verticalSwipeThreshold) {
 					if (onUpSwipe) onUpSwipe();
-				} else {
+				} else if (yDiff < -verticalSwipeThreshold) {
 					if (onDownSwipe) onDownSwipe();
 				}
 			}
+		};
 
-			/* reset values */
+		function handleTouchEnd() {
 			xDown.current = null;
 			yDown.current = null;
-		};
+		}
 
 		domRef.addEventListener("touchstart", handleTouchStart, false);
 		domRef.addEventListener("touchmove", handleTouchMove, false);
+		domRef.addEventListener("touchend", handleTouchEnd, false);
 
 		return () => {
 			domRef.removeEventListener("touchstart", handleTouchStart);
 			domRef.removeEventListener("touchmove", handleTouchMove);
+			domRef.removeEventListener("touchend", handleTouchEnd);
 		};
-	}, [domRef, onLeftSwipe, onRightSwipe, onUpSwipe, onDownSwipe]);
+	}, [domRef, onLeftSwipe, onRightSwipe, onUpSwipe, onDownSwipe, verticalSwipeThreshold, horizontalSwipeThreshold]);
 
 	return (ref) => setDomRef(ref);
 };
