@@ -1613,6 +1613,104 @@ export default {
 						backgroundPosition: "center"
 					}
 				},
+				{
+					fileName: "46.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "45.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "47.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "48.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "49.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "50.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center 70%"
+					}
+				},
+				{
+					fileName: "51.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "52.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "53.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "55.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "56.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "57.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "58.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "left bottom"
+					}
+				},
+				{
+					fileName: "59.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
 			].reverse()
 		},
 	}
