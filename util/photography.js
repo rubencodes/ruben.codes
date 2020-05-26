@@ -4,7 +4,7 @@ export default {
 	metaUrl: "https://ruben.codes/photography",
 	metaImage: "https://ruben.codes/static/photography/landscapes/46.jpg",
 
-	baseUrl: "/static/photography/",
+	baseUrl: "https://ruben.codes/static/photography/",
 	galleryOrder: [
 		"cat_ross",
 		"kitty_k",
