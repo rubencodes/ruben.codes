@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 import Loader from "./Loader";
 import useWindowSize from "./useWindowSize";
@@ -36,7 +36,7 @@ function fitSizeWithinSize(innerRectangle, outerRectangle) {
 	};
 }
 
-const ImageModal = ({ src, close }) => {
+const ImageModal = forwardRef(({ src, close }, ref) => {
 	const {
 		imageSource,
 		imageSize,
@@ -53,6 +53,7 @@ const ImageModal = ({ src, close }) => {
 	return (
 		<div className={styles.imageModal} onClick={close}>
 			<div
+				ref={ref}
 				className={styles.imageModal__Inner}
 				onClick={(e) => e.preventDefault() || e.stopPropagation()}
 				style={{
@@ -70,6 +71,6 @@ const ImageModal = ({ src, close }) => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default ImageModal;

@@ -8,6 +8,7 @@ import ImageModal from "./ImageModal";
 import useKeydownEvent from "./useKeydownEvent";
 import useQueryStringState from "./useQueryStringState";
 import useRandomCycleThroughItems from "./useRandomCycleThroughItems";
+import useSwipeDetector from "./useSwipeDetector";
 
 const COLORS = [
 	"blue",
@@ -47,6 +48,7 @@ function isElementInViewport(el) {
 }
 
 const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
+	// Highlighted image state for prominence.
 	const highlightedImageElementsRef = useRef({});
 	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
 	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
@@ -65,6 +67,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 		}
 	}, [...highlightedImageIndices]);
 
+	// Selected image state for the image modal.
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
 	const updateSelectedImageIndex = useCallback((index) => setSelectedImageIndex(index), [setSelectedImageIndex]);
 	const clearSelectedImageIndex = useCallback(() => setSelectedImageIndex(null), [setSelectedImageIndex]);
@@ -72,6 +75,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 		? `${baseUrl}${path}${images[selectedImageIndex].fileName}`
 		: null;
 
+	// Add keyboard navigation for the modal.
 	useKeydownEvent((event) => {
 		// Don't do anything if there's no image.
 		if (!Number.isInteger(selectedImageIndex)) {
@@ -96,6 +100,14 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 			}
 		}
 	}, [images, selectedImageIndex]);
+
+	// Add swipe navigation for the modal.
+	const swipeTargetRef = useSwipeDetector({
+		onLeftSwipe: () => setSelectedImageIndex(Math.max(selectedImageIndex - 1, 0)),
+		onRightSwipe: () => setSelectedImageIndex(Math.min(selectedImageIndex + 1, images.length - 1)),
+		onUpSwipe: clearSelectedImageIndex,
+		onDownSwipe: clearSelectedImageIndex,
+	});
 
 	return (
 		<PhotoGrid>
@@ -129,6 +141,7 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 					</Head>
 					<ImageLicenseData imageUrl={selectedImageUrl} />
 					<ImageModal
+						ref={swipeTargetRef}
 						src={selectedImageUrl}
 						close={clearSelectedImageIndex}
 					/>
