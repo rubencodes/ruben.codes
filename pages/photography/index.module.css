@@ -26,7 +26,7 @@
 
 @media(max-width: 880px) {
   .photography {
-  	padding: 16px;
+  	padding: 32px 16px;
     margin: 0;
   }
 
@@ -37,6 +37,6 @@
 
 @media(max-width: 440px) {
   .photography {
-  	padding: 12px;
+  	padding: 28px 12px;
   }
 }
