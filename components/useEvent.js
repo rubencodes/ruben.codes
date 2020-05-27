@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-function useEvent(eventName, func, deps, bindToElement = document) {
+function useEvent(eventName, func, deps, bindToElement) {
 	useEffect(() => {
-		bindToElement.addEventListener(eventName, func);
-		return () => bindToElement.removeEventListener(eventName, func);
+		(bindToElement || document).addEventListener(eventName, func);
+		return () => (bindToElement || document).removeEventListener(eventName, func);
 	}, [bindToElement, eventName, ...deps]);
 }
 
