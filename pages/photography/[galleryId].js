@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
 import PhotoGridItem from "../../components/PhotoGridItem";
+import Footer from "../../components/Footer";
 import { state } from "../../util/constants";
 
 import styles from "./index.module.css";
@@ -66,6 +67,7 @@ const GalleryPage = () => {
 					</button>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

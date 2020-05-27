@@ -1,0 +1,17 @@
+.footer {
+	background: inherit;
+	font-family: "IBM Plex Mono";
+	text-align: center;
+	width: 100%;
+}
+
+.footerInner {
+	margin: 0;
+	padding: 63px 20px 43px;
+}
+
+@media(max-width: 880px) {
+	.footerInner {
+		padding: 20px 20px 60px;
+	}
+}

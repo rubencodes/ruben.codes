@@ -2,7 +2,8 @@ import React from "react";
 import Head from "next/head";
 
 import { state } from "../util/constants";
-import Resume from "../components/Resume.js";
+import Resume from "../components/Resume";
+import Footer from "../components/Footer";
 
 const Home = () => (
   <>
@@ -14,6 +15,7 @@ const Home = () => (
       <meta key="image" property="og:image" content={state.home.metaImage} />
     </Head>
     <Resume name={state.name} {...state.home} />
+    <Footer />
   </>
 );
 

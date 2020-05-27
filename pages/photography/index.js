@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
 import GalleryPreviews from "../../components/GalleryPreviews";
+import Footer from "../../components/Footer";
 import { state } from "../../util/constants";
 
 import styles from "./index.module.css";
@@ -30,6 +31,7 @@ const Photography = () => {
 				</b>
 				<GalleryPreviews {...state.photography} onSelect={onSelect} />
 			</div>
+			<Footer />
 		</>
 	);
 };

@@ -8,6 +8,7 @@ html, body, #__next {
 	padding: 0;
 	margin: 0;
 	background: #444;
+	color: white;
 }
 
 body.no_scroll {
@@ -99,11 +100,13 @@ button, a {
 	border-radius: 10px;
 	padding: 2px 10px;
 	user-select: none;
+	pointer-events: all;
 }
 
 @media(max-width: 880px) {
 	html, body, #__next {
 		background: white;
+		color: black;
 	}
 
 	div.hero {
