@@ -5,11 +5,8 @@ import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
 import ImageModal from "./ImageModal";
-import useKeydownEvent from "../hooks/useKeydownEvent";
 import useQueryStringState from "../hooks/useQueryStringState";
 import useRandomCycleThroughItems from "../hooks/useRandomCycleThroughItems";
-import useArrayNavigator from "../hooks/useArrayNavigator";
-import useSwipeDetector from "../hooks/useSwipeDetector";
 
 const COLORS = [
 	"blue",
@@ -70,44 +67,9 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 
 	// Selected image state for the image modal.
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
-	const { decrement, increment, clear } = useArrayNavigator(selectedImageIndex, setSelectedImageIndex, images.length);
 	const selectedImageUrl = Number.isInteger(selectedImageIndex)
 		? `${baseUrl}${path}${images[selectedImageIndex].fileName}`
 		: null;
-
-	// Add keyboard navigation for the modal.
-	useKeydownEvent((event) => {
-		// Don't do anything if there's no image.
-		if (!Number.isInteger(selectedImageIndex)) {
-			return;
-		}
-
-		switch (event.key) {
-			case "ArrowLeft": {
-				decrement();
-				return;
-			}
-			case "ArrowRight": {
-				increment();
-				return;
-			}
-			case "Escape": {
-				clear();
-				return;
-			}
-			default: {
-				return;
-			}
-		}
-	}, [selectedImageIndex, decrement, increment, clear]);
-
-	// Add swipe navigation for the modal.
-	const swipeTargetRef = useSwipeDetector({
-		onLeftSwipe: decrement,
-		onRightSwipe: increment,
-		onUpSwipe: clear,
-		onDownSwipe: clear,
-	});
 
 	return (
 		<PhotoGrid>
@@ -141,9 +103,11 @@ const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 					</Head>
 					<ImageLicenseData imageUrl={selectedImageUrl} />
 					<ImageModal
-						ref={swipeTargetRef}
-						src={selectedImageUrl}
-						close={clear}
+						baseUrl={baseUrl}
+						path={path}
+						images={images}
+						selectedImageIndex={selectedImageIndex}
+						setSelectedImageIndex={setSelectedImageIndex}
 					/>
 				</>
 			)}

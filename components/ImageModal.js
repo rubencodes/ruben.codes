@@ -1,81 +1,44 @@
-import React, { forwardRef } from "react";
+import React, { memo, useCallback, useMemo } from "react";
 
-import Loader from "./Loader";
-import useWindowSize from "../hooks/useWindowSize";
-import useCache from "../hooks/useCache";
-import useImageLoader from "../hooks/useImageLoader";
+import Carousel from "./Carousel";
 import useBodyClassList from "../hooks/useBodyClassList";
 
 import styles from "./ImageModal.module.css";
 
-const DEFAULT_WINDOW_SIZE = {
-	width: 250,
-	height: 250,
-};
-
-function fitSizeWithinSize(innerRectangle, outerRectangle) {
-	// Use the outer rectangle if we don't have an inner one.
-	if (!innerRectangle) {
-		return outerRectangle;
-	}
-
-	// Use the inner rectangle if it's smaller than the outer rectangle.
-	if (innerRectangle.width <= outerRectangle.width && innerRectangle.height <= outerRectangle.height) {
-		return innerRectangle;
-	}
-
-	// Width constrained.
-	const innerAspectRatio = innerRectangle.width / innerRectangle.height;
-	const outerAspectRatio = outerRectangle.width / outerRectangle.height;
-	if (innerAspectRatio > outerAspectRatio) {
-		return {
-			width: outerRectangle.width,
-			height: outerRectangle.width / innerAspectRatio,
-		};
-	}
-
-	// Height constrained.
-	return {
-		width: outerRectangle.height * innerAspectRatio,
-		height: outerRectangle.height,
-	};
-}
-
-const ImageModal = forwardRef(({ src, close }, ref) => {
-	const {
-		imageSource,
-		imageSize,
-		isLoading,
-	} = useImageLoader(src);
+const ImageModal = ({ baseUrl, path, images, selectedImageIndex, setSelectedImageIndex }) => {
 	useBodyClassList("no_scroll");
-	const imageSizeCached = useCache(imageSize, imageSize === null);
-	const windowSize = useWindowSize(DEFAULT_WINDOW_SIZE);
-	const modalSize = fitSizeWithinSize(imageSizeCached, {
-		width: (windowSize.width * 0.9),
-		height: (windowSize.height * 0.9),
+	const close = useCallback(() => setSelectedImageIndex(null), [setSelectedImageIndex]);
+	const formattedImageList = useMemo(() => {
+		return images.map(({ fileName }) => ({
+			url: `${baseUrl}${path}${fileName}`
+		}));
 	});
 
 	return (
 		<div className={styles.imageModal} onClick={close}>
 			<div
-				ref={ref}
 				className={styles.imageModal__Inner}
 				onClick={(e) => e.preventDefault() || e.stopPropagation()}
 				style={{
-					width: Math.floor(modalSize.width),
-					height: Math.floor(modalSize.height),
+					width: "100%",
+					height: "100%",
 				}}
 			>
-				{isLoading ? (
-					<div className={styles.imageModal__Loading}>
-						<Loader />
-					</div>
-				) : (
-					<img className={styles.imageModal__Image} src={imageSource} />
-				)}
+				<Carousel
+					className={styles.imageModal__Carousel}
+					currentPage={selectedImageIndex}
+					setCurrentPage={setSelectedImageIndex}
+					images={formattedImageList}
+					onClickOutside={close}
+					verticalCount={1}
+					horizontalCount={1}
+					spacing={0}
+					hidePageIndicators
+					hidePageNavigationButtons
+				/>
 			</div>
 		</div>
 	);
-});
+};
 
-export default ImageModal;
+export default memo(ImageModal);
