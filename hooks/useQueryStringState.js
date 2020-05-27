@@ -28,7 +28,12 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
 		replace,
 	} = useRouter();
 
-	const setValue = useCallback((newValue) => {
+	const setValue = useCallback((_newValue) => {
+		// Handle function type.
+		const newValue = typeof _newValue === "function"
+			? _newValue(processValue(value))
+			: _newValue;
+
 		// Do nothing if value hasn't changed.
 		if (newValue === processValue(value)) {
 			return;
