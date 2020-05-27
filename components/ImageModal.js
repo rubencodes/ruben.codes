@@ -1,10 +1,10 @@
 import React, { forwardRef } from "react";
 
 import Loader from "./Loader";
-import useWindowSize from "./useWindowSize";
-import useCache from "./useCache";
-import useImageLoader from "./useImageLoader";
-import useBodyClassList from "./useBodyClassList";
+import useWindowSize from "../hooks/useWindowSize";
+import useCache from "../hooks/useCache";
+import useImageLoader from "../hooks/useImageLoader";
+import useBodyClassList from "../hooks/useBodyClassList";
 
 import styles from "./ImageModal.module.css";
 

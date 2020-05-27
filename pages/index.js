@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import { state } from "../util/constants";
+import { state } from "../utilities/constants";
 import Resume from "../components/Resume";
 import Footer from "../components/Footer";
 

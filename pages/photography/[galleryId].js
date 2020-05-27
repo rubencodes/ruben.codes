@@ -7,7 +7,7 @@ import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
 import PhotoGridItem from "../../components/PhotoGridItem";
 import Footer from "../../components/Footer";
-import { state } from "../../util/constants";
+import { state } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 

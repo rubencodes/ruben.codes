@@ -1,7 +1,7 @@
 import React, { forwardRef, memo } from "react";
 import classnames from "classnames";
 
-import useLazyEffect from "./useLazyEffect";
+import useLazyEffect from "../hooks/useLazyEffect";
 import ImageLicenseData from "./ImageLicenseData";
 
 import styles from "./PhotoGridItem.module.css";

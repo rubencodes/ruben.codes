@@ -5,11 +5,11 @@ import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridItem from "./PhotoGridItem";
 import ImageModal from "./ImageModal";
-import useKeydownEvent from "./useKeydownEvent";
-import useQueryStringState from "./useQueryStringState";
-import useRandomCycleThroughItems from "./useRandomCycleThroughItems";
-import useArrayNavigator from "./useArrayNavigator";
-import useSwipeDetector from "./useSwipeDetector";
+import useKeydownEvent from "../hooks/useKeydownEvent";
+import useQueryStringState from "../hooks/useQueryStringState";
+import useRandomCycleThroughItems from "../hooks/useRandomCycleThroughItems";
+import useArrayNavigator from "../hooks/useArrayNavigator";
+import useSwipeDetector from "../hooks/useSwipeDetector";
 
 const COLORS = [
 	"blue",

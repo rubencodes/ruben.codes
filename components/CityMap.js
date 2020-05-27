@@ -1,6 +1,6 @@
 import React from "react";
 
-import { STATIC_MAPS_API_KEY } from "../util/constants";
+import { STATIC_MAPS_API_KEY } from "../utilities/constants";
 
 import styles from "./CityMap.module.css";
 

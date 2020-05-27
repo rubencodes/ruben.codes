@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import InstagramLink from "../../components/InstagramLink";
 import GalleryPreviews from "../../components/GalleryPreviews";
 import Footer from "../../components/Footer";
-import { state } from "../../util/constants";
+import { state } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 
