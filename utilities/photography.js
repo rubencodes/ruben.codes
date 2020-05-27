@@ -1559,6 +1559,209 @@ export default {
 					}
 				},
 				{
+					fileName: "2019/1.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center top"
+					}
+				},
+				{
+					fileName: "2019/2.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/3.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/4.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center bottom"
+					}
+				},
+				{
+					fileName: "2019/5.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/6.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center top"
+					}
+				},
+				{
+					fileName: "2019/7.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/13.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/8.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/9.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/10.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/12.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/11.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/14.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/15.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/16.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/17.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 70%"
+					}
+				},
+				{
+					fileName: "2019/18.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/19.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/20.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/21.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/22.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/23.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/24.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/25.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/26.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/27.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/28.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2019/29.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
 					fileName: "2020/25.jpg",
 					span: 3,
 					customStyles: {
