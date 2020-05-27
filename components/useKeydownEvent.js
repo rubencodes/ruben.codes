@@ -1,10 +1,7 @@
-import { useEffect } from "react";
+import useEvent from "./useEvent";
 
-function useKeydownEvent(func, deps) {
-	useEffect(() => {
-		document.addEventListener("keydown", func);
-		return () => document.removeEventListener("keydown", func);
-	}, [...deps]);
+function useKeydownEvent(func, deps, bindToElement = document) {
+	useEvent("keydown", func, [...deps], bindToElement);
 }
 
 export default useKeydownEvent;
