@@ -1,7 +1,7 @@
 import React, { forwardRef, memo } from "react";
 import classnames from "classnames";
 
-import useLazyLoad from "./useLazyLoad";
+import useLazyEffect from "./useLazyEffect";
 import ImageLicenseData from "./ImageLicenseData";
 
 import styles from "./PhotoGridItem.module.css";
@@ -15,7 +15,9 @@ const PhotoGridItem = forwardRef(({
 	customStyles,
 	span = 1,
 }, ref) => {
-	const elementRef = useLazyLoad(imageUrl);
+	const elementRef = useLazyEffect((element) => {
+		element.style.backgroundImage = `url(${imageUrl})`;
+	}, [imageUrl]);
 
 	return (
 		<button
