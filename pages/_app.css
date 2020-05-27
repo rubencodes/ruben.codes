@@ -115,6 +115,10 @@ button, a {
 }
 
 @media(max-width: 440px) {
+	div.hero {
+		margin-bottom: 12px;
+	}
+
 	h1.heading {
 		margin-bottom: 0;
 		text-align: center;

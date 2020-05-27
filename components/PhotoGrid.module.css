@@ -12,9 +12,14 @@
   }
 }
 
+@media(max-width: 440px) {
+  .photoGrid {
+		grid-gap: 12px;
+	}
+}
+
 @media(max-width: 400px) {
   .photoGrid {
-		grid-gap: 8px;
 		grid-template-columns: 1fr;
   }
 }
