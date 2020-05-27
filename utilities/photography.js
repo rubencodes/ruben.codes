@@ -1559,6 +1559,76 @@ export default {
 					}
 				},
 				{
+					fileName: "2020/25.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center bottom"
+					}
+				},
+				{
+					fileName: "2020/26.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2020/28.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2020/27.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center 80%"
+					}
+				},
+				{
+					fileName: "2020/30.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2020/29.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2020/31.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2020/32.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 60%"
+					}
+				},
+				{
+					fileName: "2020/33.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2020/34.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
 					fileName: "2020/8.jpg",
 					span: 3,
 					customStyles: {
