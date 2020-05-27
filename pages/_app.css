@@ -106,7 +106,7 @@ button, a {
 @media(max-width: 880px) {
 	html, body, #__next {
 		background: white;
-		color: black;
+		color: #222;
 	}
 
 	div.hero {
