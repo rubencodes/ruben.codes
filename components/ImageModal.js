@@ -8,6 +8,11 @@ import useBodyClassList from "./useBodyClassList";
 
 import styles from "./ImageModal.module.css";
 
+const DEFAULT_WINDOW_SIZE = {
+	width: 250,
+	height: 250,
+};
+
 function fitSizeWithinSize(innerRectangle, outerRectangle) {
 	// Use the outer rectangle if we don't have an inner one.
 	if (!innerRectangle) {
@@ -44,7 +49,7 @@ const ImageModal = forwardRef(({ src, close }, ref) => {
 	} = useImageLoader(src);
 	useBodyClassList("no_scroll");
 	const imageSizeCached = useCache(imageSize, imageSize === null);
-	const windowSize = useWindowSize();
+	const windowSize = useWindowSize(DEFAULT_WINDOW_SIZE);
 	const modalSize = fitSizeWithinSize(imageSizeCached, {
 		width: (windowSize.width * 0.9),
 		height: (windowSize.height * 0.9),
