@@ -5,6 +5,10 @@ function useImageLoader(src) {
 	const [imageSize, setImageSize] = useState(null);
 	const isLoading = imageSource === null;
 	useEffect(() => {
+		if (!src) {
+			return;
+		}
+
 		const image = new Image();
 		image.onload = function() {
 			setImageSource(src);
