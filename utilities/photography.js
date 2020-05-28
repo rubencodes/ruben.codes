@@ -84,9 +84,9 @@ export default {
 			thumbnailPath: "portraits_small/kitty_k/",
 			previewImage: {
 				caption: "Kitty K",
-				fileName: "14.jpg",
+				fileName: "29.jpg",
 				customStyles: {
-					backgroundPosition: "center 18%"
+					backgroundPosition: "center 55%"
 				},
 				span: 1
 			},
@@ -1325,7 +1325,7 @@ export default {
 			thumbnailPath: "landscapes_small/",
 			previewImage: {
 				caption: "More...",
-				fileName: "2018_and_older/1.jpg",
+				fileName: "2020/33.jpg",
 				customStyles: {
 					backgroundPosition: "center"
 				},
