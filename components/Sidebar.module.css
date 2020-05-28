@@ -1,12 +1,6 @@
 .sidebarContainer {
-	padding-top: 20px;
+	margin-top: 12px;
 
 	display: flex;
 	flex-direction: column;
-}
-
-@media(max-width: 880px) {
-	.sidebarContainer {
-		padding: 20px;
-	}
 }

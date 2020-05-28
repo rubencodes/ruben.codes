@@ -37,7 +37,7 @@ const Sidebar = ({ info, skills, languages, links, cities }) => (
 		{cities && (
 			<>
 				<b className="subheading">Cities</b>
-				<p className="time">Places I"ve Called Home</p>
+				<p className="time">Places I've Called Home</p>
 				<CityMap cities={cities} />
 			</>
 		)}

@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import classnames from "classnames";
 
 import InstagramLink from "../../components/InstagramLink";
 import GalleryPreviews from "../../components/GalleryPreviews";
@@ -22,7 +23,7 @@ const Photography = () => {
 				<meta key="url" property="og:url" content={state.photography.metaUrl} />
 				<meta key="image" property="og:image" content={state.photography.metaImage} />
 			</Head>
-			<div className={styles.photography}>
+			<main className={classnames("page", styles.photography)}>
 				<h1 className="heading">{state.name}</h1>
 				<b className="subheading">
 					Photography
@@ -30,7 +31,7 @@ const Photography = () => {
 				<InstagramLink />
 				</b>
 				<GalleryPreviews {...state.photography} onSelect={onSelect} />
-			</div>
+			</main>
 			<Footer />
 		</>
 	);

@@ -1,12 +1,6 @@
 .photography {
-  padding: 60px;
   display: flex;
   flex-direction: column;
-  max-width: 880px;
-  margin: 20px auto;
-  background: white;
-  color: #222;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .buttonContainer {
@@ -25,18 +19,13 @@
 }
 
 @media(max-width: 880px) {
-  .photography {
-  	padding: 32px 16px;
-    margin: 0;
-  }
-
   .buttonContainer {
-    padding: 18px 38px;
+    padding: 20px 60px;
   }
 }
 
 @media(max-width: 440px) {
-  .photography {
-  	padding: 28px 12px;
+  .buttonContainer {
+    padding: 20px 40px;
   }
 }

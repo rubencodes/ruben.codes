@@ -1,9 +1,13 @@
 import React from "react";
 import Head from "next/head";
+import classnames from "classnames";
 
 import { state } from "../utilities/constants";
-import Resume from "../components/Resume";
+import Main from "../components/Main";
+import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
+
+import styles from "./index.module.css";
 
 const Home = () => (
   <>
@@ -14,7 +18,24 @@ const Home = () => (
       <meta key="url" property="og:url" content={state.home.metaUrl} />
       <meta key="image" property="og:image" content={state.home.metaImage} />
     </Head>
-    <Resume name={state.name} {...state.home} />
+    <main className={classnames("page", styles.resumeContainer)}>
+      <Main
+        name={state.name}
+        about={state.home.about}
+        art={state.home.art}
+        design={state.home.design}
+        experience={state.home.experience}
+        education={state.home.education}
+        projects={state.home.projects}
+      />
+      <Sidebar
+        info={state.home.info}
+        skills={state.home.skills}
+        languages={state.home.languages}
+        links={state.home.links}
+        cities={state.home.cities}
+      />
+    </main>
     <Footer />
   </>
 );

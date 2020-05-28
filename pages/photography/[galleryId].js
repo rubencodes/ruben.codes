@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import classnames from "classnames";
 
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
@@ -37,7 +38,7 @@ const GalleryPage = () => {
 				<meta key="url" property="og:url" content={`${state.photography.metaUrl}/${galleryId}`} />
 				<meta key="image" property="og:image" content={`${state.photography.baseUrl}${thumbnailPath}${previewImage.fileName}`} />
 			</Head>
-			<div className={styles.photography}>
+			<main className={classnames("page", styles.photography)}>
 				<h1 className="heading">{state.name}</h1>
 				<b className="subheading">
 					Photography
@@ -66,7 +67,7 @@ const GalleryPage = () => {
 						↑ Scroll to Top
 					</button>
 				</div>
-			</div>
+			</main>
 			<Footer />
 		</>
 	);

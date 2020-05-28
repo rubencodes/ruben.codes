@@ -1,0 +1,10 @@
+.resumeContainer {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+}
+
+@media(max-width: 880px) {
+  .resumeContainer {
+    grid-template-columns: 1fr;
+  }
+}
