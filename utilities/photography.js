@@ -2,7 +2,7 @@ export default {
 	metaTitle: "Ruben Martinez Jr. - Photography",
 	metaDescription: "Explore artistic boudoir portraits, urban street portraits, and natural landscape photo galleries from New York City based photographer Ruben Martinez Jr. Ruben is shooting on the street and in the studio with a Sony A7rIV mirrorless camera.",
 	metaUrl: "https://ruben.codes/photography",
-	metaImage: "https://ruben.codes/static/photography/landscapes/2020/46.jpg",
+	metaImage: "https://ruben.codes/static/photography/landscapes/46.jpg",
 
 	baseUrl: "https://ruben.codes/static/photography/",
 	galleryOrder: [
@@ -13,7 +13,9 @@ export default {
 		"nina",
 		"savannah",
 		"fyre",
-		"more",
+		"2018",
+		"2019",
+		"2020",
 	],
 	galleries: {
 		/* Cat Ross */
@@ -1141,7 +1143,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center 20%"
 				},
-				span: 2
+				span: 1
 			},
 			images: [
 				{
@@ -1320,12 +1322,471 @@ export default {
 			]
 		},
 
-		"more": {
-			path: "landscapes/",
-			thumbnailPath: "landscapes_small/",
+		"2018": {
+			path: "landscapes/2018_and_older/",
+			thumbnailPath: "landscapes_small/2018_and_older/",
 			previewImage: {
-				caption: "More...",
-				fileName: "2020/33.jpg",
+				caption: "Pre-2018 Landscapes",
+				fileName: "31.jpg",
+				customStyles: {
+					backgroundPosition: "center"
+				},
+				span: 2
+			},
+			images: [
+				{
+					fileName: "1.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "2.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "7.png",
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "3.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "4.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "8.png",
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "6.png",
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "5.png",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "9.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "10.jpg",
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "11.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "12.jpg",
+					customStyles: {
+						backgroundPosition: "left center"
+					}
+				},
+				{
+					fileName: "13.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "31.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "30.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "33.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "34.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center top"
+					}
+				},
+				{
+					fileName: "35.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "24.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "29.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "26.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "14.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "16.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "32.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "17.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "19.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "20.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "21.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "22.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "23.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "18.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "28.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "27.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+			].reverse()
+		},
+
+		"2019": {
+			path: "landscapes/2019/",
+			thumbnailPath: "landscapes_small/2019/",
+			previewImage: {
+				caption: "2019 Landscapes",
+				fileName: "12.jpg",
+				customStyles: {
+					backgroundPosition: "center"
+				},
+				span: 2
+			},
+			images: [
+				{
+					fileName: "1.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center top"
+					}
+				},
+				{
+					fileName: "2.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "3.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "4.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center bottom"
+					}
+				},
+				{
+					fileName: "5.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "6.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center top"
+					}
+				},
+				{
+					fileName: "7.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "13.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "8.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "9.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "10.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "12.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "11.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "14.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "15.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "16.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "17.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 70%"
+					}
+				},
+				{
+					fileName: "18.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "19.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "20.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "21.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "22.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "23.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "24.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "25.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "26.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "27.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "28.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "29.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+			].reverse()
+		},
+
+		"2020": {
+			path: "landscapes/2020/",
+			thumbnailPath: "landscapes_small/2020/",
+			previewImage: {
+				caption: "2020 Landscapes",
+				fileName: "33.jpg",
 				customStyles: {
 					backgroundPosition: "center"
 				},
@@ -1333,657 +1794,228 @@ export default {
 			},
 			images: [
 				{
-					fileName: "2018_and_older/1.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/2.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/7.png",
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/3.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/4.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/8.png",
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/6.png",
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/5.png",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/9.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/10.jpg",
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/11.jpg",
-					span: 3,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/12.jpg",
-					customStyles: {
-						backgroundPosition: "left center"
-					}
-				},
-				{
-					fileName: "2018_and_older/13.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/31.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/30.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/33.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/34.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center top"
-					}
-				},
-				{
-					fileName: "2018_and_older/35.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/24.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/29.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/26.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/14.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/16.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/32.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/17.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/19.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/20.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/21.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/22.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/23.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/18.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/28.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2018_and_older/27.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/1.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center top"
-					}
-				},
-				{
-					fileName: "2019/2.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/3.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/4.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center bottom"
-					}
-				},
-				{
-					fileName: "2019/5.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/6.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center top"
-					}
-				},
-				{
-					fileName: "2019/7.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/13.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/8.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/9.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/10.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/12.jpg",
-					span: 3,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/11.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/14.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/15.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/16.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/17.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center 70%"
-					}
-				},
-				{
-					fileName: "2019/18.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/19.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/20.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/21.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/22.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/23.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/24.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/25.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/26.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/27.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/28.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2019/29.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
-					fileName: "2020/25.jpg",
+					fileName: "25.jpg",
 					span: 3,
 					customStyles: {
 						backgroundPosition: "center bottom"
 					}
 				},
 				{
-					fileName: "2020/26.jpg",
+					fileName: "26.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/28.jpg",
+					fileName: "28.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/27.jpg",
+					fileName: "27.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center 80%"
 					}
 				},
 				{
-					fileName: "2020/30.jpg",
+					fileName: "30.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/29.jpg",
+					fileName: "29.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/31.jpg",
+					fileName: "31.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/32.jpg",
+					fileName: "32.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center 60%"
 					}
 				},
 				{
-					fileName: "2020/33.jpg",
+					fileName: "33.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/34.jpg",
+					fileName: "34.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/8.jpg",
+					fileName: "8.jpg",
 					span: 3,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
-					fileName: "2020/7.jpg",
+					fileName: "7.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/3.jpg",
+					fileName: "3.jpg",
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/1.jpg",
+					fileName: "1.jpg",
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/2.jpg",
+					fileName: "2.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/4.jpg",
+					fileName: "4.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/6.jpg",
+					fileName: "6.jpg",
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/9.jpg",
+					fileName: "9.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
 				},
 				{
-					fileName: "2020/5.jpg",
+					fileName: "5.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/11.jpg",
+					fileName: "11.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/10.jpg",
+					fileName: "10.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/12.jpg",
+					fileName: "12.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/13.jpg",
+					fileName: "13.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/14.jpg",
+					fileName: "14.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/15.jpg",
+					fileName: "15.jpg",
 					span: 3,
 					customStyles: {
 						backgroundPosition: "center 70%"
 					}
 				},
 				{
-					fileName: "2020/16.jpg",
+					fileName: "16.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/17.jpg",
+					fileName: "17.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/18.jpg",
+					fileName: "18.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/20.jpg",
+					fileName: "20.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/21.jpg",
+					fileName: "21.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/22.jpg",
+					fileName: "22.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "2020/23.jpg",
+					fileName: "23.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "left bottom"
 					}
 				},
 				{
-					fileName: "2020/24.jpg",
+					fileName: "24.jpg",
 					span: 1,
 					customStyles: {
 						backgroundPosition: "center"
