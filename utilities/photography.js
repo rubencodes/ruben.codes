@@ -2022,13 +2022,6 @@ export default {
 					}
 				},
 				{
-					fileName: "35.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "center"
-					}
-				},
-				{
 					fileName: "36.jpg",
 					span: 1,
 					customStyles: {
@@ -2158,7 +2151,7 @@ export default {
 					fileName: "54.jpg",
 					span: 1,
 					customStyles: {
-						backgroundPosition: "center"
+						backgroundPosition: "60% center"
 					}
 				},
 				{
