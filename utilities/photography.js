@@ -2134,6 +2134,13 @@ export default {
 					}
 				},
 				{
+					fileName: "54.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 75%"
+					}
+				},
+				{
 					fileName: "52.jpg",
 					span: 2,
 					customStyles: {
@@ -2141,35 +2148,21 @@ export default {
 					}
 				},
 				{
+					fileName: "56.jpg",
+					span: 1,
+					customStyles: {
+						backgroundPosition: "right top"
+					}
+				},
+				{
 					fileName: "53.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center 20%"
-					}
-				},
-				{
-					fileName: "54.jpg",
-					span: 1,
-					customStyles: {
-						backgroundPosition: "60% center"
-					}
-				},
-				{
-					fileName: "55.jpg",
-					span: 1,
+					span: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
-					fileName: "56.jpg",
-					span: 2,
-					customStyles: {
-						backgroundPosition: "center top"
-					}
-				},
-				{
-					fileName: "59.jpg",
+					fileName: "55.jpg",
 					span: 2,
 					customStyles: {
 						backgroundPosition: "center"
