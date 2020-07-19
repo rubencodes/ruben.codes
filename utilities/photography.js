@@ -10,7 +10,7 @@ export default {
 		"kitty_k",
 		"odette_coquette",
 		"morgana",
-		"nina",
+		"victoria",
 		"savannah",
 		"fyre",
 		"2018",
@@ -540,12 +540,12 @@ export default {
 			]
 		},
 
-		/* Nina */
-		"nina": {
-			path: "portraits/nina/",
-			thumbnailPath: "portraits_small/nina/",
+		/* Victoria */
+		"victoria": {
+			path: "portraits/victoria/",
+			thumbnailPath: "portraits_small/victoria/",
 			previewImage: {
-				caption: "Nina",
+				caption: "Victoria",
 				fileName: "26.jpg",
 				customStyles: {
 					backgroundPosition: "center"
