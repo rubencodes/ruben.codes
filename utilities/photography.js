@@ -1,10 +1,13 @@
+const IS_PROD = process.env.NODE_ENV !== "development";
+const ORIGIN = IS_PROD ? "https://ruben.codes" : "http://localhost:3000";
+
 export default {
 	metaTitle: "Ruben Martinez Jr. - Photography",
 	metaDescription: "Explore artistic boudoir portraits, urban street portraits, and natural landscape photo galleries from New York City based photographer Ruben Martinez Jr. Ruben is shooting on the street and in the studio with a Sony A7rIV mirrorless camera.",
-	metaUrl: "https://ruben.codes/photography",
-	metaImage: "https://ruben.codes/static/photography/landscapes/46.jpg",
+	metaUrl: `${ORIGIN}/photography`,
+	metaImage: `${ORIGIN}/static/photography/landscapes/46.jpg`,
 
-	baseUrl: "https://ruben.codes/static/photography/",
+	baseUrl: `${ORIGIN}/static/photography/`,
 	galleryOrder: [
 		"cat_ross",
 		"kitty_k",
@@ -535,6 +538,80 @@ export default {
 				},
 				{
 					fileName: "42.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "49.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "50.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "51.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "52.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center 8%"
+					}
+				},
+				{
+					fileName: "53.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "54.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 8%"
+					}
+				},
+				{
+					fileName: "55.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "56.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "57.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "58.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center"
+					}
+				},
+				{
+					fileName: "59.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "60.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "61.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "62.jpg",
+					customStyles: {}
+				},
+				{
+					fileName: "63.jpg",
+					span: 2,
+					customStyles: {}
+				},
+				{
+					fileName: "64.jpg",
 					customStyles: {}
 				},
 			]
@@ -2514,4 +2591,4 @@ export default {
 			].reverse()
 		},
 	}
-}
+};
