@@ -2588,6 +2588,62 @@ export default {
 						backgroundPosition: "26% center"
 					}
 				},
+				{
+					fileName: "107.jpg",
+					customStyles: {
+					}
+				},
+				{
+					fileName: "108.jpg",
+					customStyles: {
+					}
+				},
+				{
+					fileName: "109.jpg",
+					customStyles: {
+					}
+				},
+				{
+					fileName: "111.jpg",
+					span: 3,
+					customStyles: {
+						backgroundPosition: "center 30%"
+					}
+				},
+				{
+					fileName: "112.jpg",
+					customStyles: {
+					}
+				},
+				{
+					fileName: "110.jpg",
+					span: 2,
+					customStyles: {
+						backgroundPosition: "center 40%"
+					}
+				},
+				{
+					fileName: "113.jpg",
+					span: 2,
+					customStyles: {
+					}
+				},
+				{
+					fileName: "114.jpg",
+					customStyles: {
+					}
+				},
+				{
+					fileName: "115.jpg",
+					customStyles: {
+					}
+				},
+				{
+					fileName: "116.jpg",
+					span: 2,
+					customStyles: {
+					}
+				},
 			].reverse()
 		},
 	}
