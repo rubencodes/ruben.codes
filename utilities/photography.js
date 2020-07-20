@@ -1,5 +1,6 @@
 const IS_PROD = process.env.NODE_ENV !== "development";
 const ORIGIN = IS_PROD ? "https://ruben.codes" : "http://localhost:3000";
+const PHOTO_URL = IS_PROD ? 'https://static.ruben.codes/photography/' : `${ORIGIN}/static/photography/`
 
 export default {
 	metaTitle: "Ruben Martinez Jr. - Photography",
@@ -7,7 +8,7 @@ export default {
 	metaUrl: `${ORIGIN}/photography`,
 	metaImage: `${ORIGIN}/static/photography/landscapes/46.jpg`,
 
-	baseUrl: `${ORIGIN}/static/photography/`,
+	baseUrl: PHOTO_URL,
 	galleryOrder: [
 		"cat_ross",
 		"kitty_k",
