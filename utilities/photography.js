@@ -1,12 +1,10 @@
-const IS_PROD = process.env.NODE_ENV !== "development";
-const ORIGIN = IS_PROD ? "https://ruben.codes" : "http://localhost:3000";
-const PHOTO_URL = IS_PROD ? 'https://static.ruben.codes/photography/' : `${ORIGIN}/static/photography/`
+const PHOTO_URL = "https://static.ruben.codes/photography/";
 
 export default {
 	metaTitle: "Ruben Martinez Jr. - Photography",
 	metaDescription: "Explore artistic boudoir portraits, urban street portraits, and natural landscape photo galleries from New York City based photographer Ruben Martinez Jr. Ruben is shooting on the street and in the studio with a Sony A7rIV mirrorless camera.",
-	metaUrl: `${ORIGIN}/photography`,
-	metaImage: `${ORIGIN}/static/photography/landscapes/46.jpg`,
+	metaUrl: "https://ruben.codes/photography",
+	metaImage: `${PHOTO_URL}landscapes/2020/11.jpg`,
 
 	baseUrl: PHOTO_URL,
 	galleryOrder: [
