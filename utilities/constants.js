@@ -1,6 +1,18 @@
 import home from "./home";
 import photography from "./photography";
 
+export const COLORS = [
+	"blue",
+	"red",
+	"yellow",
+	"forestgreen",
+	"orange",
+	"pink",
+	"rebeccapurple",
+];
+
+export const CYCLE_TIMEOUT = 300;
+
 export const state = {
 	/* Common */
 	name: "Ruben Martinez Jr.",

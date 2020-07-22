@@ -7,70 +7,10 @@ import PhotoGridItem from "./PhotoGridItem";
 import ImageModal from "./ImageModal";
 import useQueryStringState from "../hooks/useQueryStringState";
 import useRandomCycleThroughItems from "../hooks/useRandomCycleThroughItems";
-
-const COLORS = [
-	"blue",
-	"red",
-	"yellow",
-	"forestgreen",
-	"orange",
-	"pink",
-	"rebeccapurple",
-];
-const CYCLE_TIMEOUT = 300;
-const queryStringValueToArray = (val) => {
-	// Array type, e.g. blah=0&blah=2&blah=3
-	if (Array.isArray(val)) {
-		return val;
-	}
-
-	// Range type, e.g. blah=0...69.
-	if (typeof val === "string" && val.includes("...")) {
-		const [rangeStart, rangeEnd] = val.split("...");
-		const rangeSize = parseInt(rangeEnd, 10) - parseInt(rangeStart, 10);
-		return [...(new Array(rangeSize + 1))]
-			.map((_, index) => index + parseInt(rangeStart, 10));
-	}
-
-	// Comma-delimited type, e.g. blah=0,1,2,3
-	if (typeof val === "string" && val.includes(",")) {
-		return val.split(",");
-	}
-
-	return val;
-};
-const normalizeArray = (arr) => {
-	return arr
-		.map((i) => typeof i === "string" ? parseInt(i, 10) : i)
-		.filter((n) => !Number.isNaN(n))
-};
-const toIntArray = (val) => {
-	if (!val) {
-		return [];
-	}
-
-	return normalizeArray(
-		queryStringValueToArray(
-			val
-		)
-	);
-};
-const toIntOrNull = (val) => {
-	return val && !Number.isNaN(parseInt(val, 10))
-		? parseInt(val, 10)
-		: null
-};
-
-function isElementInViewport(el) {
-	const rect = el.getBoundingClientRect();
-
-	return (
-		rect.top >= 0 &&
-		rect.left >= 0 &&
-		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-	);
-}
+import toIntArray from "../utilities/toIntArray";
+import toIntOrNull from "../utilities/toIntOrNull";
+import isElementInViewport from "../utilities/isElementInViewport";
+import { COLORS, CYCLE_TIMEOUT } from "../utilities/constants";
 
 const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
 	// Highlighted image state for prominence.
