@@ -6,6 +6,6 @@ const PhotoGrid = ({ children }) => (
 	<div className={styles.photoGrid}>
 		{children}
 	</div>
-)
+);
 
 export default PhotoGrid;
