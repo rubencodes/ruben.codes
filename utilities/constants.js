@@ -13,6 +13,11 @@ export const COLORS = [
 
 export const CYCLE_TIMEOUT = 300;
 
+export const AWS_CREDENTIALS = {
+	bucketName: "static.ruben.codes",
+	bucketRegion: "us-east-2",
+};
+
 export const state = {
 	/* Common */
 	name: "Ruben Martinez Jr.",
