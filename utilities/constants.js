@@ -16,6 +16,8 @@ export const CYCLE_TIMEOUT = 300;
 export const AWS_CREDENTIALS = {
 	bucketName: "static.ruben.codes",
 	bucketRegion: "us-east-2",
+	credentials: {
+	},
 };
 
 export const state = {
