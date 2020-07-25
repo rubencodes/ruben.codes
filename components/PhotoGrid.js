@@ -21,7 +21,8 @@ export const PhotoGrid = ({
   children,
   images,
   onImageClick,
-  onImageResize,
+  onImageResizeWidth,
+  onImageResizeHeight,
   onImageRemove,
   isEditMode,
 }) => {
@@ -34,9 +35,15 @@ export const PhotoGrid = ({
           </PhotoGridItemMoveButton>
           <PhotoGridItemButton
             buttonStyle={buttonStyle}
-            onClick={() => onImageResize(imageInfo)}
+            onClick={() => onImageResizeWidth(imageInfo)}
           >
             <Icon type="arrows-alt-h" />
+          </PhotoGridItemButton>
+          <PhotoGridItemButton
+            buttonStyle={buttonStyle}
+            onClick={() => onImageResizeHeight(imageInfo)}
+          >
+            <Icon type="arrows-alt-v" />
           </PhotoGridItemButton>
           <PhotoGridItemButton
             buttonStyle={buttonStyle}

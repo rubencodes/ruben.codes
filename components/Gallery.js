@@ -106,10 +106,19 @@ const PhotoGridGallery = ({
     ({ imageIndex }) => removeImage(imageIndex),
     [removeImage],
   );
-  const onImageResize = useCallback(
+  const onImageResizeWidth = useCallback(
     ({ imageIndex, ...image }) => {
       updateImage(
         { ...image, spanWidth: (image.spanWidth % 3) + 1 },
+        imageIndex,
+      );
+    },
+    [updateImage],
+  );
+  const onImageResizeHeight = useCallback(
+    ({ imageIndex, ...image }) => {
+      updateImage(
+        { ...image, spanHeight: (image.spanHeight % 3) + 1 },
         imageIndex,
       );
     },
@@ -132,7 +141,8 @@ const PhotoGridGallery = ({
         gridRef={gridRef}
         images={allImages}
         onImageClick={onImageClick}
-        onImageResize={onImageResize}
+        onImageResizeWidth={onImageResizeWidth}
+        onImageResizeHeight={onImageResizeHeight}
         onImageRemove={onImageRemove}
         isEditMode={isEditMode}
         axis="xy"
