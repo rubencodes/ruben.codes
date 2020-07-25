@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useRef, useState } from "react";
 import Head from "next/head";
 
 import ImageLicenseData from "./ImageLicenseData";
@@ -7,231 +7,126 @@ import PhotoGridHero from "./PhotoGridHero";
 import PhotoGridPlaceholder from "./PhotoGridPlaceholder";
 import PhotoGridUploader from "./PhotoGridUploader";
 import ImageModal from "./ImageModal";
-import useQueryStringState from "../hooks/useQueryStringState";
-import toIntOrNull from "../utilities/toIntOrNull";
+import Icon from "./Icon";
+import useImageManager from "../hooks/useImageManager";
+import useImageUploadManager from "../hooks/useImageUploadManager";
+import useImageActions from "../hooks/useImageActions";
+import { IS_DEV } from "../utilities/constants";
 
-const fileNameToImageUrl = (baseUrl, path, image) => ({
-  ...image,
-  imageUrl: `${baseUrl}${path}${image.fileName}`,
-  spanWidth: image.spanWidth || 1,
-  spanHeight: image.spanHeight || 1,
-  customStyles: {
-    backgroundPositionX: "50%",
-    backgroundPositionY: "0%",
-    ...(image.customStyles || {}),
-  },
-});
+import styles from "./Gallery.module.css";
+
+const noop = () => false;
 
 const PhotoGridGallery = ({
-  isEditMode = process.env.NODE_ENV === "development", // Only enabled in dev for now.
   baseUrl,
   fullPath,
   thumbnailPath,
   images,
   previewImage,
+  updatePhotographyConfig,
 }) => {
-  // Helpers for normalizing the image URLs.
-  const normalizeThumbnailImage = (image) =>
-    fileNameToImageUrl(baseUrl, thumbnailPath, image);
-  const normalizeFullImage = (image) =>
-    fileNameToImageUrl(baseUrl, fullPath, image);
-
   // Ref to the grid DOM node.
   const gridRef = useRef();
 
-  // Contains both the stored images and newly uploaded ones.
-  const [allImages, setAllImages] = useState(
-    images.map(normalizeThumbnailImage),
+  // Provide advanced image utilities.
+  const imageManager = useImageManager(
+    baseUrl,
+    fullPath,
+    thumbnailPath,
+    images,
   );
-
-  // Helpers for updating the images array.
-  const appendImage = useCallback((image) => {
-    setAllImages((imgs) => [...imgs, image]);
-  }, []);
-  const removeImage = useCallback((index) => {
-    setAllImages((imgs) => {
-      const withoutImage = [...imgs.slice(0, index), ...imgs.slice(index + 1)];
-
-      return withoutImage;
-    });
-  }, []);
-  const updateImage = useCallback((image, index) => {
-    setAllImages((imgs) => {
-      const withoutImage = [...imgs.slice(0, index), ...imgs.slice(index + 1)];
-      const withImage = [
-        ...withoutImage.slice(0, index),
-        image,
-        ...withoutImage.slice(index),
-      ];
-
-      return withImage;
-    });
-  }, []);
-  const moveImage = useCallback(({ oldIndex, newIndex }) => {
-    setAllImages((imgs) => {
-      const image = imgs[oldIndex];
-      const withoutImage = [
-        ...imgs.slice(0, oldIndex),
-        ...imgs.slice(oldIndex + 1),
-      ];
-      const withImage = [
-        ...withoutImage.slice(0, newIndex),
-        image,
-        ...withoutImage.slice(newIndex),
-      ];
-
-      return withImage;
-    });
-  }, []);
-
-  // Uploading image state.
-  const [isUploadingFile, setIsUploadingFile] = useState(false);
-  const onStartUpload = useCallback(() => setIsUploadingFile(true), []);
-  const onFinishUpload = useCallback(
-    (imageUrls) => {
-      setIsUploadingFile(false);
-      imageUrls.forEach((imageUrl) =>
-        appendImage({
-          imageUrl,
-          spanWidth: 1,
-          customStyles: {},
-          isUploaded: true,
-        }),
-      );
-    },
-    [appendImage],
+  const imageUploadManager = useImageUploadManager(
+    (imageUrl) => imageManager.appendImage({ imageUrl }),
+    [imageManager.appendImage],
   );
+  const imageActions = useImageActions(imageManager);
 
-  // Handle image actions.
-  const onImageClick = useCallback(
-    ({ imageIndex }) => setSelectedImageIndex(imageIndex),
-    [],
-  );
-  const onImageRemove = useCallback(
-    ({ imageIndex }) => removeImage(imageIndex),
-    [removeImage],
-  );
-  const onImageResizeWidth = useCallback(
-    ({ imageIndex, ...image }) => {
-      updateImage(
-        { ...image, spanWidth: (image.spanWidth % 3) + 1 },
-        imageIndex,
-      );
-    },
-    [updateImage],
-  );
-  const onImageResizeHeight = useCallback(
-    ({ imageIndex, ...image }) => {
-      updateImage(
-        { ...image, spanHeight: (image.spanHeight % 3) + 1 },
-        imageIndex,
-      );
-    },
-    [updateImage],
-  );
-  const onImageMove = useCallback((event) => {
-    event.preventDefault();
-    const { deltaX, deltaY, target: image } = event;
-    const { backgroundPositionX, backgroundPositionY } = image.style;
+  // Optionally, allow editing the layout.
+  const [isSaving, setIsSaving] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const onToggleEditMode = () => {
+    if (isEditMode) {
+      setIsSaving(true);
 
-    // Handle horizontal movement.
-    if (Math.abs(deltaX) > 1) {
-      const backgroundPositionXPercent = parseInt(
-        backgroundPositionX.match(/(.*)%/)[1],
-        10,
-      );
-
-      image.style.backgroundPositionX = `${Math.min(
-        Math.max(backgroundPositionXPercent + deltaX, 0),
-        100,
-      )}%`;
+      // eslint-disable-next-line no-unused-vars
+      const galleryImages = images.map(({ imageUrl: _, ...image }) => image);
+      return updatePhotographyConfig(galleryImages);
     }
 
-    // Handle vertical movement.
-    if (Math.abs(deltaY) > 1) {
-      const backgroundPositionYPercent = parseInt(
-        backgroundPositionY.match(/(.*)%/)[1],
-        10,
-      );
+    setIsEditMode(true);
+  };
 
-      image.style.backgroundPositionY = `${Math.min(
-        Math.max(backgroundPositionYPercent + deltaY, 0),
-        100,
-      )}%`;
+  const iconType = (() => {
+    if (isSaving) {
+      return "spinner";
     }
-  }, []);
-  const onImageToggleMove = useCallback(
-    (button, image) => {
-      const DEFAULT_COLOR = "#FFFFFF";
-      const ENABLED_COLOR = "#05CC05";
-      const isMoveModeEnabled = button.style.backgroundColor === ENABLED_COLOR;
-      if (isMoveModeEnabled) {
-        image.removeEventListener("mousewheel", onImageMove);
-        button.style.backgroundColor = DEFAULT_COLOR;
-      } else {
-        image.addEventListener("mousewheel", onImageMove);
-        button.style.backgroundColor = ENABLED_COLOR;
-      }
-    },
-    [onImageMove],
-  );
 
-  // Selected image state.
-  const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState(
-    "selected",
-    toIntOrNull,
-  );
-  const selectedImageUrl = Number.isInteger(selectedImageIndex)
-    ? normalizeFullImage(images[selectedImageIndex]).imageUrl
-    : null;
+    if (isEditMode) {
+      return "save";
+    } else {
+      return "edit";
+    }
+  })();
 
   return (
     <>
-      <PhotoGridHero {...normalizeThumbnailImage(previewImage)} />
+      <PhotoGridHero {...imageManager.normalizeThumbnailImage(previewImage)}>
+        {IS_DEV && (
+          <button
+            className={styles.photoGrid__HeroButton}
+            onClick={onToggleEditMode}
+          >
+            <Icon
+              className={styles[`photoGrid__HeroButton__${iconType}`]}
+              type={iconType}
+            />
+          </button>
+        )}
+      </PhotoGridHero>
       <PhotoGrid
         gridRef={gridRef}
-        images={allImages}
-        onImageClick={onImageClick}
-        onImageResizeWidth={onImageResizeWidth}
-        onImageResizeHeight={onImageResizeHeight}
-        onImageToggleMove={onImageToggleMove}
-        onImageRemove={onImageRemove}
+        images={imageManager.allImages}
+        onImageClick={imageActions.onImageClick}
+        onImageResizeWidth={imageActions.onImageResizeWidth}
+        onImageResizeHeight={imageActions.onImageResizeHeight}
+        onImageToggleMove={imageActions.onImageToggleMove}
+        onImageRemove={imageActions.onImageRemove}
         isEditMode={isEditMode}
         axis="xy"
-        onSortEnd={moveImage}
-        shouldCancelStart={() => false}
+        onSortEnd={imageManager.moveImage}
+        shouldCancelStart={noop}
         useWindowAsScrollContainer
         useDragHandle
       >
         {isEditMode && (
           <>
-            <PhotoGridPlaceholder show={isUploadingFile} />
+            <PhotoGridPlaceholder show={imageUploadManager.isUploading} />
             <PhotoGridUploader
               dropZoneRef={gridRef}
               fullPath={fullPath}
               thumbnailPath={thumbnailPath}
-              onStartUpload={onStartUpload}
-              onFinishUpload={onFinishUpload}
-              disabled={isUploadingFile}
+              onStartUpload={imageUploadManager.onStartUpload}
+              onFinishUpload={imageUploadManager.onFinishUpload}
+              disabled={imageUploadManager.isUploading}
             />
           </>
         )}
-        {selectedImageUrl && (
+        {imageManager.selectedImageUrl && (
           <>
             <Head>
               <meta
                 key="image"
                 property="og:image"
-                content={selectedImageUrl}
+                content={imageManager.selectedImageUrl}
               />
             </Head>
-            <ImageLicenseData imageUrl={selectedImageUrl} />
+            <ImageLicenseData imageUrl={imageManager.selectedImageUrl} />
             <ImageModal
               baseUrl={baseUrl}
               fullPath={fullPath}
-              images={images}
-              selectedImageIndex={selectedImageIndex}
-              setSelectedImageIndex={setSelectedImageIndex}
+              images={imageManager.allImages}
+              selectedImageIndex={imageManager.selectedImageIndex}
+              setSelectedImageIndex={imageManager.setSelectedImageIndex}
             />
           </>
         )}

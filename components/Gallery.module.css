@@ -1,0 +1,35 @@
+.photoGrid__HeroButton {
+  all: unset;
+  position: absolute;
+  right: 20px;
+  bottom: 22px;
+
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photoGrid__HeroButton__edit {
+  position: relative;
+  left: 2px;
+  bottom: 1px;
+}
+
+.photoGrid__HeroButton__spinner {
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

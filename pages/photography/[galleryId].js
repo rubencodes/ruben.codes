@@ -24,21 +24,20 @@ const GalleryPage = ({ photographyConfig }) => {
     baseUrl,
     galleries: { [galleryId]: selectedGallery },
   } = photographyState;
-  const updatePhotographyConfig = useCallback((galleryData) => {
+  const updatePhotographyConfig = useCallback((galleryImages) => {
     // Optimistically update.
     setPhotographyState((currentPhotographyState) => ({
       ...currentPhotographyState,
       galleries: {
         ...currentPhotographyState.galleries,
-        [galleryId]: galleryData,
+        [galleryId]: {
+          ...currentPhotographyState.galleries[galleryId],
+          images: galleryImages,
+        },
       },
     }));
 
-    return fetchConfig(
-      state.photography.metaConfig,
-    ).then((updatedPhotographyConfig) =>
-      setPhotographyState(updatedPhotographyConfig),
-    );
+    window.location.reload();
   }, []);
 
   const { fullPath, thumbnailPath, previewImage = {}, images } =

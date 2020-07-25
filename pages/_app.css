@@ -40,9 +40,11 @@ b.subheading {
 }
 
 div.hero {
-  margin-bottom: 20px;
+  position: relative;
+
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 p.text {

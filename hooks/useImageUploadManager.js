@@ -1,0 +1,24 @@
+import { useState, useCallback, useMemo } from "react";
+
+function useImageUploadManager(callback, callbackDependencies) {
+  // Uploading image state.
+  const [isUploading, setIsUploading] = useState(false);
+  const onStartUpload = useCallback(() => setIsUploading(true), []);
+  const onFinishUpload = useCallback((imageUrls) => {
+    setIsUploading(false);
+    imageUrls.forEach(callback);
+  }, callbackDependencies);
+
+  const imageUploadManager = useMemo(
+    () => ({
+      isUploading,
+      onStartUpload,
+      onFinishUpload,
+    }),
+    [],
+  );
+
+  return imageUploadManager;
+}
+
+export default useImageUploadManager;
