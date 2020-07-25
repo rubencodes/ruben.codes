@@ -9,7 +9,7 @@ const queryStringValueToArray = (val) => {
     const [rangeStart, rangeEnd] = val.split("...");
     const rangeSize = parseInt(rangeEnd, 10) - parseInt(rangeStart, 10);
     return [...new Array(rangeSize + 1)].map(
-      (_, index) => index + parseInt(rangeStart, 10)
+      (_, index) => index + parseInt(rangeStart, 10),
     );
   }
 
