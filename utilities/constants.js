@@ -1,6 +1,8 @@
 import home from "./home";
 import photography from "./photography";
 
+export const IS_DEV = process.env.NODE_ENV === "development";
+
 export const COLORS = [
   "blue",
   "red",
