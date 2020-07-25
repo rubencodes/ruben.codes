@@ -1,18 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 
 import PhotoGridItem from "./PhotoGridItem";
+import PhotoGrid from "./PhotoGrid";
 
-const PhotoGridHero = ({ previewImage }) => (
+const PhotoGridHero = (previewImage) => (
 	<div className="hero">
-		<PhotoGridItem
-			index={0}
-			imageUrl={previewImage.fileUrl}
-			customStyles={previewImage.customStyles}
-			caption={previewImage.caption}
-			span={3}
-			disabled
-		/>
+		<PhotoGrid images={[{ ...previewImage, span: 3 }]} />
 	</div>
 );
 
-export default PhotoGridHero;
+export default memo(PhotoGridHero);

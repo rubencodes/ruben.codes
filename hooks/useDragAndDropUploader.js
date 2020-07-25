@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const EVENTS = {
 	DragEnter: "dragenter",
@@ -7,8 +7,7 @@ const EVENTS = {
 	Drop: "drop",
 };
 
-function useDragAndDropUploader(handleFiles, handleFilesDependencies) {
-	const dropAreaRef = useRef(null);
+function useDragAndDropUploader(dropAreaRef, handleFiles, handleFilesDependencies) {
 	const [isDropAreaHovered, setIsDropAreaHovered] = useState(false);
 	useEffect(() => {
 		const dropArea = dropAreaRef.current;
@@ -76,7 +75,7 @@ function useDragAndDropUploader(handleFiles, handleFilesDependencies) {
 		};
 	}, [...handleFilesDependencies]);
 
-	return [dropAreaRef, isDropAreaHovered];
+	return isDropAreaHovered;
 }
 
 export default useDragAndDropUploader;

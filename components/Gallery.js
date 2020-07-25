@@ -1,85 +1,142 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import Head from "next/head";
 
 import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
-import PhotoGridItem from "./PhotoGridItem";
+import PhotoGridHero from "./PhotoGridHero";
+import PhotoGridPlaceholder from "./PhotoGridPlaceholder";
+import PhotoGridUploader from "./PhotoGridUploader";
 import ImageModal from "./ImageModal";
 import useQueryStringState from "../hooks/useQueryStringState";
-import useRandomCycleThroughItems from "../hooks/useRandomCycleThroughItems";
-import toIntArray from "../utilities/toIntArray";
 import toIntOrNull from "../utilities/toIntOrNull";
-import isElementInViewport from "../utilities/isElementInViewport";
-import { COLORS, CYCLE_TIMEOUT } from "../utilities/constants";
 
-const PhotoGridGallery = ({ baseUrl, path, thumbnailPath, images }) => {
-	// Highlighted image state for prominence.
-	const highlightedImageElementsRef = useRef({});
-	const [highlightedImageIndices] = useQueryStringState("highlighted", toIntArray);
-	const highlightedColor = useRandomCycleThroughItems(COLORS, CYCLE_TIMEOUT);
-	useEffect(() => {
-		const firstHighlighted = highlightedImageIndices.sort()[0];
-		const element = highlightedImageElementsRef.current[firstHighlighted];
-		const needsScroll = element && !isElementInViewport(element);
-		if (needsScroll) {
-			setTimeout(() => {
-				element.scrollIntoView({
-					behavior: "smooth",
-					block: "center",
-					inline: "nearest"
-				})
-			}, 100);
-		}
-	}, [...highlightedImageIndices]);
+const fileNameToImageUrl = (baseUrl, path, { fileName, ...image }) => ({
+	...image,
+	imageUrl: `${baseUrl}${path}${fileName}`,
+	span: image.span || 1,
+});
 
-	// Selected image state for the image modal.
+const PhotoGridGallery = ({
+	isEditMode = process.env.NODE_ENV === "development", // Only enabled in dev for now.
+	baseUrl,
+	fullPath,
+	thumbnailPath,
+	images,
+	previewImage,
+}) => {
+	// Helpers for normalizing the image URLs.
+	const normalizeThumbnailImage = (image) => fileNameToImageUrl(baseUrl, thumbnailPath, image);
+	const normalizeFullImage = (image) => fileNameToImageUrl(baseUrl, fullPath, image);
+
+	// Ref to the grid DOM node.
+	const gridRef = useRef();
+
+	// Contains both the stored images and newly uploaded ones.
+	const [allImages, setAllImages] = useState(images.map(normalizeThumbnailImage));
+
+	// Helpers for updating the images array.
+	const appendImage = useCallback((image) => {
+		setAllImages((imgs) => [...imgs, image]);
+	}, []);
+	const removeImage = useCallback((index) => {
+		setAllImages((imgs) => {
+			const withoutImage = [...imgs.slice(0, index), ...imgs.slice(index + 1)];
+
+			return withoutImage;
+		});
+	}, []);
+	const updateImage = useCallback((image, index) => {
+		setAllImages((imgs) => {
+			const withoutImage = [...imgs.slice(0, index), ...imgs.slice(index + 1)];
+			const withImage = [...withoutImage.slice(0, index), image, ...withoutImage.slice(index)];
+
+			return withImage;
+		});
+	}, []);
+	const moveImage = useCallback(({ oldIndex, newIndex }) => {
+		setAllImages((imgs) => {
+			const image = imgs[oldIndex];
+			const withoutImage = [...imgs.slice(0, oldIndex), ...imgs.slice(oldIndex + 1)];
+			const withImage = [...withoutImage.slice(0, newIndex), image, ...withoutImage.slice(newIndex)];
+
+			return withImage;
+		});
+	}, []);
+
+	// Uploading image state.
+	const [isUploadingFile, setIsUploadingFile] = useState(false);
+	const onStartUpload = useCallback(() => setIsUploadingFile(true), []);
+	const onFinishUpload = useCallback((imageUrls) => {
+		setIsUploadingFile(false);
+		imageUrls.forEach((imageUrl) => appendImage({
+			imageUrl,
+			span: 1,
+			customStyles: {},
+			isUploaded: true,
+		}));
+	}, [appendImage]);
+
+	// Handle image actions.
+	const onImageClick = useCallback(({ imageIndex }) => setSelectedImageIndex(imageIndex), []);
+	const onImageRemove = useCallback(({ imageIndex }) => removeImage(imageIndex), [removeImage]);
+	const onImageResize = useCallback(({ imageIndex, ...image }) => {
+		updateImage({ ...image, span: (image.span % 3) + 1 }, imageIndex);
+	}, [updateImage]);
+
+	// Selected image state.
 	const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState("selected", toIntOrNull);
 	const selectedImageUrl = Number.isInteger(selectedImageIndex)
-		? `${baseUrl}${path}${images[selectedImageIndex].fileName}`
+		? normalizeFullImage(images[selectedImageIndex]).imageUrl
 		: null;
 
 	return (
-		<PhotoGrid>
-			{images.map(({ fileName, span, customStyles }, index) => {
-				const isHighlighted = highlightedImageIndices.includes(index);
-				const highlightedRef = (ref) => highlightedImageElementsRef.current[index] = ref;
-				const highlightedStyle = {
-					borderColor: highlightedColor,
-					borderWidth: 4,
-					borderStyle: "solid",
-				};
-				const imageUrl = `${baseUrl}${thumbnailPath}${fileName}`;
+		<>
+			<PhotoGridHero
+				{...normalizeThumbnailImage(previewImage)}
+			/>
+			<PhotoGrid
+				gridRef={gridRef}
+				images={allImages}
+				onImageClick={onImageClick}
+				onImageResize={onImageResize}
+				onImageRemove={onImageRemove}
+				isEditMode={isEditMode}
 
-				return (
-					<PhotoGridItem
-						key={index}
-						index={index}
-						ref={isHighlighted ? highlightedRef : undefined}
-						customContainerStyles={isHighlighted ? highlightedStyle : undefined}
-						imageUrl={imageUrl}
-						customStyles={customStyles}
-						span={span}
-						onClick={setSelectedImageIndex}
-					/>
-				);
-			})}
-			{selectedImageUrl && (
-				<>
-					<Head>
-						<meta key="image" property="og:image" content={`${baseUrl}${thumbnailPath}${images[selectedImageIndex].fileName}`} />
-					</Head>
-					<ImageLicenseData imageUrl={selectedImageUrl} />
-					<ImageModal
-						baseUrl={baseUrl}
-						path={path}
-						images={images}
-						selectedImageIndex={selectedImageIndex}
-						setSelectedImageIndex={setSelectedImageIndex}
-					/>
-				</>
-			)}
-		</PhotoGrid>
-	)
+				axis="xy"
+				onSortEnd={moveImage}
+				shouldCancelStart={() => false}
+				useWindowAsScrollContainer
+				useDragHandle
+			>
+				{isEditMode && (
+					<>
+						<PhotoGridPlaceholder show={isUploadingFile} />
+						<PhotoGridUploader
+							dropZoneRef={gridRef}
+							onStartUpload={onStartUpload}
+							onFinishUpload={onFinishUpload}
+							disabled={isUploadingFile}
+						/>
+					</>
+				)}
+				{selectedImageUrl && (
+					<>
+						<Head>
+							<meta key="image" property="og:image" content={selectedImageUrl} />
+						</Head>
+						<ImageLicenseData imageUrl={selectedImageUrl} />
+						<ImageModal
+							baseUrl={baseUrl}
+							fullPath={fullPath}
+							images={images}
+							selectedImageIndex={selectedImageIndex}
+							setSelectedImageIndex={setSelectedImageIndex}
+						/>
+					</>
+				)}
+			</PhotoGrid>
+		</>
+	);
 };
 
 export default PhotoGridGallery;

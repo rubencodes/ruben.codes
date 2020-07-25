@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import classnames from "classnames";
 
 import useDragAndDropUploader from "../hooks/useDragAndDropUploader";
 import useS3Uploader from "../hooks/useS3Uploader";
@@ -6,9 +7,9 @@ import { AWS_CREDENTIALS } from "../utilities/constants";
 
 import styles from "./PhotoGridUploader.module.css";
 
-const PhotoGridUploader = ({ onStartUpload, onFinishUpload, disabled }) => {
+const PhotoGridUploader = ({ dropZoneRef, onStartUpload, onFinishUpload, disabled }) => {
 	const uploadFile = useS3Uploader(AWS_CREDENTIALS);
-	const [ref] = useDragAndDropUploader((files) => {
+	const isHovering = useDragAndDropUploader(dropZoneRef, (files) => {
 		if (disabled) {
 			return;
 		}
@@ -25,7 +26,11 @@ const PhotoGridUploader = ({ onStartUpload, onFinishUpload, disabled }) => {
 	}, [uploadFile, disabled]);
 
 	return (
-		<div ref={ref} className={styles.photoGridUploader}>
+		<div
+			className={classnames(styles.photoGridUploader, {
+				[styles.photoGridUploaderVisible]: isHovering
+			})}
+		>
 			Upload File
 		</div>
 	);

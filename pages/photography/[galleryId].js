@@ -22,12 +22,11 @@ const GalleryPage = () => {
 	} = state.photography;
 
 	const {
-		path,
+		fullPath,
 		thumbnailPath,
 		previewImage = {},
 		images,
 	} = selectedGallery || {};
-	const imageUrl = `${baseUrl}${thumbnailPath}${previewImage.fileName}`;
 
 	return (
 		<>
@@ -45,19 +44,12 @@ const GalleryPage = () => {
 					&nbsp;
 					<InstagramLink />
 				</b>
-				<div className="hero">
-					<PhotoGridItem
-						imageUrl={imageUrl}
-						customStyles={previewImage.customStyles}
-						caption={previewImage.caption}
-						span={3}
-					/>
-				</div>
 				<Gallery
 					baseUrl={baseUrl}
-					path={path}
+					fullPath={fullPath}
 					thumbnailPath={thumbnailPath}
 					images={images}
+					previewImage={previewImage}
 				/>
 				<div className={styles.buttonContainer}>
 					<Link href="/photography">

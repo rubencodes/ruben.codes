@@ -5,12 +5,12 @@ import useBodyClassList from "../hooks/useBodyClassList";
 
 import styles from "./ImageModal.module.css";
 
-const ImageModal = ({ baseUrl, path, images, selectedImageIndex, setSelectedImageIndex }) => {
+const ImageModal = ({ baseUrl, fullPath, images, selectedImageIndex, setSelectedImageIndex }) => {
 	useBodyClassList("no_scroll");
 	const close = useCallback(() => setSelectedImageIndex(null), [setSelectedImageIndex]);
 	const formattedImageList = useMemo(() => {
 		return images.map(({ fileName }) => ({
-			url: `${baseUrl}${path}${fileName}`
+			url: `${baseUrl}${fullPath}${fileName}`
 		}));
 	});
 

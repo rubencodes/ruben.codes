@@ -22,7 +22,7 @@ export default {
 	galleries: {
 		/* Cat Ross */
 		"cat_ross": {
-			path: "portraits/cat_ross/",
+			fullPath: "portraits/cat_ross/",
 			thumbnailPath: "portraits_small/cat_ross/",
 			previewImage: {
 				caption: "Cat Ross",
@@ -84,7 +84,7 @@ export default {
 
 		/* Kitty K */
 		"kitty_k": {
-			path: "portraits/kitty_k/",
+			fullPath: "portraits/kitty_k/",
 			thumbnailPath: "portraits_small/kitty_k/",
 			previewImage: {
 				caption: "Kitty K",
@@ -230,7 +230,7 @@ export default {
 
 		/* Odette */
 		"odette_coquette": {
-			path: "portraits/odette_coquette/",
+			fullPath: "portraits/odette_coquette/",
 			thumbnailPath: "portraits_small/odette_coquette/",
 			previewImage: {
 				caption: "Odette Coquette",
@@ -399,7 +399,7 @@ export default {
 
 		/* Morgana */
 		"morgana": {
-			path: "portraits/morgana/",
+			fullPath: "portraits/morgana/",
 			thumbnailPath: "portraits_small/morgana/",
 			previewImage: {
 				caption: "Morgana",
@@ -618,7 +618,7 @@ export default {
 
 		/* Victoria */
 		"victoria": {
-			path: "portraits/victoria/",
+			fullPath: "portraits/victoria/",
 			thumbnailPath: "portraits_small/victoria/",
 			previewImage: {
 				caption: "Victoria",
@@ -825,7 +825,7 @@ export default {
 
 		/* Savannah */
 		"savannah": {
-			path: "portraits/savannah/",
+			fullPath: "portraits/savannah/",
 			thumbnailPath: "portraits_small/savannah/",
 			previewImage: {
 				caption: "Savannah",
@@ -1211,7 +1211,7 @@ export default {
 
 		/* Fyre photoshoot */
 		"fyre": {
-			path: "portraits/fyre/",
+			fullPath: "portraits/fyre/",
 			thumbnailPath: "portraits_small/fyre/",
 			previewImage: {
 				caption: "Fyre 02/20",
@@ -1399,7 +1399,7 @@ export default {
 		},
 
 		"2018": {
-			path: "landscapes/2018_and_older/",
+			fullPath: "landscapes/2018_and_older/",
 			thumbnailPath: "landscapes_small/2018_and_older/",
 			previewImage: {
 				caption: "Pre-2018 Landscapes",
@@ -1640,7 +1640,7 @@ export default {
 		},
 
 		"2019": {
-			path: "landscapes/2019/",
+			fullPath: "landscapes/2019/",
 			thumbnailPath: "landscapes_small/2019/",
 			previewImage: {
 				caption: "2019 Landscapes",
@@ -1858,7 +1858,7 @@ export default {
 		},
 
 		"2020": {
-			path: "landscapes/2020/",
+			fullPath: "landscapes/2020/",
 			thumbnailPath: "landscapes_small/2020/",
 			previewImage: {
 				caption: "2020 Landscapes",
