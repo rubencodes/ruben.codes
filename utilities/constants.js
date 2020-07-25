@@ -17,6 +17,8 @@ export const AWS_CREDENTIALS = {
 	bucketName: "static.ruben.codes",
 	bucketRegion: "us-east-2",
 	credentials: {
+		accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
+		secretAccessKey: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_SECRET,
 	},
 };
 
