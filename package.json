@@ -6,7 +6,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint --fix ."
   },
   "author": "Ruben Martinez Jr. <ruben.martinez93@gmail.com>",
   "license": "MIT",
@@ -15,6 +17,7 @@
     "babel-eslint": "^10.1.0",
     "classnames": "^2.2.6",
     "eslint": "^7.5.0",
+    "eslint-plugin-react": "^7.20.3",
     "next": "^9.3.2",
     "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
