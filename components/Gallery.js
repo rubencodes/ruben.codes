@@ -156,6 +156,8 @@ const PhotoGridGallery = ({
             <PhotoGridPlaceholder show={isUploadingFile} />
             <PhotoGridUploader
               dropZoneRef={gridRef}
+              fullPath={fullPath}
+              thumbnailPath={thumbnailPath}
               onStartUpload={onStartUpload}
               onFinishUpload={onFinishUpload}
               disabled={isUploadingFile}

@@ -9,6 +9,8 @@ import styles from "./PhotoGridUploader.module.css";
 
 const PhotoGridUploader = ({
   dropZoneRef,
+  fullPath,
+  thumbnailPath,
   onStartUpload,
   onFinishUpload,
   disabled,

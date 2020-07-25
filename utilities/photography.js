@@ -1,4 +1,4 @@
-const PHOTO_URL = "https://static.ruben.codes/photography/";
+const PHOTO_URL = "https://static.ruben.codes/";
 
 export default {
   metaTitle: "Ruben Martinez Jr. - Photography",
@@ -23,8 +23,8 @@ export default {
   galleries: {
     /* Cat Ross */
     cat_ross: {
-      fullPath: "portraits/cat_ross/",
-      thumbnailPath: "portraits_small/cat_ross/",
+      fullPath: "photography/portraits/cat_ross/",
+      thumbnailPath: "photography/portraits_small/cat_ross/",
       previewImage: {
         caption: "Cat Ross",
         fileName: "6.jpg",
@@ -85,8 +85,8 @@ export default {
 
     /* Kitty K */
     kitty_k: {
-      fullPath: "portraits/kitty_k/",
-      thumbnailPath: "portraits_small/kitty_k/",
+      fullPath: "photography/portraits/kitty_k/",
+      thumbnailPath: "photography/portraits_small/kitty_k/",
       previewImage: {
         caption: "Kitty K",
         fileName: "29.jpg",
@@ -231,8 +231,8 @@ export default {
 
     /* Odette */
     odette_coquette: {
-      fullPath: "portraits/odette_coquette/",
-      thumbnailPath: "portraits_small/odette_coquette/",
+      fullPath: "photography/portraits/odette_coquette/",
+      thumbnailPath: "photography/portraits_small/odette_coquette/",
       previewImage: {
         caption: "Odette Coquette",
         fileName: "12.png",
@@ -400,8 +400,8 @@ export default {
 
     /* Morgana */
     morgana: {
-      fullPath: "portraits/morgana/",
-      thumbnailPath: "portraits_small/morgana/",
+      fullPath: "photography/portraits/morgana/",
+      thumbnailPath: "photography/portraits_small/morgana/",
       previewImage: {
         caption: "Morgana",
         fileName: "38.jpg",
@@ -619,8 +619,8 @@ export default {
 
     /* Victoria */
     victoria: {
-      fullPath: "portraits/victoria/",
-      thumbnailPath: "portraits_small/victoria/",
+      fullPath: "photography/portraits/victoria/",
+      thumbnailPath: "photography/portraits_small/victoria/",
       previewImage: {
         caption: "Victoria",
         fileName: "26.jpg",
@@ -825,8 +825,8 @@ export default {
 
     /* Savannah */
     savannah: {
-      fullPath: "portraits/savannah/",
-      thumbnailPath: "portraits_small/savannah/",
+      fullPath: "photography/portraits/savannah/",
+      thumbnailPath: "photography/portraits_small/savannah/",
       previewImage: {
         caption: "Savannah",
         fileName: "78.JPG",
@@ -1211,8 +1211,8 @@ export default {
 
     /* Fyre photoshoot */
     fyre: {
-      fullPath: "portraits/fyre/",
-      thumbnailPath: "portraits_small/fyre/",
+      fullPath: "photography/portraits/fyre/",
+      thumbnailPath: "photography/portraits_small/fyre/",
       previewImage: {
         caption: "Fyre 02/20",
         fileName: "2.jpg",
@@ -1399,8 +1399,8 @@ export default {
     },
 
     "2018": {
-      fullPath: "landscapes/2018_and_older/",
-      thumbnailPath: "landscapes_small/2018_and_older/",
+      fullPath: "photography/landscapes/2018_and_older/",
+      thumbnailPath: "photography/landscapes_small/2018_and_older/",
       previewImage: {
         caption: "Pre-2018 Landscapes",
         fileName: "31.jpg",
@@ -1640,8 +1640,8 @@ export default {
     },
 
     "2019": {
-      fullPath: "landscapes/2019/",
-      thumbnailPath: "landscapes_small/2019/",
+      fullPath: "photography/landscapes/2019/",
+      thumbnailPath: "photography/landscapes_small/2019/",
       previewImage: {
         caption: "2019 Landscapes",
         fileName: "12.jpg",
@@ -1858,8 +1858,8 @@ export default {
     },
 
     "2020": {
-      fullPath: "landscapes/2020/",
-      thumbnailPath: "landscapes_small/2020/",
+      fullPath: "photography/landscapes/2020/",
+      thumbnailPath: "photography/landscapes_small/2020/",
       previewImage: {
         caption: "2020 Landscapes",
         fileName: "33.jpg",
