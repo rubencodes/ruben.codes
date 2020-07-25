@@ -108,7 +108,7 @@ class InlineGallery extends Component {
 
     const selected = `${baseURL}${largePrefix}${loopedImages[showing]}`;
     const thumbs = loopedImages.map(
-      (file) => `${baseURL}${thumbPrefix}${file}`
+      (file) => `${baseURL}${thumbPrefix}${file}`,
     );
 
     return (

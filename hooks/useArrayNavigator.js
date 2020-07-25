@@ -7,7 +7,7 @@ function useArrayNavigator(value, setValue, length) {
   ]);
   const increment = useCallback(
     () => setValue(Math.min(value + 1, length - 1)),
-    [value, length, setValue]
+    [value, length, setValue],
   );
   const goToStart = useCallback(() => setValue(0), [setValue]);
   const goToEnd = useCallback(() => setValue(length - 1), [length, setValue]);
@@ -15,7 +15,7 @@ function useArrayNavigator(value, setValue, length) {
     (newValue) => {
       setValue(Math.min(Math.max(newValue, 0), length - 1));
     },
-    [length, setValue]
+    [length, setValue],
   );
   const clear = useCallback(() => setValue(null), [setValue]);
 

@@ -13,7 +13,7 @@ import styles from "./Carousel.module.css";
 const scrollToPage = (
   scrollArea,
   page,
-  { isScrolling, setIsScrolling, immediate = false }
+  { isScrolling, setIsScrolling, immediate = false },
 ) => {
   // Check to make sure we're not actively scrolling.
   if (isScrolling) return;
@@ -42,7 +42,7 @@ const arrayToChunks = (arr, chunkSize) => {
         ? [...chunks.slice(0, chunks.length - 1), [...lastChunk, item]]
         : [...chunks, [item]];
     },
-    [[]]
+    [[]],
   );
 };
 
@@ -97,14 +97,14 @@ const Carousel = ({
         isScrollingRef.current = false;
       }
     },
-    [currentPage, setCurrentPage]
+    [currentPage, setCurrentPage],
   );
 
   // Update current page state from keyboard.
   const ArrayNavigator = useArrayNavigator(
     currentPage,
     setCurrentPage,
-    pageCount
+    pageCount,
   );
   useKeydownEvent(
     (event) => {
@@ -140,7 +140,7 @@ const Carousel = ({
         }
       }
     },
-    [ArrayNavigator]
+    [ArrayNavigator],
   );
 
   // When the current page state changes, make sure we're scrolled to the correct page.
@@ -238,7 +238,7 @@ Carousel.propTypes = {
     PropTypes.shape({
       url: PropTypes.string,
       altText: PropTypes.string,
-    })
+    }),
   ),
   onSelectImage: PropTypes.func,
   verticalCount: PropTypes.number,

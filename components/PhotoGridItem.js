@@ -20,7 +20,7 @@ const PhotoGridItem = ({
     (element) => {
       element.style.backgroundImage = `url(${imageUrl})`;
     },
-    [imageUrl]
+    [imageUrl],
   );
   const isDisabled = !onClick || !!renderButtons;
   const imageInfo = {
@@ -36,7 +36,7 @@ const PhotoGridItem = ({
       className={classnames(
         styles.photoGridItem,
         styles[`photoGridItemSpanWidth${spanWidth}`],
-        { [styles.photoGridItemActive]: !isDisabled }
+        { [styles.photoGridItemActive]: !isDisabled },
       )}
     >
       <button

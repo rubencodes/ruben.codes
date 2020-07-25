@@ -10,7 +10,7 @@ const EVENTS = {
 function useDragAndDropUploader(
   dropAreaRef,
   handleFiles,
-  handleFilesDependencies
+  handleFilesDependencies,
 ) {
   const [isDropAreaHovered, setIsDropAreaHovered] = useState(false);
   useEffect(() => {
@@ -33,7 +33,7 @@ function useDragAndDropUploader(
     [EVENTS.DragEnter, EVENTS.DragOver, EVENTS.DragLeave, EVENTS.Drop].forEach(
       (eventName) => {
         dropArea.addEventListener(eventName, preventDefaults, false);
-      }
+      },
     );
 
     // Track drag/drop enter state.

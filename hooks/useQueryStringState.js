@@ -51,7 +51,7 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
           },
           {
             shallow: true,
-          }
+          },
         );
         return;
       }
@@ -72,10 +72,10 @@ function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
         },
         {
           shallow: true,
-        }
+        },
       );
     },
-    [queryParamName, processValue, value]
+    [queryParamName, processValue, value],
   );
 
   return [processValue(value), setValue];

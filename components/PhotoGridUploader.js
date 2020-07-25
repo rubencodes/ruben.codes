@@ -29,7 +29,7 @@ const PhotoGridUploader = ({
         })
         .then((fileUrls) => onFinishUpload(fileUrls));
     },
-    [uploadFile, disabled]
+    [uploadFile, disabled],
   );
 
   return (

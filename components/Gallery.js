@@ -35,7 +35,7 @@ const PhotoGridGallery = ({
 
   // Contains both the stored images and newly uploaded ones.
   const [allImages, setAllImages] = useState(
-    images.map(normalizeThumbnailImage)
+    images.map(normalizeThumbnailImage),
   );
 
   // Helpers for updating the images array.
@@ -90,35 +90,35 @@ const PhotoGridGallery = ({
           spanWidth: 1,
           customStyles: {},
           isUploaded: true,
-        })
+        }),
       );
     },
-    [appendImage]
+    [appendImage],
   );
 
   // Handle image actions.
   const onImageClick = useCallback(
     ({ imageIndex }) => setSelectedImageIndex(imageIndex),
-    []
+    [],
   );
   const onImageRemove = useCallback(
     ({ imageIndex }) => removeImage(imageIndex),
-    [removeImage]
+    [removeImage],
   );
   const onImageResize = useCallback(
     ({ imageIndex, ...image }) => {
       updateImage(
         { ...image, spanWidth: (image.spanWidth % 3) + 1 },
-        imageIndex
+        imageIndex,
       );
     },
-    [updateImage]
+    [updateImage],
   );
 
   // Selected image state.
   const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState(
     "selected",
-    toIntOrNull
+    toIntOrNull,
   );
   const selectedImageUrl = Number.isInteger(selectedImageIndex)
     ? normalizeFullImage(images[selectedImageIndex]).imageUrl

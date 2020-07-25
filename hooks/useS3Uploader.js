@@ -20,7 +20,7 @@ function useS3Uploader(awsCredentials) {
 
       return upload.promise();
     },
-    [s3]
+    [s3],
   );
 
   return uploadFile;
