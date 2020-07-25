@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 
-import PhotoGridItem from "./PhotoGridItem";
 import PhotoGrid from "./PhotoGrid";
 
 const PhotoGridHero = (previewImage) => (

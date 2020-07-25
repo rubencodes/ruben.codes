@@ -58,7 +58,7 @@ const Main = ({
       <>
         <b className="subheading">Design</b>
         <p className="time">
-          Examples of apps and promotional materials I"ve designed.
+          {"Examples of apps and promotional materials I've designed."}
         </p>
         <div className={styles.imageGalleryContainer}>
           <InlineGallery {...design} />

@@ -6,7 +6,6 @@ import classnames from "classnames";
 
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
-import PhotoGridItem from "../../components/PhotoGridItem";
 import Footer from "../../components/Footer";
 import { state } from "../../utilities/constants";
 

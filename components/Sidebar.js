@@ -34,7 +34,7 @@ const Sidebar = ({ info, skills, languages, links, cities }) => (
     {cities && (
       <>
         <b className="subheading">Cities</b>
-        <p className="time">Places I've Called Home</p>
+        <p className="time">{"Places I've Called Home"}</p>
         <CityMap cities={cities} />
       </>
     )}
@@ -44,7 +44,7 @@ const Sidebar = ({ info, skills, languages, links, cities }) => (
         <ul className="list">
           {links.map(({ title, href }, i) => (
             <li key={i}>
-              <a href={href} target="_blank">
+              <a href={href} target="_blank" rel="noreferrer">
                 {title}
               </a>
             </li>

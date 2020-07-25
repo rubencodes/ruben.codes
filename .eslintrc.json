@@ -13,6 +13,10 @@
       "impliedStrict": true
     }
   },
+  "globals": {
+    "AWS": true,
+    "Promise": true
+  },
   "rules": {
     "react/prop-types": [0]
   }
