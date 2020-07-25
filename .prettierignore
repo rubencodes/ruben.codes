@@ -1,4 +1,5 @@
 node_modules/
+public/
 .next/
 .DS_Store
 .env*.local
