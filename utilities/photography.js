@@ -29,7 +29,8 @@ export default {
         caption: "Cat Ross",
         fileName: "6.jpg",
         customStyles: {
-          backgroundPosition: "center 18%",
+          backgroundPositionX: "center",
+          backgroundPositionY: "18%",
         },
         spanWidth: 2,
       },
@@ -46,7 +47,8 @@ export default {
           fileName: "6.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 18%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "18%",
           },
         },
         {
@@ -77,7 +79,8 @@ export default {
           fileName: "18.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 18%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "18%",
           },
         },
       ],
@@ -91,7 +94,8 @@ export default {
         caption: "Kitty K",
         fileName: "29.jpg",
         customStyles: {
-          backgroundPosition: "center 55%",
+          backgroundPositionX: "center",
+          backgroundPositionY: "55%",
         },
         spanWidth: 1,
       },
@@ -112,7 +116,8 @@ export default {
           fileName: "4.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 26%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "26%",
           },
         },
         {
@@ -127,7 +132,8 @@ export default {
           fileName: "7.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
@@ -158,7 +164,8 @@ export default {
           fileName: "14.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
@@ -177,7 +184,8 @@ export default {
           fileName: "18.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -200,14 +208,16 @@ export default {
           fileName: "21.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "23.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -237,7 +247,8 @@ export default {
         caption: "Odette Coquette",
         fileName: "12.png",
         customStyles: {
-          backgroundPosition: "center 10%",
+          backgroundPositionX: "center",
+          backgroundPositionY: "10%",
         },
         spanWidth: 3,
       },
@@ -250,19 +261,22 @@ export default {
           fileName: "2.png",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center right",
+            backgroundPositionX: "right",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "4.png",
           customStyles: {
-            backgroundPosition: "bottom left",
+            backgroundPositionX: "left",
+            backgroundPositionY: "bottom",
           },
         },
         {
           fileName: "5.png",
           customStyles: {
-            backgroundPosition: "center left",
+            backgroundPositionX: "left",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -276,7 +290,8 @@ export default {
         {
           fileName: "8.png",
           customStyles: {
-            backgroundPosition: "bottom right",
+            backgroundPositionX: "right",
+            backgroundPositionY: "bottom",
           },
         },
         {
@@ -329,7 +344,8 @@ export default {
           fileName: "52.png",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 30%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "30%",
           },
         },
         {
@@ -406,7 +422,8 @@ export default {
         caption: "Morgana",
         fileName: "38.jpg",
         customStyles: {
-          backgroundPosition: "center",
+          backgroundPositionX: "center",
+          backgroundPositionY: "center",
         },
         spanWidth: 2,
       },
@@ -449,7 +466,8 @@ export default {
         {
           fileName: "11.jpg",
           customStyles: {
-            backgroundPosition: "left center",
+            backgroundPositionX: "left",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -516,7 +534,8 @@ export default {
           fileName: "38.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -556,7 +575,8 @@ export default {
           fileName: "52.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 8%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "8%",
           },
         },
         {
@@ -567,7 +587,8 @@ export default {
           fileName: "54.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 8%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "8%",
           },
         },
         {
@@ -586,7 +607,8 @@ export default {
           fileName: "58.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -625,7 +647,8 @@ export default {
         caption: "Victoria",
         fileName: "26.jpg",
         customStyles: {
-          backgroundPosition: "center",
+          backgroundPositionX: "center",
+          backgroundPositionY: "center",
         },
         spanWidth: 1,
       },
@@ -646,7 +669,8 @@ export default {
           fileName: "5.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 30%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "30%",
           },
         },
         {
@@ -661,7 +685,8 @@ export default {
           fileName: "4.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
@@ -680,7 +705,8 @@ export default {
           fileName: "14.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
@@ -695,7 +721,8 @@ export default {
           fileName: "13.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
@@ -730,14 +757,16 @@ export default {
           fileName: "22.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "23.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
@@ -757,7 +786,8 @@ export default {
           fileName: "27.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -772,7 +802,8 @@ export default {
           fileName: "29.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 15%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "15%",
           },
         },
         {
@@ -791,7 +822,8 @@ export default {
           fileName: "31.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 25%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "25%",
           },
         },
         {
@@ -806,14 +838,16 @@ export default {
           fileName: "38.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
           fileName: "36.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 35%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "35%",
           },
         },
         {
@@ -831,7 +865,8 @@ export default {
         caption: "Savannah",
         fileName: "78.JPG",
         customStyles: {
-          backgroundPosition: "center",
+          backgroundPositionX: "center",
+          backgroundPositionY: "center",
         },
         spanWidth: 3,
       },
@@ -840,7 +875,8 @@ export default {
           fileName: "1.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 40%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "40%",
           },
         },
         {
@@ -896,7 +932,8 @@ export default {
           fileName: "16.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 50%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "50%",
           },
         },
         {
@@ -1000,7 +1037,8 @@ export default {
           fileName: "40.JPG",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 30%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "30%",
           },
         },
         {
@@ -1044,7 +1082,8 @@ export default {
           fileName: "50.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 30%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "30%",
           },
         },
         {
@@ -1055,7 +1094,8 @@ export default {
           fileName: "52.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 40%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "40%",
           },
         },
         {
@@ -1086,7 +1126,8 @@ export default {
           fileName: "59.JPG",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -1097,7 +1138,8 @@ export default {
           fileName: "61.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 50%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "50%",
           },
         },
         {
@@ -1116,14 +1158,16 @@ export default {
           fileName: "65.JPG",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "66.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -1155,7 +1199,8 @@ export default {
           fileName: "73.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 35%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "35%",
           },
         },
         {
@@ -1194,7 +1239,8 @@ export default {
           fileName: "82.JPG",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center bottom",
+            backgroundPositionX: "center",
+            backgroundPositionY: "bottom",
           },
         },
         {
@@ -1217,7 +1263,8 @@ export default {
         caption: "Fyre 02/20",
         fileName: "2.jpg",
         customStyles: {
-          backgroundPosition: "center 20%",
+          backgroundPositionX: "center",
+          backgroundPositionY: "20%",
         },
         spanWidth: 1,
       },
@@ -1231,14 +1278,16 @@ export default {
           fileName: "2.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
           fileName: "6.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 30%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "30%",
           },
         },
         {
@@ -1255,7 +1304,8 @@ export default {
           fileName: "5.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
@@ -1277,7 +1327,8 @@ export default {
           fileName: "12.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
@@ -1299,7 +1350,8 @@ export default {
           fileName: "14.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
@@ -1326,7 +1378,8 @@ export default {
           fileName: "21.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 30%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "30%",
           },
         },
         {
@@ -1363,7 +1416,8 @@ export default {
           fileName: "26.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
@@ -1380,14 +1434,16 @@ export default {
           fileName: "29.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
           fileName: "30.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
@@ -1405,7 +1461,8 @@ export default {
         caption: "Pre-2018 Landscapes",
         fileName: "31.jpg",
         customStyles: {
-          backgroundPosition: "center",
+          backgroundPositionX: "center",
+          backgroundPositionY: "center",
         },
         spanWidth: 2,
       },
@@ -1414,226 +1471,259 @@ export default {
           fileName: "1.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "2.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "7.png",
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "3.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "4.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "8.png",
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "6.png",
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "5.png",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "9.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "10.jpg",
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "11.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "12.jpg",
           customStyles: {
-            backgroundPosition: "left center",
+            backgroundPositionX: "left",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "13.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "31.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "30.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "33.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "34.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "35.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "24.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "29.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "26.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "14.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "16.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "32.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "17.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "19.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "20.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "21.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "22.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "23.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "18.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "28.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "27.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
       ].reverse(),
@@ -1646,7 +1736,8 @@ export default {
         caption: "2019 Landscapes",
         fileName: "12.jpg",
         customStyles: {
-          backgroundPosition: "center",
+          backgroundPositionX: "center",
+          backgroundPositionY: "center",
         },
         spanWidth: 2,
       },
@@ -1655,203 +1746,232 @@ export default {
           fileName: "1.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "2.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "3.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "4.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center bottom",
+            backgroundPositionX: "center",
+            backgroundPositionY: "bottom",
           },
         },
         {
           fileName: "5.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "6.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "7.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "13.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "8.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "9.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "10.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "12.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "11.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "14.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "15.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "16.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "17.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 70%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "70%",
           },
         },
         {
           fileName: "18.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "19.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "20.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "21.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "22.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "23.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "24.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "25.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "26.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "27.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "28.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "29.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
       ].reverse(),
@@ -1864,7 +1984,8 @@ export default {
         caption: "2020 Landscapes",
         fileName: "33.jpg",
         customStyles: {
-          backgroundPosition: "center",
+          backgroundPositionX: "center",
+          backgroundPositionY: "center",
         },
         spanWidth: 1,
       },
@@ -1873,718 +1994,821 @@ export default {
           fileName: "25.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center bottom",
+            backgroundPositionX: "center",
+            backgroundPositionY: "bottom",
           },
         },
         {
           fileName: "26.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "28.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "27.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center 80%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "80%",
           },
         },
         {
           fileName: "30.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "29.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "31.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "32.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 60%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "60%",
           },
         },
         {
           fileName: "33.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "34.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "8.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
           fileName: "7.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "3.jpg",
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "1.jpg",
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "2.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "4.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "6.jpg",
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "9.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center 10%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "10%",
           },
         },
         {
           fileName: "5.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "11.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "10.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "12.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "13.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "14.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "15.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 70%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "70%",
           },
         },
         {
           fileName: "16.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "17.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "18.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "20.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "21.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "22.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "23.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "left bottom",
+            backgroundPositionX: "left",
+            backgroundPositionY: "bottom",
           },
         },
         {
           fileName: "24.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "36.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "37.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "38.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "41.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "39.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "40.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "42.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "43.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "44.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "45.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "46.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "47.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "48.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "50.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "49.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "51.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "54.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 75%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "75%",
           },
         },
         {
           fileName: "52.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "56.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "right top",
+            backgroundPositionX: "right",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "53.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "55.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "57.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "58.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center bottom",
+            backgroundPositionX: "center",
+            backgroundPositionY: "bottom",
           },
         },
         {
           fileName: "59.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "60.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "61.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "64.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 80%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "80%",
           },
         },
         {
           fileName: "62.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 90%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "90%",
           },
         },
         {
           fileName: "63.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "65.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "left top",
+            backgroundPositionX: "left",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "66.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "67.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "left center",
+            backgroundPositionX: "left",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "69.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center 20%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "20%",
           },
         },
         {
           fileName: "68.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "left 20%",
+            backgroundPositionX: "left",
+            backgroundPositionY: "20%",
           },
         },
         {
           fileName: "70.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "71.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center bottom",
+            backgroundPositionX: "center",
+            backgroundPositionY: "bottom",
           },
         },
         {
           fileName: "72.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center bottom",
+            backgroundPositionX: "center",
+            backgroundPositionY: "bottom",
           },
         },
         {
           fileName: "73.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "74.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "75.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "76.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "78.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "77.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "79.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "80.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "81.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "82.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "83.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "84.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "89.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "87.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "88.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "85.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "90.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "91.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center top",
+            backgroundPositionX: "center",
+            backgroundPositionY: "top",
           },
         },
         {
           fileName: "92.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 70%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "70%",
           },
         },
         {
           fileName: "93.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 70%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "70%",
           },
         },
         {
           fileName: "94.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center 70%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "70%",
           },
         },
         {
           fileName: "102.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "96.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "95.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "97.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "98.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "100.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "101.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "99.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "103.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "104.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "26% center",
+            backgroundPositionX: "26%",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "105.jpg",
           spanWidth: 1,
           customStyles: {
-            backgroundPosition: "center",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
           },
         },
         {
           fileName: "106.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "26% center",
+            backgroundPositionX: "26%",
+            backgroundPositionY: "center",
           },
         },
         {
@@ -2603,7 +2827,8 @@ export default {
           fileName: "111.jpg",
           spanWidth: 3,
           customStyles: {
-            backgroundPosition: "center 30%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "30%",
           },
         },
         {
@@ -2614,7 +2839,8 @@ export default {
           fileName: "110.jpg",
           spanWidth: 2,
           customStyles: {
-            backgroundPosition: "center 40%",
+            backgroundPositionX: "center",
+            backgroundPositionY: "40%",
           },
         },
         {

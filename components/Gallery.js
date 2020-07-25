@@ -10,11 +10,16 @@ import ImageModal from "./ImageModal";
 import useQueryStringState from "../hooks/useQueryStringState";
 import toIntOrNull from "../utilities/toIntOrNull";
 
-const fileNameToImageUrl = (baseUrl, path, { fileName, ...image }) => ({
+const fileNameToImageUrl = (baseUrl, path, image) => ({
   ...image,
-  imageUrl: `${baseUrl}${path}${fileName}`,
+  imageUrl: `${baseUrl}${path}${image.fileName}`,
   spanWidth: image.spanWidth || 1,
   spanHeight: image.spanHeight || 1,
+  customStyles: {
+    backgroundPositionX: "50%",
+    backgroundPositionY: "0%",
+    ...(image.customStyles || {}),
+  },
 });
 
 const PhotoGridGallery = ({
