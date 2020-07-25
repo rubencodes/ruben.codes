@@ -5,10 +5,10 @@
 }
 
 .loader {
-  color: #FFF;
+  color: #fff;
   font-size: 11px;
-	text-indent: -99999em;
-	margin: auto;
+  text-indent: -99999em;
+  margin: auto;
   position: relative;
   width: 10em;
   height: 10em;
@@ -19,7 +19,7 @@
 .loader:before,
 .loader:after {
   position: absolute;
-  content: '';
+  content: "";
 }
 
 .loader:before {

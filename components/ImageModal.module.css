@@ -1,28 +1,28 @@
 .imageModal {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(0, 0, 0, 0.4);
-	backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
 
-	display: flex;
-	overflow: auto;
-	z-index: 2;
-	user-select: none;
+  display: flex;
+  overflow: auto;
+  z-index: 2;
+  user-select: none;
 }
 
 .imageModal__Inner {
-	margin: auto;
-	background: transparent;
-	transition: all 0.4s;
+  margin: auto;
+  background: transparent;
+  transition: all 0.4s;
 }
 
 .imageModal__Carousel {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

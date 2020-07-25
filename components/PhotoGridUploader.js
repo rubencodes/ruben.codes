@@ -7,33 +7,40 @@ import { AWS_CREDENTIALS } from "../utilities/constants";
 
 import styles from "./PhotoGridUploader.module.css";
 
-const PhotoGridUploader = ({ dropZoneRef, onStartUpload, onFinishUpload, disabled }) => {
-	const uploadFile = useS3Uploader(AWS_CREDENTIALS);
-	const isHovering = useDragAndDropUploader(dropZoneRef, (files) => {
-		if (disabled) {
-			return;
-		}
+const PhotoGridUploader = ({
+  dropZoneRef,
+  onStartUpload,
+  onFinishUpload,
+  disabled,
+}) => {
+  const uploadFile = useS3Uploader(AWS_CREDENTIALS);
+  const isHovering = useDragAndDropUploader(
+    dropZoneRef,
+    (files) => {
+      if (disabled) {
+        return;
+      }
 
-		onStartUpload();
-		const fileUploads = [...files].map((file) => uploadFile("test/", file));
-		return Promise.all(fileUploads)
-			.then((results) => {
-				return results
-					.filter(Boolean)
-					.map(({ Location }) => Location);
-			})
-			.then((fileUrls) => onFinishUpload(fileUrls));
-	}, [uploadFile, disabled]);
+      onStartUpload();
+      const fileUploads = [...files].map((file) => uploadFile("test/", file));
+      return Promise.all(fileUploads)
+        .then((results) => {
+          return results.filter(Boolean).map(({ Location }) => Location);
+        })
+        .then((fileUrls) => onFinishUpload(fileUrls));
+    },
+    [uploadFile, disabled]
+  );
 
-	return (
-		<div
-			className={classnames(styles.photoGridUploader, {
-				[styles.photoGridUploaderVisible]: isHovering
-			})}
-		>
-			Upload File
-		</div>
-	);
+  return (
+    <div
+      className={classnames(styles.photoGridUploader, {
+        [styles.photoGridUploaderVisible]: isHovering,
+      })}
+    >
+      Upload File
+    </div>
+  );
 };
 
 export default PhotoGridUploader;

@@ -8,5 +8,5 @@
     }
   },
   "icons": { "16": "img/art-16.png", "128": "img/art-128.png" },
-  "permissions" : [ "videoCapture", "audioCapture" ]
+  "permissions": ["videoCapture", "audioCapture"]
 }

@@ -1,16 +1,12 @@
-import queryStringValueToArray from "./queryStringValueToArray"
-import normalizeNumericalArray from "./normalizeNumericalArray"
+import queryStringValueToArray from "./queryStringValueToArray";
+import normalizeNumericalArray from "./normalizeNumericalArray";
 
 const toIntArray = (val) => {
-	if (!val) {
-		return [];
-	}
+  if (!val) {
+    return [];
+  }
 
-	return normalizeNumericalArray(
-		queryStringValueToArray(
-			val
-		)
-	);
+  return normalizeNumericalArray(queryStringValueToArray(val));
 };
 
 export default toIntArray;

@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
 function useCache(value, useCachedValue) {
-	const [valueCache, setValueCache] = useState(value);
-	useEffect(() => {
-		if (useCachedValue) {
-			return;
-		}
+  const [valueCache, setValueCache] = useState(value);
+  useEffect(() => {
+    if (useCachedValue) {
+      return;
+    }
 
-		setValueCache(value);
-	}, [value]);
+    setValueCache(value);
+  }, [value]);
 
-	return valueCache;
+  return valueCache;
 }
 
 export default useCache;

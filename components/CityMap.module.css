@@ -1,6 +1,6 @@
 .cityMap {
-	width: 100%;
-	max-width: 300px;
-	object-fit: contain;
-	border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  object-fit: contain;
+  border-radius: 10px;
 }

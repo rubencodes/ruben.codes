@@ -7,58 +7,62 @@ import ImageLicenseData from "./ImageLicenseData";
 import styles from "./PhotoGridItem.module.css";
 
 const PhotoGridItem = ({
-	imageIndex,
-	imageUrl,
-	customStyles,
-	spanWidth = 1,
-	caption,
-	onClick,
-	customContainerStyles,
-	renderButtons,
+  imageIndex,
+  imageUrl,
+  customStyles,
+  spanWidth = 1,
+  caption,
+  onClick,
+  customContainerStyles,
+  renderButtons,
 }) => {
-	const elementRef = useLazyEffect((element) => {
-		element.style.backgroundImage = `url(${imageUrl})`;
-	}, [imageUrl]);
-	const isDisabled = !onClick || !!renderButtons;
-	const imageInfo = {
-		imageIndex,
-		imageUrl,
-		customStyles,
-		spanWidth,
-		caption,
-	};
+  const elementRef = useLazyEffect(
+    (element) => {
+      element.style.backgroundImage = `url(${imageUrl})`;
+    },
+    [imageUrl]
+  );
+  const isDisabled = !onClick || !!renderButtons;
+  const imageInfo = {
+    imageIndex,
+    imageUrl,
+    customStyles,
+    spanWidth,
+    caption,
+  };
 
-	return (
-		<div
-			className={classnames(
-				styles.photoGridItem,
-				styles[`photoGridItemSpanWidth${spanWidth}`],
-				{ [styles.photoGridItemActive]: !isDisabled }
-			)}
-		>
-			<button
-				className={styles.photoGridItem__Main}
-				onClick={() => onClick(imageInfo)}
-				disabled={isDisabled}
-				style={customContainerStyles}
-			>
-				<ImageLicenseData imageUrl={imageUrl} />
-				<div
-					ref={elementRef}
-					className={styles.photoGridItem__Inner}
-					style={customStyles}
-				/>
-				<div className={styles.photoGridItem__Caption}>
-					{caption}
-				</div>
-			</button>
-			{renderButtons && (
-				<div className={styles.photoGridItem__ButtonsContainer}>
-					{renderButtons({ buttonStyle: styles.photoGridItem__Button, imageInfo })}
-				</div>
-			)}
-		</div>
-	);
+  return (
+    <div
+      className={classnames(
+        styles.photoGridItem,
+        styles[`photoGridItemSpanWidth${spanWidth}`],
+        { [styles.photoGridItemActive]: !isDisabled }
+      )}
+    >
+      <button
+        className={styles.photoGridItem__Main}
+        onClick={() => onClick(imageInfo)}
+        disabled={isDisabled}
+        style={customContainerStyles}
+      >
+        <ImageLicenseData imageUrl={imageUrl} />
+        <div
+          ref={elementRef}
+          className={styles.photoGridItem__Inner}
+          style={customStyles}
+        />
+        <div className={styles.photoGridItem__Caption}>{caption}</div>
+      </button>
+      {renderButtons && (
+        <div className={styles.photoGridItem__ButtonsContainer}>
+          {renderButtons({
+            buttonStyle: styles.photoGridItem__Button,
+            imageInfo,
+          })}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default memo(PhotoGridItem);

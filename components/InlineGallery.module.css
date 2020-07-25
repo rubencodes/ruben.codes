@@ -1,196 +1,210 @@
 /* Gallery */
 .gallery {
-	overflow: hidden;
-	height: 710px;
-	width: 100%;
-	max-width: 500px;
-	transform: translate3d(0, 0, 0);
+  overflow: hidden;
+  height: 710px;
+  width: 100%;
+  max-width: 500px;
+  transform: translate3d(0, 0, 0);
 }
 
 .gallery__selected {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
 }
 
 .gallery__thumbs {
-	position: absolute;
-	bottom: 8%;
-	left: 0;
-	width: 100%;
-	height: 20%;
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  width: 100%;
+  height: 20%;
 }
 
 /* Selected */
 .selected {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .selected:before,
 .selected:after {
-	content: "";
-	background: white;
-	position: absolute;
-	top: -2%;
-	height: 104%;
-	width: 102%;
+  content: "";
+  background: white;
+  position: absolute;
+  top: -2%;
+  height: 104%;
+  width: 102%;
 }
 .selected:before {
-	right: 101%;
-	z-index: 2;
+  right: 101%;
+  z-index: 2;
 }
 .selected:after {
-	left: 101%;
+  left: 101%;
 }
 .selected--entering:before,
 .selected--entering:after {
-	transition: transform 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: transform 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .selected--entering.selected--moving-left {
-	transition: transform 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: transform 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
 .selected--entering.selected--moving-left:after {
-	transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 .selected--entering.selected--moving-left .selected__image {
-	transform: translate3d(-42.5%, -50%, 0) scale(0.85) skew(-5deg);
-	transition: transform 1ms linear 300ms;
+  transform: translate3d(-42.5%, -50%, 0) scale(0.85) skew(-5deg);
+  transition: transform 1ms linear 300ms;
 }
 .selected--entering.selected--moving-right {
-	transition: transform 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: transform 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
 .selected--entering.selected--moving-right:before {
-	transform: translateX(100%);
+  transform: translateX(100%);
 }
 .selected--entering.selected--moving-right .selected__image {
-	transform: translate3d(-57.5%, -50%, 0) scale(0.85) skew(5deg);
-	transition: transform 1ms linear 300ms;
+  transform: translate3d(-57.5%, -50%, 0) scale(0.85) skew(5deg);
+  transition: transform 1ms linear 300ms;
 }
-.selected--exiting:before, .selected--exiting:after {
-	transition: transform 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+.selected--exiting:before,
+.selected--exiting:after {
+  transition: transform 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .selected--exiting.selected--moving-left:after {
-	transform: translateX(-200%);
+  transform: translateX(-200%);
 }
 .selected--exiting.selected--moving-right:before {
-	transform: translateX(200%);
+  transform: translateX(200%);
 }
 
 .selected__image {
-	box-shadow: inset 0 0 50px 0 black;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 125%;
-	width: 125%;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-	transform: translate3d(-50%, -50%, 0) scale(0.85);
-	transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-	transform-origin: 50% 50%;
+  box-shadow: inset 0 0 50px 0 black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 125%;
+  width: 125%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: translate3d(-50%, -50%, 0) scale(0.85);
+  transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform-origin: 50% 50%;
 }
 
 /* thumb */
 .thumb {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 15%;
-	height: 80%;
-	display: inline-block;
-	cursor: pointer;
-	transform: translateX(-100vw);
-	opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 15%;
+  height: 80%;
+  display: inline-block;
+  cursor: pointer;
+  transform: translateX(-100vw);
+  opacity: 0;
 }
 .thumb:hover .thumb__inner {
-	transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-	transform: scale(1.2) translate3d(-50%, -50%, 0);
+  transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(1.2) translate3d(-50%, -50%, 0);
 }
-.thumb--offset-4, .thumb--offset-3, .thumb--offset-2, .thumb--offset-1, .thumb--offset0, .thumb--offset1, .thumb--offset2, .thumb--offset3, .thumb--offset4 {
-	opacity: 1;
-	transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1), opacity 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+.thumb--offset-4,
+.thumb--offset-3,
+.thumb--offset-2,
+.thumb--offset-1,
+.thumb--offset0,
+.thumb--offset1,
+.thumb--offset2,
+.thumb--offset3,
+.thumb--offset4 {
+  opacity: 1;
+  transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.thumb--offset-5, .thumb--offset-6, .thumb--offset-7 {
-	transform: translateX(-700%);
+.thumb--offset-5,
+.thumb--offset-6,
+.thumb--offset-7 {
+  transform: translateX(-700%);
 }
 .thumb--offset-4 {
-	transform: translateX(-550%);
-	transition-delay: 150ms;
+  transform: translateX(-550%);
+  transition-delay: 150ms;
 }
 .thumb--offset-3 {
-	transform: translateX(-425%);
-	transition-delay: 112.5ms;
+  transform: translateX(-425%);
+  transition-delay: 112.5ms;
 }
 .thumb--offset-2 {
-	transform: translateX(-300%);
-	transition-delay: 75ms;
+  transform: translateX(-300%);
+  transition-delay: 75ms;
 }
 .thumb--offset-1 {
-	transform: translateX(-175%);
-	transition-delay: 37.5ms;
+  transform: translateX(-175%);
+  transition-delay: 37.5ms;
 }
 .thumb--offset0 {
-	transform: translateX(-50%);
-	transition-delay: 0ms;
+  transform: translateX(-50%);
+  transition-delay: 0ms;
 }
 .thumb--offset0 .thumb__inner {
-	transform: scale(0.8) translate3d(-50%, -50%, 0) !important;
+  transform: scale(0.8) translate3d(-50%, -50%, 0) !important;
 }
 .thumb--offset1 {
-	transform: translateX(75%);
-	transition-delay: 37.5ms;
+  transform: translateX(75%);
+  transition-delay: 37.5ms;
 }
 .thumb--offset2 {
-	transform: translateX(200%);
-	transition-delay: 75ms;
+  transform: translateX(200%);
+  transition-delay: 75ms;
 }
 .thumb--offset3 {
-	transform: translateX(325%);
-	transition-delay: 112.5ms;
+  transform: translateX(325%);
+  transition-delay: 112.5ms;
 }
 .thumb--offset4 {
-	transform: translateX(450%);
-	transition-delay: 150ms;
+  transform: translateX(450%);
+  transition-delay: 150ms;
 }
-.thumb--offset5, .thumb--offset6, .thumb--offset7 {
-	transform: translateX(600%);
+.thumb--offset5,
+.thumb--offset6,
+.thumb--offset7 {
+  transform: translateX(600%);
 }
 
 .thumb__inner {
-	box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.8);
-	position: absolute;
-	width: 125%;
-	height: 80%;
-	top: 50%;
-	left: 50%;
-	background-size: cover;
-	background-position: center;
-	transform: scale(0.8) translate3d(-50%, -50%, 0);
-	transform-origin: left top;
-	transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.8);
+  position: absolute;
+  width: 125%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(0.8) translate3d(-50%, -50%, 0);
+  transform-origin: left top;
+  transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /* Thumbs */
 .thumbs {
-	text-align: center;
-	position: relative;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	transform-origin: 50% 50%;
-	transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-align: center;
+  position: relative;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%;
+  transition: transform 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .thumbs--entering {
-	transition: transform 1ms linear;
+  transition: transform 1ms linear;
 }
 .thumbs--entering.thumbs--moving-left {
-	transform: skewX(3deg);
+  transform: skewX(3deg);
 }
 .thumbs--entering.thumbs--moving-right {
-	transform: skewX(-3deg);
+  transform: skewX(-3deg);
 }

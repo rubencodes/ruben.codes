@@ -15,16 +15,16 @@
 
 .carouselPageItemImage {
   max-width: 90vw;
-	max-height: 90vh;
-	object-fit: contain;
+  max-height: 90vh;
+  object-fit: contain;
 }
 
 .carouselPageItemLoader {
-	background: black;
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  background: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -8,68 +8,77 @@ const DO_NOTHING = (i) => i;
 	that are actually route params, so this does.
 */
 const removeKeysInUrl = (object, url) => {
-	const copy = { ...object };
-	Object.keys(object).forEach((key) => {
-		if (url.includes(`[${key}]`)) {
-			delete copy[key];
-		}
-	});
+  const copy = { ...object };
+  Object.keys(object).forEach((key) => {
+    if (url.includes(`[${key}]`)) {
+      delete copy[key];
+    }
+  });
 
-	return copy;
+  return copy;
 };
 
 function useQueryStringState(queryParamName, processValue = DO_NOTHING) {
-	const {
-		pathname,
-		query: {
-			[queryParamName]: value = null,
-			...otherQueryParams
-		},
-		replace,
-	} = useRouter();
+  const {
+    pathname,
+    query: { [queryParamName]: value = null, ...otherQueryParams },
+    replace,
+  } = useRouter();
 
-	const setValue = useCallback((_newValue) => {
-		// Handle function type.
-		const newValue = typeof _newValue === "function"
-			? _newValue(processValue(value))
-			: _newValue;
+  const setValue = useCallback(
+    (_newValue) => {
+      // Handle function type.
+      const newValue =
+        typeof _newValue === "function"
+          ? _newValue(processValue(value))
+          : _newValue;
 
-		// Do nothing if value hasn't changed.
-		if (newValue === processValue(value)) {
-			return;
-		}
+      // Do nothing if value hasn't changed.
+      if (newValue === processValue(value)) {
+        return;
+      }
 
-		// Remove it if value is nullish.
-		if (newValue === null || newValue === undefined) {
-			replace({
-				pathname,
-				query: otherQueryParams,
-			}, {
-				pathname: location.pathname,
-				query: removeKeysInUrl(otherQueryParams, pathname),
-			}, {
-				shallow: true,
-			});
-			return;
-		}
+      // Remove it if value is nullish.
+      if (newValue === null || newValue === undefined) {
+        replace(
+          {
+            pathname,
+            query: otherQueryParams,
+          },
+          {
+            pathname: location.pathname,
+            query: removeKeysInUrl(otherQueryParams, pathname),
+          },
+          {
+            shallow: true,
+          }
+        );
+        return;
+      }
 
-		// Push to the new value.
-		const nextQueryParams = {
-			...otherQueryParams,
-			[queryParamName]: newValue
-		};
-		replace({
-			pathname,
-			query: nextQueryParams,
-		}, {
-			pathname: location.pathname,
-			query: removeKeysInUrl(nextQueryParams, pathname),
-		}, {
-			shallow: true,
-		});
-	}, [queryParamName, processValue, value]);
+      // Push to the new value.
+      const nextQueryParams = {
+        ...otherQueryParams,
+        [queryParamName]: newValue,
+      };
+      replace(
+        {
+          pathname,
+          query: nextQueryParams,
+        },
+        {
+          pathname: location.pathname,
+          query: removeKeysInUrl(nextQueryParams, pathname),
+        },
+        {
+          shallow: true,
+        }
+      );
+    },
+    [queryParamName, processValue, value]
+  );
 
-	return [processValue(value), setValue];
+  return [processValue(value), setValue];
 }
 
 export default useQueryStringState;

@@ -18,13 +18,13 @@
   pointer-events: none;
 }
 
-@media(max-width: 880px) {
+@media (max-width: 880px) {
   .buttonContainer {
     padding: 20px 60px;
   }
 }
 
-@media(max-width: 440px) {
+@media (max-width: 440px) {
   .buttonContainer {
     padding: 20px 40px;
   }

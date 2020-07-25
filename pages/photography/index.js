@@ -11,30 +11,41 @@ import { state } from "../../utilities/constants";
 import styles from "./index.module.css";
 
 const Photography = () => {
-	const router = useRouter();
-	const onSelect = (gallery) => router.push(`/photography/${gallery}`);
+  const router = useRouter();
+  const onSelect = (gallery) => router.push(`/photography/${gallery}`);
 
-	return (
-		<>
-			<Head>
-				<title>{state.photography.metaTitle}</title>
-				<meta key="title" property="og:title" content={state.photography.metaTitle} />
-				<meta key="description" property="og:description" content={state.photography.metaDescription} />
-				<meta key="url" property="og:url" content={state.photography.metaUrl} />
-				<meta key="image" property="og:image" content={state.photography.metaImage} />
-			</Head>
-			<main className={classnames("page", styles.photography)}>
-				<h1 className="heading">{state.name}</h1>
-				<b className="subheading">
-					Photography
-					&nbsp;
-				<InstagramLink />
-				</b>
-				<GalleryPreviews {...state.photography} onSelect={onSelect} />
-			</main>
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Head>
+        <title>{state.photography.metaTitle}</title>
+        <meta
+          key="title"
+          property="og:title"
+          content={state.photography.metaTitle}
+        />
+        <meta
+          key="description"
+          property="og:description"
+          content={state.photography.metaDescription}
+        />
+        <meta key="url" property="og:url" content={state.photography.metaUrl} />
+        <meta
+          key="image"
+          property="og:image"
+          content={state.photography.metaImage}
+        />
+      </Head>
+      <main className={classnames("page", styles.photography)}>
+        <h1 className="heading">{state.name}</h1>
+        <b className="subheading">
+          Photography &nbsp;
+          <InstagramLink />
+        </b>
+        <GalleryPreviews {...state.photography} onSelect={onSelect} />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default Photography;
