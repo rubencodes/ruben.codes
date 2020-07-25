@@ -30,7 +30,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center 18%"
 				},
-				span: 2
+				spanWidth: 2
 			},
 			images: [
 				{
@@ -43,7 +43,7 @@ export default {
 				},
 				{
 					fileName: "6.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 18%"
 					}
@@ -74,7 +74,7 @@ export default {
 				},
 				{
 					fileName: "18.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 18%"
 					}
@@ -92,7 +92,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center 55%"
 				},
-				span: 1
+				spanWidth: 1
 			},
 			images: [
 				{
@@ -109,7 +109,7 @@ export default {
 				},
 				{
 					fileName: "4.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 26%"
 					}
@@ -124,7 +124,7 @@ export default {
 				},
 				{
 					fileName: "7.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
@@ -155,7 +155,7 @@ export default {
 				},
 				{
 					fileName: "14.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
@@ -174,7 +174,7 @@ export default {
 				},
 				{
 					fileName: "18.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center center"
 					}
@@ -197,14 +197,14 @@ export default {
 				},
 				{
 					fileName: "21.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "23.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -238,7 +238,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center 10%"
 				},
-				span: 3
+				spanWidth: 3
 			},
 			images: [
 				{
@@ -247,7 +247,7 @@ export default {
 				},
 				{
 					fileName: "2.png",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center right"
 					}
@@ -292,7 +292,7 @@ export default {
 				},
 				{
 					fileName: "12.png",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -317,7 +317,7 @@ export default {
 				},
 				{
 					fileName: "50.png",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -326,7 +326,7 @@ export default {
 				},
 				{
 					fileName: "52.png",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 30%"
 					}
@@ -337,7 +337,7 @@ export default {
 				},
 				{
 					fileName: "58.png",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -370,12 +370,12 @@ export default {
 				},
 				{
 					fileName: "75.png",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
 					fileName: "87.png",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -407,7 +407,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center"
 				},
-				span: 2
+				spanWidth: 2
 			},
 			images: [
 				{
@@ -424,7 +424,7 @@ export default {
 				},
 				{
 					fileName: "3.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -437,12 +437,12 @@ export default {
 				},
 				{
 					fileName: "8.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
 					fileName: "9.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -481,12 +481,12 @@ export default {
 				},
 				{
 					fileName: "28.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
 					fileName: "29.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -499,12 +499,12 @@ export default {
 				},
 				{
 					fileName: "31.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
 					fileName: "37.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -513,7 +513,7 @@ export default {
 				},
 				{
 					fileName: "38.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -524,7 +524,7 @@ export default {
 				},
 				{
 					fileName: "39.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -553,7 +553,7 @@ export default {
 				},
 				{
 					fileName: "52.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 8%"
 					}
@@ -564,7 +564,7 @@ export default {
 				},
 				{
 					fileName: "54.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 8%"
 					}
@@ -583,7 +583,7 @@ export default {
 				},
 				{
 					fileName: "58.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -606,7 +606,7 @@ export default {
 				},
 				{
 					fileName: "63.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -626,7 +626,7 @@ export default {
 				customStyles: {
 					backgroundPosition: "center"
 				},
-				span: 1
+				spanWidth: 1
 			},
 			images: [
 				{
@@ -643,7 +643,7 @@ export default {
 				},
 				{
 					fileName: "5.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 30%"
 					}
@@ -659,7 +659,7 @@ export default {
 				},
 				{
 					fileName: "4.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
@@ -678,7 +678,7 @@ export default {
 				},
 				{
 					fileName: "14.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
@@ -693,7 +693,7 @@ export default {
 				},
 				{
 					fileName: "13.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
@@ -728,14 +728,14 @@ export default {
 				},
 				{
 					fileName: "22.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center center"
 					}
 				},
 				{
 					fileName: "23.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
@@ -750,12 +750,12 @@ export default {
 				},
 				{
 					fileName: "26.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
 					fileName: "27.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center center"
 					}
@@ -770,7 +770,7 @@ export default {
 				},
 				{
 					fileName: "29.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 15%"
 					}
@@ -789,7 +789,7 @@ export default {
 				},
 				{
 					fileName: "31.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 25%"
 					}
@@ -804,14 +804,14 @@ export default {
 				},
 				{
 					fileName: "38.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
 				},
 				{
 					fileName: "36.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 35%"
 					}
@@ -833,12 +833,12 @@ export default {
 				customStyles: {
 					backgroundPosition: "center"
 				},
-				span: 3
+				spanWidth: 3
 			},
 			images: [
 				{
 					fileName: "1.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 40%"
 					}
@@ -853,7 +853,7 @@ export default {
 				},
 				{
 					fileName: "5.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -894,7 +894,7 @@ export default {
 				},
 				{
 					fileName: "16.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 50%"
 					}
@@ -921,7 +921,7 @@ export default {
 				},
 				{
 					fileName: "22.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -942,12 +942,12 @@ export default {
 				},
 				{
 					fileName: "27.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
 					fileName: "28.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -968,7 +968,7 @@ export default {
 				},
 				{
 					fileName: "33.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -993,19 +993,19 @@ export default {
 				},
 				{
 					fileName: "39.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
 					fileName: "40.JPG",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 30%"
 					}
 				},
 				{
 					fileName: "41.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -1042,7 +1042,7 @@ export default {
 				},
 				{
 					fileName: "50.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 30%"
 					}
@@ -1053,7 +1053,7 @@ export default {
 				},
 				{
 					fileName: "52.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 40%"
 					}
@@ -1084,7 +1084,7 @@ export default {
 				},
 				{
 					fileName: "59.JPG",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1095,7 +1095,7 @@ export default {
 				},
 				{
 					fileName: "61.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 50%"
 					}
@@ -1114,14 +1114,14 @@ export default {
 				},
 				{
 					fileName: "65.JPG",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "66.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1136,7 +1136,7 @@ export default {
 				},
 				{
 					fileName: "69.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -1153,7 +1153,7 @@ export default {
 				},
 				{
 					fileName: "73.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 35%"
 					}
@@ -1192,14 +1192,14 @@ export default {
 				},
 				{
 					fileName: "82.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center bottom",
 					}
 				},
 				{
 					fileName: "83.JPG",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {}
 				},
 				{
@@ -1219,180 +1219,180 @@ export default {
 				customStyles: {
 					backgroundPosition: "center 20%"
 				},
-				span: 1
+				spanWidth: 1
 			},
 			images: [
 				{
 					fileName: "1.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "2.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "6.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 30%"
 					}
 				},
 				{
 					fileName: "3.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "4.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "5.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
 				},
 				{
 					fileName: "7.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "9.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "8.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "12.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "10.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "11.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "13.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "14.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "15.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "16.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "17.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "18.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "21.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 30%"
 					}
 				},
 				{
 					fileName: "19.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "20.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "22.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "23.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "24.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "25.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "26.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "27.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "28.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 				{
 					fileName: "29.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "30.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "31.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {}
 				},
 			]
@@ -1407,19 +1407,19 @@ export default {
 				customStyles: {
 					backgroundPosition: "center"
 				},
-				span: 2
+				spanWidth: 2
 			},
 			images: [
 				{
 					fileName: "1.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "2.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1432,14 +1432,14 @@ export default {
 				},
 				{
 					fileName: "3.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "4.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1458,14 +1458,14 @@ export default {
 				},
 				{
 					fileName: "5.png",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "9.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1478,7 +1478,7 @@ export default {
 				},
 				{
 					fileName: "11.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1491,147 +1491,147 @@ export default {
 				},
 				{
 					fileName: "13.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "31.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "30.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "33.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "34.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "35.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "24.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "29.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "26.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "14.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "16.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "32.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "17.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "19.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "20.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "21.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "22.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "23.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "18.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "28.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "27.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1648,208 +1648,208 @@ export default {
 				customStyles: {
 					backgroundPosition: "center"
 				},
-				span: 2
+				spanWidth: 2
 			},
 			images: [
 				{
 					fileName: "1.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "2.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "3.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "4.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center bottom"
 					}
 				},
 				{
 					fileName: "5.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "6.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "7.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "13.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "8.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "9.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "10.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "12.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "11.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "14.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "15.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "16.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "17.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 70%"
 					}
 				},
 				{
 					fileName: "18.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "19.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "20.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "21.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "22.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "23.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "24.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "25.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "26.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "27.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "28.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "29.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1866,89 +1866,89 @@ export default {
 				customStyles: {
 					backgroundPosition: "center"
 				},
-				span: 1
+				spanWidth: 1
 			},
 			images: [
 				{
 					fileName: "25.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center bottom"
 					}
 				},
 				{
 					fileName: "26.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "28.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "27.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center 80%"
 					}
 				},
 				{
 					fileName: "30.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "29.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "31.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "32.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 60%"
 					}
 				},
 				{
 					fileName: "33.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "34.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "8.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "7.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1967,14 +1967,14 @@ export default {
 				},
 				{
 					fileName: "2.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "4.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
@@ -1987,602 +1987,602 @@ export default {
 				},
 				{
 					fileName: "9.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center 10%"
 					}
 				},
 				{
 					fileName: "5.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "11.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "10.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "12.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "13.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "14.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "15.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 70%"
 					}
 				},
 				{
 					fileName: "16.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "17.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "18.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "20.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "21.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "22.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "23.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "left bottom"
 					}
 				},
 				{
 					fileName: "24.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "36.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "37.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "38.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "41.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "39.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "40.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "42.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "43.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "44.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "45.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "46.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "47.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "48.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "50.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "49.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "51.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "54.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 75%"
 					}
 				},
 				{
 					fileName: "52.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "56.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "right top"
 					}
 				},
 				{
 					fileName: "53.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "55.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "57.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "58.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center bottom"
 					}
 				},
 				{
 					fileName: "59.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "60.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "61.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "64.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 80%"
 					}
 				},
 				{
 					fileName: "62.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 90%"
 					}
 				},
 				{
 					fileName: "63.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "65.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "left top"
 					}
 				},
 				{
 					fileName: "66.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "67.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "left center"
 					}
 				},
 				{
 					fileName: "69.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center 20%"
 					}
 				},
 				{
 					fileName: "68.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "left 20%"
 					}
 				},
 				{
 					fileName: "70.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center center"
 					}
 				},
 				{
 					fileName: "71.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center bottom"
 					}
 				},
 				{
 					fileName: "72.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center bottom"
 					}
 				},
 				{
 					fileName: "73.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "74.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "75.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "76.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "78.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "77.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "79.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "80.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "81.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "82.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "83.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "84.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "89.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "87.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "88.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "85.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "90.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "91.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center top"
 					}
 				},
 				{
 					fileName: "92.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 70%"
 					}
 				},
 				{
 					fileName: "93.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 70%"
 					}
 				},
 				{
 					fileName: "94.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center 70%"
 					}
 				},
 				{
 					fileName: "102.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "96.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "95.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "97.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "98.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "100.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "101.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "99.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "103.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "104.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "26% center"
 					}
 				},
 				{
 					fileName: "105.jpg",
-					span: 1,
+					spanWidth: 1,
 					customStyles: {
 						backgroundPosition: "center"
 					}
 				},
 				{
 					fileName: "106.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "26% center"
 					}
@@ -2604,7 +2604,7 @@ export default {
 				},
 				{
 					fileName: "111.jpg",
-					span: 3,
+					spanWidth: 3,
 					customStyles: {
 						backgroundPosition: "center 30%"
 					}
@@ -2616,14 +2616,14 @@ export default {
 				},
 				{
 					fileName: "110.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 						backgroundPosition: "center 40%"
 					}
 				},
 				{
 					fileName: "113.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 					}
 				},
@@ -2639,7 +2639,7 @@ export default {
 				},
 				{
 					fileName: "116.jpg",
-					span: 2,
+					spanWidth: 2,
 					customStyles: {
 					}
 				},

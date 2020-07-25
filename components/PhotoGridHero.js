@@ -5,7 +5,7 @@ import PhotoGrid from "./PhotoGrid";
 
 const PhotoGridHero = (previewImage) => (
 	<div className="hero">
-		<PhotoGrid images={[{ ...previewImage, span: 3 }]} />
+		<PhotoGrid images={[{ ...previewImage, spanWidth: 3 }]} />
 	</div>
 );
 

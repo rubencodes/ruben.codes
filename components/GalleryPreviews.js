@@ -12,7 +12,7 @@ const GalleryPreviews = ({ baseUrl, galleryOrder, galleries, onSelect }) => {
 					imageUrl: `${baseUrl}${thumbnailPath}${previewImage.fileName}`,
 					customStyles: previewImage.customStyles,
 					caption: previewImage.caption,
-					span: previewImage.span,
+					spanWidth: previewImage.spanWidth,
 				}))
 			}
 			onImageClick={onSelectGalleryIndex}

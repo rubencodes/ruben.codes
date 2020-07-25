@@ -13,7 +13,7 @@ import toIntOrNull from "../utilities/toIntOrNull";
 const fileNameToImageUrl = (baseUrl, path, { fileName, ...image }) => ({
 	...image,
 	imageUrl: `${baseUrl}${path}${fileName}`,
-	span: image.span || 1,
+	spanWidth: image.spanWidth || 1,
 });
 
 const PhotoGridGallery = ({
@@ -70,7 +70,7 @@ const PhotoGridGallery = ({
 		setIsUploadingFile(false);
 		imageUrls.forEach((imageUrl) => appendImage({
 			imageUrl,
-			span: 1,
+			spanWidth: 1,
 			customStyles: {},
 			isUploaded: true,
 		}));
@@ -80,7 +80,7 @@ const PhotoGridGallery = ({
 	const onImageClick = useCallback(({ imageIndex }) => setSelectedImageIndex(imageIndex), []);
 	const onImageRemove = useCallback(({ imageIndex }) => removeImage(imageIndex), [removeImage]);
 	const onImageResize = useCallback(({ imageIndex, ...image }) => {
-		updateImage({ ...image, span: (image.span % 3) + 1 }, imageIndex);
+		updateImage({ ...image, spanWidth: (image.spanWidth % 3) + 1 }, imageIndex);
 	}, [updateImage]);
 
 	// Selected image state.

@@ -36,14 +36,14 @@ export const PhotoGrid = ({
 
 	return (
 		<div ref={gridRef} className={styles.photoGrid}>
-			{images.map(({ imageUrl, caption, span, customStyles }, index) => (
+			{images.map(({ imageUrl, caption, spanWidth, customStyles }, index) => (
 				<GridItem
 					key={index}
 					index={index}
 					imageIndex={index}
 					imageUrl={imageUrl}
 					caption={caption}
-					span={span}
+					spanWidth={spanWidth}
 					customStyles={customStyles}
 					onClick={onImageClick}
 					renderButtons={renderButtons}

@@ -10,7 +10,7 @@ const PhotoGridItem = ({
 	imageIndex,
 	imageUrl,
 	customStyles,
-	span = 1,
+	spanWidth = 1,
 	caption,
 	onClick,
 	customContainerStyles,
@@ -24,15 +24,17 @@ const PhotoGridItem = ({
 		imageIndex,
 		imageUrl,
 		customStyles,
-		span,
+		spanWidth,
 		caption,
 	};
 
 	return (
 		<div
-			className={classnames(styles.photoGridItem, styles[`photoGridItemSpan${span}`], {
-				[styles.photoGridItemActive]: !isDisabled
-			})}
+			className={classnames(
+				styles.photoGridItem,
+				styles[`photoGridItemSpanWidth${spanWidth}`],
+				{ [styles.photoGridItemActive]: !isDisabled }
+			)}
 		>
 			<button
 				className={styles.photoGridItem__Main}

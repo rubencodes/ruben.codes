@@ -54,15 +54,15 @@
 	cursor: pointer;
 }
 
-.photoGridItemSpan1 {
+.photoGridItemSpanWidth1 {
 	grid-column: span 1;
 }
 
-.photoGridItemSpan2 {
+.photoGridItemSpanWidth2 {
 	grid-column: span 2;
 }
 
-.photoGridItemSpan3 {
+.photoGridItemSpanWidth3 {
 	grid-column: span 3;
 }
 
