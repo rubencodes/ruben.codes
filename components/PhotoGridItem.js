@@ -11,6 +11,7 @@ const PhotoGridItem = ({
   imageUrl,
   customStyles,
   spanWidth = 1,
+  spanHeight = 1,
   caption,
   onClick,
   customContainerStyles,
@@ -28,6 +29,7 @@ const PhotoGridItem = ({
     imageUrl,
     customStyles,
     spanWidth,
+    spanHeight,
     caption,
   };
 
@@ -36,6 +38,7 @@ const PhotoGridItem = ({
       className={classnames(
         styles.photoGridItem,
         styles[`photoGridItemSpanWidth${spanWidth}`],
+        styles[`photoGridItemSpanHeight${spanHeight}`],
         { [styles.photoGridItemActive]: !isDisabled },
       )}
     >

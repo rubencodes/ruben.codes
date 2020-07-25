@@ -14,6 +14,7 @@ const fileNameToImageUrl = (baseUrl, path, { fileName, ...image }) => ({
   ...image,
   imageUrl: `${baseUrl}${path}${fileName}`,
   spanWidth: image.spanWidth || 1,
+  spanHeight: image.spanHeight || 1,
 });
 
 const PhotoGridGallery = ({
