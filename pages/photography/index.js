@@ -6,11 +6,12 @@ import classnames from "classnames";
 import InstagramLink from "../../components/InstagramLink";
 import GalleryPreviews from "../../components/GalleryPreviews";
 import Footer from "../../components/Footer";
+import fetchConfig from "../../utilities/fetchConfig";
 import { state } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 
-const Photography = () => {
+const Photography = ({ photographyConfig }) => {
   const router = useRouter();
   const onSelect = (gallery) => router.push(`/photography/${gallery}`);
 
@@ -41,11 +42,19 @@ const Photography = () => {
           Photography &nbsp;
           <InstagramLink />
         </b>
-        <GalleryPreviews {...state.photography} onSelect={onSelect} />
+        <GalleryPreviews {...photographyConfig} onSelect={onSelect} />
       </main>
       <Footer />
     </>
   );
 };
+
+export async function getServerSideProps() {
+  return {
+    props: {
+      photographyConfig: await fetchConfig(state.photography.metaConfig),
+    },
+  };
+}
 
 export default Photography;

@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+import classnames from "classnames";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import classnames from "classnames";
 
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
 import Footer from "../../components/Footer";
+import fetchConfig from "../../utilities/fetchConfig";
 import { state } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const GalleryPage = () => {
+const GalleryPage = ({ photographyConfig }) => {
   const {
     query: { galleryId },
   } = useRouter();
+
+  const [photographyState, setPhotographyState] = useState(photographyConfig);
   const {
     baseUrl,
     galleries: { [galleryId]: selectedGallery },
-  } = state.photography;
+  } = photographyState;
 
   const { fullPath, thumbnailPath, previewImage = {}, images } =
     selectedGallery || {};
@@ -81,6 +84,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       params: context.params,
+      photographyConfig: await fetchConfig(state.photography.metaConfig),
     },
   };
 }
