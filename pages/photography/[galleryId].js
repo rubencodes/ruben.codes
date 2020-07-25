@@ -24,6 +24,22 @@ const GalleryPage = ({ photographyConfig }) => {
     baseUrl,
     galleries: { [galleryId]: selectedGallery },
   } = photographyState;
+  const updatePhotographyConfig = useCallback((galleryData) => {
+    // Optimistically update.
+    setPhotographyState((currentPhotographyState) => ({
+      ...currentPhotographyState,
+      galleries: {
+        ...currentPhotographyState.galleries,
+        [galleryId]: galleryData,
+      },
+    }));
+
+    return fetchConfig(
+      state.photography.metaConfig,
+    ).then((updatedPhotographyConfig) =>
+      setPhotographyState(updatedPhotographyConfig),
+    );
+  }, []);
 
   const { fullPath, thumbnailPath, previewImage = {}, images } =
     selectedGallery || {};
@@ -67,6 +83,7 @@ const GalleryPage = ({ photographyConfig }) => {
           thumbnailPath={thumbnailPath}
           images={images}
           previewImage={previewImage}
+          updatePhotographyConfig={updatePhotographyConfig}
         />
         <div className={styles.buttonContainer}>
           <Link href="/photography">
