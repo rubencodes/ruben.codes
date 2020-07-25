@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from "react";
+import React, { useRef, memo, useEffect } from "react";
 import classnames from "classnames";
 
 import useLazyEffect from "../hooks/useLazyEffect";
@@ -17,12 +17,15 @@ const PhotoGridItem = ({
   customContainerStyles,
   renderButtons,
 }) => {
-  const elementRef = useLazyEffect(
+  const elementRef = useRef();
+  const lazyLoadBackground = useLazyEffect(
     (element) => {
       element.style.backgroundImage = `url(${imageUrl})`;
     },
     [imageUrl],
   );
+  useEffect(() => lazyLoadBackground(elementRef.current), []);
+
   const isDisabled = !onClick || !!renderButtons;
   const imageInfo = {
     imageIndex,
@@ -61,6 +64,7 @@ const PhotoGridItem = ({
           {renderButtons({
             buttonStyle: styles.photoGridItem__Button,
             imageInfo,
+            elementRef,
           })}
         </div>
       )}

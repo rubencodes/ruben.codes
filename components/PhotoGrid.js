@@ -21,6 +21,7 @@ export const PhotoGrid = ({
   children,
   images,
   onImageClick,
+  onImageToggleMove,
   onImageResizeWidth,
   onImageResizeHeight,
   onImageRemove,
@@ -28,10 +29,18 @@ export const PhotoGrid = ({
 }) => {
   const GridItem = isEditMode ? SortablePhotoGridItem : PhotoGridItem;
   const renderButtons = isEditMode
-    ? ({ buttonStyle, imageInfo }) => (
+    ? ({ buttonStyle, imageInfo, elementRef }) => (
         <>
-          <PhotoGridItemMoveButton buttonStyle={buttonStyle}>
+          <PhotoGridItemButton
+            buttonStyle={buttonStyle}
+            onClick={(e) =>
+              onImageToggleMove(e.target.closest("button"), elementRef.current)
+            }
+          >
             <Icon type="arrows-alt" />
+          </PhotoGridItemButton>
+          <PhotoGridItemMoveButton buttonStyle={buttonStyle}>
+            <Icon type="hand-rock" />
           </PhotoGridItemMoveButton>
           <PhotoGridItemButton
             buttonStyle={buttonStyle}

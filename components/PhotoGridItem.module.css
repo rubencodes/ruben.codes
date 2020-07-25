@@ -30,9 +30,14 @@
 .photoGridItem__ButtonsContainer {
   position: absolute;
   top: -18px;
-  right: 8px;
+  right: 0;
+
+  width: 100%;
+  max-width: 240px;
+  padding: 0 8px;
 
   display: flex;
+  justify-content: space-between;
 }
 
 .photoGridItem__Button {
@@ -45,7 +50,6 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  margin-left: 8px;
 
   display: flex;
   align-items: center;
