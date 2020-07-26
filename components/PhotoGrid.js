@@ -27,7 +27,6 @@ export const PhotoGrid = ({
   onImageRemove,
   isEditMode,
 }) => {
-  const GridItem = isEditMode ? SortablePhotoGridItem : PhotoGridItem;
   const renderButtons = useCallback(
     ({ buttonStyle, imageInfo, elementRef }) => (
       <>
@@ -72,7 +71,7 @@ export const PhotoGrid = ({
   return (
     <div ref={gridRef} className={styles.photoGrid}>
       {images.map((image, index) => (
-        <GridItem
+        <SortablePhotoGridItem
           key={image.fileName}
           index={index}
           imageIndex={index}

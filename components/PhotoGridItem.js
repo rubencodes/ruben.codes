@@ -39,8 +39,6 @@ const PhotoGridItem = ({
     caption,
   };
 
-  console.log(fileName, customStyles);
-
   return (
     <div
       className={classnames(

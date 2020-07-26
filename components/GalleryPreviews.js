@@ -1,6 +1,6 @@
 import React from "react";
 
-import { PhotoGrid } from "./PhotoGrid";
+import PhotoGrid from "./PhotoGrid";
 
 const GalleryPreviews = ({ baseUrl, galleryOrder, galleries, onSelect }) => {
   const onSelectGalleryIndex = ({ imageIndex }) =>
@@ -16,6 +16,8 @@ const GalleryPreviews = ({ baseUrl, galleryOrder, galleries, onSelect }) => {
           spanWidth: previewImage.spanWidth,
         }))}
       onImageClick={onSelectGalleryIndex}
+      useWindowAsScrollContainer
+      useDragHandle
     />
   );
 };
