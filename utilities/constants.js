@@ -37,4 +37,4 @@ export const state = {
   photography,
 };
 
-export const STATIC_MAPS_API_KEY = "AIzaSyDQFdy_CXGQOVvcClcZfMA0waK2QTIJnt0";
+export const STATIC_MAPS_API_KEY = process.env.NEXT_PUBLIC_STATIC_MAPS_API_KEY;
