@@ -2,13 +2,14 @@ import React, { useState, useCallback } from "react";
 import classnames from "classnames";
 import Link from "next/link";
 import Head from "next/head";
+import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
 import Footer from "../../components/Footer";
-import fetchConfig from "../../utilities/fetchConfig";
 import useS3Uploader from "../../hooks/useS3Uploader";
+import fetchConfig from "../../utilities/fetchConfig";
 import { state, AWS_CREDENTIALS } from "../../utilities/constants";
 import styles from "./index.module.css";
 
@@ -22,17 +23,13 @@ const {
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const GalleryPage = ({ photographyConfig }) => {
+const GalleryPage = () => {
   const {
     query: { galleryId },
   } = useRouter();
 
   const uploadFile = useS3Uploader(AWS_CREDENTIALS);
-  const [photographyState, setPhotographyState] = useState(photographyConfig);
-  const {
-    baseUrl,
-    galleries: { [galleryId]: selectedGallery },
-  } = photographyState;
+  const [photographyState, setPhotographyState] = useState(null);
   const updatePhotographyConfig = useCallback(
     async (galleryImages) => {
       // Optimistically update.
@@ -47,16 +44,22 @@ const GalleryPage = ({ photographyConfig }) => {
         },
       };
       setPhotographyState(updatedConfig);
+      console.log({ updatedConfig });
 
       const file = new File([JSON.stringify(updatedConfig)], fileName, {
         type: "application/json",
       });
 
-      return uploadFile(path, file).then(() => window.location.reload());
+      return uploadFile(path, file); //.then(() => window.location.reload());
     },
     [uploadFile],
   );
+  useSWR(state.photography.metaConfig, fetchConfig, {
+    onSuccess: setPhotographyState,
+  });
 
+  const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
+    photographyState || {};
   const { fullPath, thumbnailPath, previewImage = {}, images } =
     selectedGallery || {};
 
@@ -89,15 +92,17 @@ const GalleryPage = ({ photographyConfig }) => {
           Photography &nbsp;
           <InstagramLink />
         </b>
-        <Gallery
-          baseUrl={baseUrl}
-          fullPath={fullPath}
-          thumbnailPath={thumbnailPath}
-          images={images}
-          previewImage={previewImage}
-          updatePhotographyConfig={updatePhotographyConfig}
-          uploadFile={uploadFile}
-        />
+        {photographyState && (
+          <Gallery
+            baseUrl={baseUrl}
+            fullPath={fullPath}
+            thumbnailPath={thumbnailPath}
+            images={images}
+            previewImage={previewImage}
+            updatePhotographyConfig={updatePhotographyConfig}
+            uploadFile={uploadFile}
+          />
+        )}
         <div className={styles.buttonContainer}>
           <Link href="/photography">
             <a>← Go Back</a>
@@ -114,7 +119,6 @@ export async function getServerSideProps(context) {
   return {
     props: {
       params: context.params,
-      photographyConfig: await fetchConfig(state.photography.metaConfig),
     },
   };
 }

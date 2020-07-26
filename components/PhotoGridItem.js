@@ -9,6 +9,7 @@ import styles from "./PhotoGridItem.module.css";
 const PhotoGridItem = ({
   imageIndex,
   imageUrl,
+  fileName,
   customStyles,
   spanWidth = 1,
   spanHeight = 1,
@@ -30,6 +31,7 @@ const PhotoGridItem = ({
   const imageInfo = {
     imageIndex,
     imageUrl,
+    fileName,
     customStyles,
     spanWidth,
     spanHeight,

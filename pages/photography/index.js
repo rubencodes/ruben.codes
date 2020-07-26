@@ -1,7 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import classnames from "classnames";
+import useSWR from "swr";
+import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
 import GalleryPreviews from "../../components/GalleryPreviews";
@@ -11,9 +12,13 @@ import { state } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 
-const Photography = ({ photographyConfig }) => {
+const Photography = () => {
   const router = useRouter();
   const onSelect = (gallery) => router.push(`/photography/${gallery}`);
+  const { data: photographyConfig } = useSWR(
+    state.photography.metaConfig,
+    fetchConfig,
+  );
 
   return (
     <>
@@ -42,19 +47,13 @@ const Photography = ({ photographyConfig }) => {
           Photography &nbsp;
           <InstagramLink />
         </b>
-        <GalleryPreviews {...photographyConfig} onSelect={onSelect} />
+        {photographyConfig && (
+          <GalleryPreviews {...photographyConfig} onSelect={onSelect} />
+        )}
       </main>
       <Footer />
     </>
   );
 };
-
-export async function getServerSideProps() {
-  return {
-    props: {
-      photographyConfig: await fetchConfig(state.photography.metaConfig),
-    },
-  };
-}
 
 export default Photography;
