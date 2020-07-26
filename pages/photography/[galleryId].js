@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from "react";
 import classnames from "classnames";
 import Link from "next/link";
-import Head from "next/head";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
@@ -10,18 +9,14 @@ import Gallery from "../../components/Gallery";
 import Footer from "../../components/Footer";
 import useS3Uploader from "../../hooks/useS3Uploader";
 import fetchConfig from "../../utilities/fetchConfig";
+import scrollToTop from "../../utilities/scrollToTop";
 import { state, AWS_CREDENTIALS } from "../../utilities/constants";
 import styles from "./index.module.css";
 
 const {
   metaConfigPath: path,
   metaConfigFileName: fileName,
-  metaUrl,
-  metaDescription,
-  metaTitle,
 } = state.photography;
-
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const GalleryPage = () => {
   const {
@@ -66,32 +61,11 @@ const GalleryPage = () => {
   // Extract the relevant info.
   const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
     photographyState || {};
-  const { fullPath, thumbnailPath, previewImage = {}, images } =
+  const { fullPath, thumbnailPath, previewImage, images } =
     selectedGallery || {};
 
   return (
     <>
-      <Head>
-        <title>
-          {metaTitle} - {previewImage.caption}
-        </title>
-        <meta
-          key="title"
-          property="og:title"
-          content={`${metaTitle} - ${previewImage.caption}`}
-        />
-        <meta
-          key="description"
-          property="og:description"
-          content={metaDescription}
-        />
-        <meta key="url" property="og:url" content={`${metaUrl}/${galleryId}`} />
-        <meta
-          key="image"
-          property="og:image"
-          content={`${baseUrl}${thumbnailPath}${previewImage.fileName}`}
-        />
-      </Head>
       <main className={classnames("page", styles.photography)}>
         <h1 className="heading">{state.name}</h1>
         <b className="subheading">
