@@ -38,3 +38,4 @@ export const state = {
 };
 
 export const STATIC_MAPS_API_KEY = process.env.NEXT_PUBLIC_STATIC_MAPS_API_KEY;
+console.log(STATIC_MAPS_API_KEY, process.env.NEXT_PUBLIC_STATIC_MAPS_API_KEY);
