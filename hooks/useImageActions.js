@@ -111,6 +111,7 @@ function useImageActions(imageManager) {
           "mousewheel",
           imageMoveHandlers.current[image.imageUrl],
         );
+        imageMoveHandlers.current[image.imageUrl] = null;
       } else {
         buttonEl.style.backgroundColor = "#05CC05";
         imageMoveHandlers.current[image.imageUrl] = (event) => {
