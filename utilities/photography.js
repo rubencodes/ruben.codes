@@ -5,4 +5,6 @@ export default {
   metaUrl: "https://ruben.codes/photography",
   metaImage: "https://static.ruben.codes/photography/landscapes/2020/11.jpg",
   metaConfig: "https://static.ruben.codes/photography/galleryConfig.json",
+  metaConfigPath: "photography/",
+  metaConfigFileName: "galleryConfig.json",
 };

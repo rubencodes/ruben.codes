@@ -48,8 +48,10 @@ const PhotoGridGallery = ({
     if (isEditMode) {
       setIsSaving(true);
 
-      // eslint-disable-next-line no-unused-vars
-      const galleryImages = images.map(({ imageUrl: _, ...image }) => image);
+      const galleryImages = imageManager.allImages.map(
+        // eslint-disable-next-line no-unused-vars
+        ({ imageUrl: _, ...image }) => image,
+      );
       return updatePhotographyConfig(galleryImages);
     }
 

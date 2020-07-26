@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+
 import useS3 from "./useS3";
 
 function useS3Uploader(awsCredentials) {
@@ -9,13 +10,11 @@ function useS3Uploader(awsCredentials) {
 
       // Use S3 ManagedUpload class as it supports multipart uploads.
       const fileName = file.name;
-      const upload = new AWS.S3.ManagedUpload({
-        params: {
-          Bucket: awsCredentials.bucketName,
-          Key: `${path}${fileName}`,
-          Body: file,
-          ACL: "public-read",
-        },
+      const upload = s3.upload({
+        Bucket: awsCredentials.bucketName,
+        Key: `${path}${fileName}`,
+        Body: file,
+        ACL: "public-read",
       });
 
       return upload.promise();

@@ -8,37 +8,55 @@ import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
 import Footer from "../../components/Footer";
 import fetchConfig from "../../utilities/fetchConfig";
-import { state } from "../../utilities/constants";
-
+import useS3Uploader from "../../hooks/useS3Uploader";
+import { state, AWS_CREDENTIALS } from "../../utilities/constants";
 import styles from "./index.module.css";
+
+const {
+  metaConfigPath: path,
+  metaConfigFileName: fileName,
+  metaUrl,
+  metaDescription,
+  metaTitle,
+} = state.photography;
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const GalleryPage = ({ photographyConfig }) => {
+  console.log(photographyConfig);
   const {
     query: { galleryId },
   } = useRouter();
 
+  const uploadFile = useS3Uploader(AWS_CREDENTIALS);
   const [photographyState, setPhotographyState] = useState(photographyConfig);
   const {
     baseUrl,
     galleries: { [galleryId]: selectedGallery },
   } = photographyState;
-  const updatePhotographyConfig = useCallback((galleryImages) => {
-    // Optimistically update.
-    setPhotographyState((currentPhotographyState) => ({
-      ...currentPhotographyState,
-      galleries: {
-        ...currentPhotographyState.galleries,
-        [galleryId]: {
-          ...currentPhotographyState.galleries[galleryId],
-          images: galleryImages,
+  const updatePhotographyConfig = useCallback(
+    async (galleryImages) => {
+      // Optimistically update.
+      const updatedConfig = {
+        ...photographyState,
+        galleries: {
+          ...photographyState.galleries,
+          [galleryId]: {
+            ...photographyState.galleries[galleryId],
+            images: galleryImages,
+          },
         },
-      },
-    }));
+      };
+      setPhotographyState(updatedConfig);
 
-    window.location.reload();
-  }, []);
+      const file = new File([JSON.stringify(updatedConfig)], fileName, {
+        type: "application/json",
+      });
+
+      return uploadFile(path, file).then(() => window.location.reload());
+    },
+    [uploadFile],
+  );
 
   const { fullPath, thumbnailPath, previewImage = {}, images } =
     selectedGallery || {};
@@ -47,27 +65,23 @@ const GalleryPage = ({ photographyConfig }) => {
     <>
       <Head>
         <title>
-          {state.photography.metaTitle} - {previewImage.caption}
+          {metaTitle} - {previewImage.caption}
         </title>
         <meta
           key="title"
           property="og:title"
-          content={`${state.photography.metaTitle} - ${previewImage.caption}`}
+          content={`${metaTitle} - ${previewImage.caption}`}
         />
         <meta
           key="description"
           property="og:description"
-          content={state.photography.metaDescription}
+          content={metaDescription}
         />
-        <meta
-          key="url"
-          property="og:url"
-          content={`${state.photography.metaUrl}/${galleryId}`}
-        />
+        <meta key="url" property="og:url" content={`${metaUrl}/${galleryId}`} />
         <meta
           key="image"
           property="og:image"
-          content={`${state.photography.baseUrl}${thumbnailPath}${previewImage.fileName}`}
+          content={`${baseUrl}${thumbnailPath}${previewImage.fileName}`}
         />
       </Head>
       <main className={classnames("page", styles.photography)}>
@@ -83,6 +97,7 @@ const GalleryPage = ({ photographyConfig }) => {
           images={images}
           previewImage={previewImage}
           updatePhotographyConfig={updatePhotographyConfig}
+          uploadFile={uploadFile}
         />
         <div className={styles.buttonContainer}>
           <Link href="/photography">
