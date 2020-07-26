@@ -23,7 +23,6 @@ const {
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const GalleryPage = ({ photographyConfig }) => {
-  console.log(photographyConfig);
   const {
     query: { galleryId },
   } = useRouter();
