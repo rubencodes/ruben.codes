@@ -43,7 +43,6 @@ const GalleryPage = () => {
           },
         },
       };
-      setPhotographyState(updatedConfig);
 
       const file = new File([JSON.stringify(updatedConfig)], fileName, {
         type: "application/json",
