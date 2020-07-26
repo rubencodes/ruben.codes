@@ -44,15 +44,14 @@ const GalleryPage = () => {
         },
       };
       setPhotographyState(updatedConfig);
-      console.log({ updatedConfig });
 
       const file = new File([JSON.stringify(updatedConfig)], fileName, {
         type: "application/json",
       });
 
-      return uploadFile(path, file); //.then(() => window.location.reload());
+      return uploadFile(path, file).then(() => window.location.reload());
     },
-    [uploadFile],
+    [uploadFile, photographyState],
   );
   useSWR(state.photography.metaConfig, fetchConfig, {
     onSuccess: setPhotographyState,

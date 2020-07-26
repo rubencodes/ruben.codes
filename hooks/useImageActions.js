@@ -61,15 +61,16 @@ function useImageActions(imageManager) {
   }, []);
   const onImageToggleMove = useCallback(
     (button, image) => {
-      const DEFAULT_COLOR = "#FFFFFF";
-      const ENABLED_COLOR = "#05CC05";
-      const isMoveModeEnabled = button.style.backgroundColor === ENABLED_COLOR;
+      const MOVE_CLASS = "moveModeOn";
+      const isMoveModeEnabled = button.classList.contains(MOVE_CLASS);
       if (isMoveModeEnabled) {
         image.removeEventListener("mousewheel", onImageMove);
-        button.style.backgroundColor = DEFAULT_COLOR;
+        button.style.backgroundColor = "#FFFFFF";
+        button.classList.remove(MOVE_CLASS);
       } else {
         image.addEventListener("mousewheel", onImageMove);
-        button.style.backgroundColor = ENABLED_COLOR;
+        button.style.backgroundColor = "#05CC05";
+        button.classList.add(MOVE_CLASS);
       }
     },
     [onImageMove],
