@@ -28,8 +28,14 @@ const GalleryPage = () => {
     query: { galleryId },
   } = useRouter();
 
-  const uploadFile = useS3Uploader(AWS_CREDENTIALS);
+  // Load the photography config.
   const [photographyState, setPhotographyState] = useState(null);
+  useSWR(state.photography.metaConfig, fetchConfig, {
+    onSuccess: setPhotographyState,
+  });
+
+  // Handle updainge the photography config.
+  const uploadFile = useS3Uploader(AWS_CREDENTIALS);
   const updatePhotographyConfig = useCallback(
     async (galleryImages) => {
       // Optimistically update.
@@ -52,10 +58,8 @@ const GalleryPage = () => {
     },
     [uploadFile, photographyState],
   );
-  useSWR(state.photography.metaConfig, fetchConfig, {
-    onSuccess: setPhotographyState,
-  });
 
+  // Extract the relevant info.
   const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
     photographyState || {};
   const { fullPath, thumbnailPath, previewImage = {}, images } =
