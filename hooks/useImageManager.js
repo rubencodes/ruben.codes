@@ -15,7 +15,13 @@ const normalizeImage = ({ baseUrl, path, ...image }) => ({
   },
 });
 
-function useImageManager(baseUrl, fullPath, thumbnailPath, defaultImages) {
+function useImageManager(
+  baseUrl,
+  fullPath,
+  thumbnailPath,
+  defaultPreviewImage,
+  defaultImages,
+) {
   // Helpers for normalizing the image URLs.
   const normalizeThumbnailImage = useCallback(
     // eslint-disable-next-line no-unused-vars
@@ -35,6 +41,12 @@ function useImageManager(baseUrl, fullPath, thumbnailPath, defaultImages) {
     defaultImages.map(normalizeThumbnailImage),
   );
 
+  // The hero image to use.
+  const previewImage = useMemo(
+    () => normalizeThumbnailImage(defaultPreviewImage),
+    [defaultPreviewImage, normalizeThumbnailImage],
+  );
+
   // Selected image state.
   const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState(
     "selected",
@@ -45,9 +57,12 @@ function useImageManager(baseUrl, fullPath, thumbnailPath, defaultImages) {
     : null;
 
   // Helpers for updating the images array.
-  const appendImage = useCallback((image) => {
-    setAllImages((imgs) => [...imgs, normalizeThumbnailImage(image)]);
-  }, []);
+  const appendImage = useCallback(
+    (image) => {
+      setAllImages((imgs) => [...imgs, normalizeThumbnailImage(image)]);
+    },
+    [normalizeThumbnailImage],
+  );
   const removeImage = useCallback((index) => {
     setAllImages((imgs) => {
       const withoutImage = [...imgs.slice(0, index), ...imgs.slice(index + 1)];
@@ -86,6 +101,7 @@ function useImageManager(baseUrl, fullPath, thumbnailPath, defaultImages) {
 
   const imageManager = useMemo(
     () => ({
+      previewImage,
       allImages,
 
       selectedImageUrl,
@@ -101,6 +117,7 @@ function useImageManager(baseUrl, fullPath, thumbnailPath, defaultImages) {
       normalizeFullImage,
     }),
     [
+      previewImage,
       allImages,
       selectedImageUrl,
       selectedImageIndex,

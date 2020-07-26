@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useMemo } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
@@ -12,6 +12,11 @@ const PhotoGridHero = ({ children, ...previewImage }) => {
   const {
     query: { galleryId },
   } = useRouter();
+
+  const images = useMemo(() => [{ ...previewImage, spanWidth: 3 }], [
+    ...Object.keys(previewImage),
+    ...Object.values(previewImage),
+  ]);
 
   return (
     <>
@@ -33,7 +38,7 @@ const PhotoGridHero = ({ children, ...previewImage }) => {
         <meta key="image" property="og:image" content={previewImage.imageUrl} />
       </Head>
       <div className="hero">
-        <PhotoGrid images={[{ ...previewImage, spanWidth: 3 }]} />
+        <PhotoGrid images={images} />
         {children}
       </div>
     </>

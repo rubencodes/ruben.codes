@@ -33,6 +33,7 @@ const PhotoGridGallery = ({
     baseUrl,
     fullPath,
     thumbnailPath,
+    previewImage,
     images,
   );
   const imageUploadManager = useImageUploadManager(
@@ -72,7 +73,7 @@ const PhotoGridGallery = ({
 
   return (
     <>
-      <PhotoGridHero {...imageManager.normalizeThumbnailImage(previewImage)}>
+      <PhotoGridHero {...imageManager.previewImage}>
         {IS_DEV && (
           <button
             className={styles.photoGrid__HeroButton}

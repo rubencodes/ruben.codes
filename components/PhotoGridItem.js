@@ -17,6 +17,7 @@ const PhotoGridItem = ({
   onClick,
   customContainerStyles,
   renderButtons,
+  isEditMode,
 }) => {
   const elementRef = useRef();
   const lazyLoadBackground = useLazyEffect(
@@ -27,7 +28,7 @@ const PhotoGridItem = ({
   );
   useEffect(() => lazyLoadBackground(elementRef.current), []);
 
-  const isDisabled = !onClick || !!renderButtons;
+  const isDisabled = !onClick || isEditMode;
   const imageInfo = {
     imageIndex,
     imageUrl,
@@ -37,6 +38,8 @@ const PhotoGridItem = ({
     spanHeight,
     caption,
   };
+
+  console.log(fileName, customStyles);
 
   return (
     <div
@@ -61,7 +64,7 @@ const PhotoGridItem = ({
         />
         <div className={styles.photoGridItem__Caption}>{caption}</div>
       </button>
-      {renderButtons && (
+      {isEditMode && (
         <div className={styles.photoGridItem__ButtonsContainer}>
           {renderButtons({
             buttonStyle: styles.photoGridItem__Button,

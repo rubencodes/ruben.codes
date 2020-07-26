@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, useCallback } from "react";
 import {
   SortableContainer,
   SortableElement,
@@ -28,52 +28,58 @@ export const PhotoGrid = ({
   isEditMode,
 }) => {
   const GridItem = isEditMode ? SortablePhotoGridItem : PhotoGridItem;
-  const renderButtons = isEditMode
-    ? ({ buttonStyle, imageInfo, elementRef }) => (
-        <>
-          <PhotoGridItemButton
-            buttonStyle={buttonStyle}
-            onClick={(e) =>
-              onImageToggleMove(e.target.closest("button"), elementRef.current)
-            }
-          >
-            <Icon type="arrows-alt" />
-          </PhotoGridItemButton>
-          <PhotoGridItemMoveButton buttonStyle={buttonStyle}>
-            <Icon type="hand-rock" />
-          </PhotoGridItemMoveButton>
-          <PhotoGridItemButton
-            buttonStyle={buttonStyle}
-            onClick={() => onImageResizeWidth(imageInfo)}
-          >
-            <Icon type="arrows-alt-h" />
-          </PhotoGridItemButton>
-          <PhotoGridItemButton
-            buttonStyle={buttonStyle}
-            onClick={() => onImageResizeHeight(imageInfo)}
-          >
-            <Icon type="arrows-alt-v" />
-          </PhotoGridItemButton>
-          <PhotoGridItemButton
-            buttonStyle={buttonStyle}
-            onClick={() => onImageRemove(imageInfo)}
-          >
-            <Icon type="times" />
-          </PhotoGridItemButton>
-        </>
-      )
-    : null;
+  const renderButtons = useCallback(
+    ({ buttonStyle, imageInfo, elementRef }) => (
+      <>
+        <PhotoGridItemButton
+          buttonStyle={buttonStyle}
+          onClick={(e) =>
+            onImageToggleMove(
+              imageInfo,
+              e.target.closest("button"),
+              elementRef.current,
+            )
+          }
+        >
+          <Icon type="arrows-alt" />
+        </PhotoGridItemButton>
+        <PhotoGridItemMoveButton buttonStyle={buttonStyle}>
+          <Icon type="hand-rock" />
+        </PhotoGridItemMoveButton>
+        <PhotoGridItemButton
+          buttonStyle={buttonStyle}
+          onClick={() => onImageResizeWidth(imageInfo)}
+        >
+          <Icon type="arrows-alt-h" />
+        </PhotoGridItemButton>
+        <PhotoGridItemButton
+          buttonStyle={buttonStyle}
+          onClick={() => onImageResizeHeight(imageInfo)}
+        >
+          <Icon type="arrows-alt-v" />
+        </PhotoGridItemButton>
+        <PhotoGridItemButton
+          buttonStyle={buttonStyle}
+          onClick={() => onImageRemove(imageInfo)}
+        >
+          <Icon type="times" />
+        </PhotoGridItemButton>
+      </>
+    ),
+    [onImageToggleMove, onImageResizeWidth, onImageResizeHeight, onImageRemove],
+  );
 
   return (
     <div ref={gridRef} className={styles.photoGrid}>
       {images.map((image, index) => (
         <GridItem
-          key={index}
+          key={image.fileName}
           index={index}
           imageIndex={index}
           {...image}
           onClick={onImageClick}
           renderButtons={renderButtons}
+          isEditMode={isEditMode}
         />
       ))}
       {children}
@@ -81,4 +87,4 @@ export const PhotoGrid = ({
   );
 };
 
-export default SortableContainer(PhotoGrid);
+export default memo(SortableContainer(PhotoGrid));
