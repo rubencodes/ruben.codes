@@ -38,7 +38,9 @@ const GalleryPage = () => {
   const uploadFile = useS3Uploader(AWS_CREDENTIALS);
   const updatePhotographyConfig = useCallback(
     async (galleryImages) => {
-      // Optimistically update.
+      // Generate the new config.
+      // We could optimisitcally update here, but the
+      // JSON upload is so fast it's not really worth it.
       const updatedConfig = {
         ...photographyState,
         galleries: {
@@ -50,10 +52,12 @@ const GalleryPage = () => {
         },
       };
 
+      // Create a JSON file.
       const file = new File([JSON.stringify(updatedConfig)], fileName, {
         type: "application/json",
       });
 
+      // Upload it, then reload.
       return uploadFile(path, file).then(() => window.location.reload());
     },
     [uploadFile, photographyState],
