@@ -4,9 +4,9 @@ function useImageUploadManager(callback, callbackDependencies) {
   // Uploading image state.
   const [isUploading, setIsUploading] = useState(false);
   const onStartUpload = useCallback(() => setIsUploading(true), []);
-  const onFinishUpload = useCallback((imageUrls) => {
+  const onFinishUpload = useCallback((fileNames) => {
     setIsUploading(false);
-    imageUrls.forEach(callback);
+    fileNames.forEach(callback);
   }, callbackDependencies);
 
   const imageUploadManager = useMemo(

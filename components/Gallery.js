@@ -36,7 +36,7 @@ const PhotoGridGallery = ({
     images,
   );
   const imageUploadManager = useImageUploadManager(
-    (imageUrl) => imageManager.appendImage({ imageUrl }),
+    (fileName) => imageManager.appendImage({ fileName }),
     [imageManager.appendImage],
   );
   const imageActions = useImageActions(imageManager);

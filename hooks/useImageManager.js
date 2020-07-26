@@ -46,7 +46,7 @@ function useImageManager(baseUrl, fullPath, thumbnailPath, defaultImages) {
 
   // Helpers for updating the images array.
   const appendImage = useCallback((image) => {
-    setAllImages((imgs) => [...imgs, normalizeImage(image)]);
+    setAllImages((imgs) => [...imgs, normalizeThumbnailImage(image)]);
   }, []);
   const removeImage = useCallback((index) => {
     setAllImages((imgs) => {
