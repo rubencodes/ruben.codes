@@ -10,13 +10,10 @@ import Footer from "../../components/Footer";
 import useS3Uploader from "../../hooks/useS3Uploader";
 import fetchConfig from "../../utilities/fetchConfig";
 import scrollToTop from "../../utilities/scrollToTop";
+import createConfigUpload from "../../utilities/createConfigUpload";
 import { state, AWS_CREDENTIALS } from "../../utilities/constants";
-import styles from "./index.module.css";
 
-const {
-  metaConfigPath: path,
-  metaConfigFileName: fileName,
-} = state.photography;
+import styles from "./index.module.css";
 
 const GalleryPage = () => {
   const {
@@ -30,32 +27,27 @@ const GalleryPage = () => {
   });
 
   // Handle updainge the photography config.
-  const uploadFile = useS3Uploader(AWS_CREDENTIALS);
+  const uploader = useS3Uploader(AWS_CREDENTIALS);
   const updatePhotographyConfig = useCallback(
     async (galleryImages) => {
       // Generate the new config.
       // We could optimisitcally update here, but the
       // JSON upload is so fast it's not really worth it.
-      const updatedConfig = {
-        ...photographyState,
-        galleries: {
-          ...photographyState.galleries,
-          [galleryId]: {
-            ...photographyState.galleries[galleryId],
-            images: galleryImages,
+      return createConfigUpload({
+        json: {
+          ...photographyState,
+          galleries: {
+            ...photographyState.galleries,
+            [galleryId]: {
+              ...photographyState.galleries[galleryId],
+              images: galleryImages,
+            },
           },
         },
-      };
-
-      // Create a JSON file.
-      const file = new File([JSON.stringify(updatedConfig)], fileName, {
-        type: "application/json",
-      });
-
-      // Upload it, then reload.
-      return uploadFile(path, file).then(() => window.location.reload());
+        uploader,
+      }).then(() => window.location.reload());
     },
-    [uploadFile, photographyState],
+    [uploader, photographyState],
   );
 
   // Extract the relevant info.
@@ -80,7 +72,6 @@ const GalleryPage = () => {
             images={images}
             previewImage={previewImage}
             updatePhotographyConfig={updatePhotographyConfig}
-            uploadFile={uploadFile}
           />
         )}
         <div className={styles.buttonContainer}>

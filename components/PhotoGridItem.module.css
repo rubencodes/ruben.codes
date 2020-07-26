@@ -111,7 +111,7 @@
 .photoGridItem__Caption {
   font-family: "IBM Plex Serif", serif;
   font-weight: 700;
-  font-size: 2.5em;
+  font-size: 2em;
   user-select: none;
   color: white;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);

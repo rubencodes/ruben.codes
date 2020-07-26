@@ -24,6 +24,14 @@ export const AWS_CREDENTIALS = {
   },
 };
 
+export const PHOTO_FOLDERS = {
+  Landscape: "landscape",
+  Portrait: "portrait",
+};
+
+export const FULL_IMAGE_SIZE = 2000;
+export const THUMBNAIL_IMAGE_SIZE = 1000;
+
 export const state = {
   /* Common */
   name: "Ruben Martinez Jr.",

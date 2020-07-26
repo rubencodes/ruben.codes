@@ -1,0 +1,94 @@
+.galleryCreator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  all: unset;
+  background-color: #eee;
+  border: 4px dashed black;
+  text-align: center;
+  cursor: pointer;
+}
+
+.galleryCreator__Title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.galleryCreator__Icon {
+  font-size: 50px;
+}
+
+.galleryCreatorForm {
+  grid-column: span 3;
+  grid-row: span 2;
+
+  display: grid;
+  grid-gap: 12px;
+  grid-template-rows: 40px 53px 53px 232px 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  background-color: #eee;
+  border: 4px dashed black;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.galleryCreatorForm__Title {
+  grid-column: span 3;
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+.galleryCreatorForm__Label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.galleryCreatorForm__Label:last-of-type {
+  margin-bottom: 0;
+}
+
+.galleryCreatorForm__Input {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  margin-top: 4px;
+  padding: 4px 8px;
+}
+
+.galleryCreatorForm__InputFile {
+  padding-left: 0;
+}
+
+.galleryCreatorForm__Image {
+  grid-column-start: 1;
+  width: 100%;
+  height: 232px;
+  background: rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+.galleryCreatorForm__ButtonContainer {
+  grid-column: span 3;
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.galleryCreatorForm__Button {
+  max-width: 100px;
+  cursor: pointer;
+}

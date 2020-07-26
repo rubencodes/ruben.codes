@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import Head from "next/head";
 import classnames from "classnames";
 import useSWR from "swr";
@@ -7,17 +7,64 @@ import { useRouter } from "next/router";
 import InstagramLink from "../../components/InstagramLink";
 import GalleryPreviews from "../../components/GalleryPreviews";
 import Footer from "../../components/Footer";
+import useS3Uploader from "../../hooks/useS3Uploader";
 import fetchConfig from "../../utilities/fetchConfig";
-import { state } from "../../utilities/constants";
+import createPhotoUploads from "../../utilities/createPhotoUploads";
+import createConfigUpload from "../../utilities/createConfigUpload";
+import { state, AWS_CREDENTIALS } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 
 const Photography = () => {
   const router = useRouter();
   const onSelect = (gallery) => router.push(`/photography/${gallery}`);
-  const { data: photographyConfig } = useSWR(
-    state.photography.metaConfig,
-    fetchConfig,
+
+  // Load the photography config.
+  const [photographyState, setPhotographyState] = useState(null);
+  useSWR(state.photography.metaConfig, fetchConfig, {
+    onSuccess: setPhotographyState,
+  });
+
+  // Handle updainge the photography config.
+  const uploader = useS3Uploader(AWS_CREDENTIALS);
+  const onCreateGallery = useCallback(
+    async (galleryType, galleryId, caption, file) => {
+      const fullPath = `photography/${galleryType}/${galleryId}`;
+      const thumbnailPath = `photography/${galleryType}_small/${galleryId}`;
+      const [imageFileName] = await createPhotoUploads({
+        fullPath,
+        thumbnailPath,
+        file,
+        uploader,
+      });
+
+      // Generate the new config.
+      // We could optimisitcally update here, but the
+      // JSON upload is so fast it's not really worth it.
+      return createConfigUpload({
+        json: {
+          ...photographyState,
+          galleryOrder: [...photographyState.galleryOrder, galleryId],
+          galleries: {
+            ...photographyState.galleries,
+            [galleryId]: {
+              fullPath,
+              thumbnailPath,
+              previewImage: {
+                caption,
+                fileName: imageFileName,
+                spanWidth: 1,
+                spanHeight: 1,
+                customStyles: {},
+              },
+              images: [],
+            },
+          },
+        },
+        uploader,
+      }).then(() => window.location.reload());
+    },
+    [uploader, photographyState],
   );
 
   return (
@@ -47,8 +94,12 @@ const Photography = () => {
           Photography &nbsp;
           <InstagramLink />
         </b>
-        {photographyConfig && (
-          <GalleryPreviews {...photographyConfig} onSelect={onSelect} />
+        {photographyState && (
+          <GalleryPreviews
+            {...photographyState}
+            onCreateGallery={onCreateGallery}
+            onSelect={onSelect}
+          />
         )}
       </main>
       <Footer />
