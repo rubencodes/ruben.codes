@@ -13,3 +13,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+.configButtonContainer__Inner > * {
+  margin-bottom: 12px;
+}

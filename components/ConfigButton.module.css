@@ -6,11 +6,11 @@
   border-radius: 50%;
   background: white;
   cursor: pointer;
-  margin-bottom: 12px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .configButton__Icon--edit {

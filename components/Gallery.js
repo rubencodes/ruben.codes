@@ -132,7 +132,12 @@ const PhotoGridGallery = ({
       </PhotoGrid>
       {IS_DEV && (
         <ConfigButtonContainer>
-          <ConfigButton iconType={iconType} onClick={onToggleEditMode} />
+          <ConfigButton
+            tooltipText="Edit Images"
+            tooltipDirection="right"
+            iconType={iconType}
+            onClick={onToggleEditMode}
+          />
           <FileInput
             onChange={onFileInputChange}
             disabled={imageUploadManager.isUploading}
@@ -141,16 +146,25 @@ const PhotoGridGallery = ({
           >
             {({ open }) => (
               <ConfigButton
+                tooltipText="New Image"
+                tooltipDirection="right"
                 iconType={imageUploadManager.isUploading ? "spinner" : "plus"}
                 onClick={open}
               />
             )}
           </FileInput>
           <ConfigButton
+            tooltipText={isPublished ? "Unpublish Gallery" : "Publish Gallery"}
+            tooltipDirection="right"
             iconType={isPublished ? "eye-slash" : "eye"}
             onClick={onTogglePublish}
           />
-          <ConfigButton iconType="trash" onClick={onDelete} />
+          <ConfigButton
+            tooltipText="Delete Gallery"
+            tooltipDirection="right"
+            iconType="trash"
+            onClick={onDelete}
+          />
         </ConfigButtonContainer>
       )}
     </>

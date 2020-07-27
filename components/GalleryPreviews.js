@@ -85,8 +85,18 @@ const GalleryPreviews = ({
       {IS_DEV && (
         <>
           <ConfigButtonContainer>
-            <ConfigButton iconType={iconType} onClick={onToggleEditMode} />
-            <ConfigButton iconType="plus" onClick={onToggleShowModal} />
+            <ConfigButton
+              tooltipText="Edit Galleries"
+              tooltipDirection="right"
+              iconType={iconType}
+              onClick={onToggleEditMode}
+            />
+            <ConfigButton
+              tooltipText="New Gallery"
+              tooltipDirection="right"
+              iconType="plus"
+              onClick={onToggleShowModal}
+            />
           </ConfigButtonContainer>
           {showCreateModal && (
             <GalleryCreator
