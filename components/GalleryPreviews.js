@@ -22,7 +22,7 @@ const GalleryPreviews = ({
     onSelect(galleryOrder[imageIndex]);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const onToggleShowModal = useCallback(
-    (show) => setShowCreateModal(!show),
+    () => setShowCreateModal((show) => !show),
     [],
   );
 
