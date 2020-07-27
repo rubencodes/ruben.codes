@@ -49,7 +49,15 @@ const GalleryPage = () => {
     },
     [uploader, photographyState],
   );
-  const onToggleGalleryPublish = useCallback(async () => {
+  const onToggleGalleryPublish = useCallback(() => {
+    const { isPublished } = photographyState.galleries[galleryId];
+    const confirmationMessage = `Are you sure you want to ${
+      isPublished ? "unpublish" : "publish"
+    } this gallery?`;
+    if (!confirm(confirmationMessage)) {
+      return;
+    }
+
     // Generate the new config.
     // We could optimisitcally update here, but the
     // JSON upload is so fast it's not really worth it.
@@ -60,7 +68,7 @@ const GalleryPage = () => {
           ...photographyState.galleries,
           [galleryId]: {
             ...photographyState.galleries[galleryId],
-            isPublished: !photographyState.galleries[galleryId].isPublished,
+            isPublished: !isPublished,
           },
         },
       },
