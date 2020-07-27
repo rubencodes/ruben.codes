@@ -3,6 +3,7 @@ import classnames from "classnames";
 
 import ModalBackdrop from "./ModalBackdrop";
 import useInputState from "../hooks/useInputState";
+import useKeydownEvent from "../hooks/useKeydownEvent";
 import { PHOTO_FOLDERS } from "../utilities/constants";
 
 import style from "./GalleryCreator.module.css";
@@ -32,6 +33,22 @@ const GalleryCreator = ({ onCreateGallery, onExit }) => {
 
     onCreateGallery(galleryType, folderName, caption, fileList[0]);
   };
+
+  // Exit on escape.
+  useKeydownEvent(
+    (event) => {
+      switch (event.key) {
+        case "Escape": {
+          onExit();
+          break;
+        }
+        default: {
+          break;
+        }
+      }
+    },
+    [onExit],
+  );
 
   return (
     <ModalBackdrop>
