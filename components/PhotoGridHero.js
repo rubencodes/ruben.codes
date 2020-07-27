@@ -38,7 +38,7 @@ const PhotoGridHero = ({ children, ...previewImage }) => {
         <meta key="image" property="og:image" content={previewImage.imageUrl} />
       </Head>
       <div className="hero">
-        <PhotoGrid images={images} />
+        <PhotoGrid images={images} useDragHandle />
         {children}
       </div>
     </>
