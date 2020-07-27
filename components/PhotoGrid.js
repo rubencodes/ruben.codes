@@ -5,16 +5,13 @@ import {
   SortableHandle,
 } from "react-sortable-hoc";
 
-import Icon from "./Icon";
 import PhotoGridItem from "./PhotoGridItem";
+import ConfigButton from "./ConfigButton";
 
 import styles from "./PhotoGrid.module.css";
 
-const PhotoGridItemButton = ({ buttonStyle, ...props }) => (
-  <button className={buttonStyle} {...props} />
-);
-const PhotoGridItemMoveButton = SortableHandle(PhotoGridItemButton);
-const SortablePhotoGridItem = SortableElement(PhotoGridItem);
+const ConfigButtonSortable = SortableHandle(ConfigButton);
+const PhotoGridItemSortable = SortableElement(PhotoGridItem);
 
 export const PhotoGrid = ({
   gridRef,
@@ -28,10 +25,10 @@ export const PhotoGrid = ({
   isEditMode,
 }) => {
   const renderButtons = useCallback(
-    ({ buttonStyle, imageInfo, elementRef }) => (
+    ({ imageInfo, elementRef }) => (
       <>
-        <PhotoGridItemButton
-          buttonStyle={buttonStyle}
+        <ConfigButton
+          iconType="arrows-alt"
           onClick={(e) =>
             onImageToggleMove(
               imageInfo,
@@ -39,30 +36,20 @@ export const PhotoGrid = ({
               elementRef.current,
             )
           }
-        >
-          <Icon type="arrows-alt" />
-        </PhotoGridItemButton>
-        <PhotoGridItemMoveButton buttonStyle={buttonStyle}>
-          <Icon type="hand-rock" />
-        </PhotoGridItemMoveButton>
-        <PhotoGridItemButton
-          buttonStyle={buttonStyle}
+        />
+        <ConfigButtonSortable iconType="hand-rock" />
+        <ConfigButton
+          iconType="arrows-alt-h"
           onClick={() => onImageResizeWidth(imageInfo)}
-        >
-          <Icon type="arrows-alt-h" />
-        </PhotoGridItemButton>
-        <PhotoGridItemButton
-          buttonStyle={buttonStyle}
+        />
+        <ConfigButton
+          iconType="arrows-alt-v"
           onClick={() => onImageResizeHeight(imageInfo)}
-        >
-          <Icon type="arrows-alt-v" />
-        </PhotoGridItemButton>
-        <PhotoGridItemButton
-          buttonStyle={buttonStyle}
+        />
+        <ConfigButton
+          iconType="times"
           onClick={() => onImageRemove(imageInfo)}
-        >
-          <Icon type="times" />
-        </PhotoGridItemButton>
+        />
       </>
     ),
     [onImageToggleMove, onImageResizeWidth, onImageResizeHeight, onImageRemove],
@@ -71,7 +58,7 @@ export const PhotoGrid = ({
   return (
     <div ref={gridRef} className={styles.photoGrid}>
       {images.map((image, index) => (
-        <SortablePhotoGridItem
+        <PhotoGridItemSortable
           key={image.fileName}
           index={index}
           imageIndex={index}

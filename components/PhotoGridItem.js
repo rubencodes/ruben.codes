@@ -65,7 +65,6 @@ const PhotoGridItem = ({
       {isEditMode && (
         <div className={styles.photoGridItem__ButtonsContainer}>
           {renderButtons({
-            buttonStyle: styles.photoGridItem__Button,
             imageInfo,
             elementRef,
           })}
