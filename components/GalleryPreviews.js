@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 import PhotoGrid from "./PhotoGrid";
 import GalleryCreator from "./GalleryCreator";
@@ -21,7 +21,10 @@ const GalleryPreviews = ({
   const onSelectGalleryIndex = ({ imageIndex }) =>
     onSelect(galleryOrder[imageIndex]);
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const onToggleShowModal = () => setShowCreateModal(!showCreateModal);
+  const onToggleShowModal = useCallback(
+    (show) => setShowCreateModal(!show),
+    [],
+  );
 
   // Provide advanced image utilities.
   const imageManager = useGalleryImageManager(galleryOrder, galleries);
