@@ -18,7 +18,7 @@ export const PhotoGrid = ({
   children,
   images,
   onImageClick,
-  onImageToggleMove,
+  onImageTogglePan,
   onImageResizeWidth,
   onImageResizeHeight,
   onImageRemove,
@@ -32,7 +32,7 @@ export const PhotoGrid = ({
           tooltipDirection="top"
           iconType="arrows-alt"
           onClick={(e) =>
-            onImageToggleMove(
+            onImageTogglePan(
               imageInfo,
               e.target.closest("button"),
               elementRef.current,
@@ -64,7 +64,7 @@ export const PhotoGrid = ({
         />
       </>
     ),
-    [onImageToggleMove, onImageResizeWidth, onImageResizeHeight, onImageRemove],
+    [onImageTogglePan, onImageResizeWidth, onImageResizeHeight, onImageRemove],
   );
 
   return (

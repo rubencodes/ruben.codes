@@ -1,7 +1,32 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useState, useEffect } from "react";
 
 import clamp from "../utilities/clamp";
 import getPercentFromString from "../utilities/getPercentFromString";
+
+function onImagePan(event, { imageIndex, ...image }, updateImage) {
+  event.preventDefault();
+
+  const {
+    didChange,
+    backgroundPositionX,
+    backgroundPositionY,
+  } = calculateNextBackgroundPositions(event);
+
+  // Update the state if necessary.
+  if (didChange) {
+    updateImage(
+      {
+        ...image,
+        customStyles: {
+          ...image.customStyles,
+          backgroundPositionX,
+          backgroundPositionY,
+        },
+      },
+      imageIndex,
+    );
+  }
+}
 
 const calculateNextPosition = (currentValue, delta) => {
   if (Math.abs(delta) > 1) {
@@ -74,64 +99,52 @@ function useImageActions(imageManager) {
   );
 
   // Pan Image button clicked.
-  const imageMoveHandlers = useRef({});
-  const onImageMove = useCallback(
-    (event, { imageIndex, ...image }) => {
-      event.preventDefault();
+  const [imagePanEnabledList, setImagePanEnabledList] = useState([]);
+  const onImageTogglePan = useCallback(
+    ({ imageUrl }, buttonEl, imageEl) => {
+      const isImagePanEnabled = imagePanEnabledList.find(
+        (img) => img.imageUrl === imageUrl,
+      );
 
-      const {
-        didChange,
-        backgroundPositionX,
-        backgroundPositionY,
-      } = calculateNextBackgroundPositions(event);
-
-      // Update the state if necessary.
-      if (didChange) {
-        imageManager.updateImage(
-          {
-            ...image,
-            customStyles: {
-              ...image.customStyles,
-              backgroundPositionX,
-              backgroundPositionY,
-            },
-          },
-          imageIndex,
-        );
-      }
-    },
-    [imageManager.updateImage],
-  );
-  const onImageToggleMove = useCallback(
-    ({ imageIndex, ...image }, buttonEl, imageEl) => {
-      const isMoveModeEnabled = imageMoveHandlers.current[image.imageUrl];
-      if (isMoveModeEnabled) {
+      if (isImagePanEnabled) {
         buttonEl.style.backgroundColor = "#FFFFFF";
-        imageEl.removeEventListener(
-          "mousewheel",
-          imageMoveHandlers.current[image.imageUrl],
+        setImagePanEnabledList((list) =>
+          list.filter((img) => img.imageUrl !== imageUrl),
         );
-        imageMoveHandlers.current[image.imageUrl] = null;
       } else {
         buttonEl.style.backgroundColor = "#05CC05";
-        imageMoveHandlers.current[image.imageUrl] = (event) => {
-          onImageMove(event, { imageIndex, ...image });
-        };
-        imageEl.addEventListener(
-          "mousewheel",
-          imageMoveHandlers.current[image.imageUrl],
-        );
+        setImagePanEnabledList((list) => [...list, { imageUrl, imageEl }]);
       }
     },
-    [onImageMove],
+    [imagePanEnabledList],
   );
+  useEffect(() => {
+    const eventListeners = {};
+    imagePanEnabledList.forEach(({ imageUrl, imageEl }) => {
+      const imageIndex = imageManager.allImages.findIndex(
+        (img) => img.imageUrl === imageUrl,
+      );
+      const image = imageManager.allImages[imageIndex];
+      eventListeners[imageUrl] = (event) =>
+        onImagePan(event, { imageIndex, ...image }, imageManager.updateImage);
+      imageEl.addEventListener("mousewheel", eventListeners[imageUrl]);
+    });
+
+    return () => {
+      imagePanEnabledList.forEach(({ imageUrl, imageEl }) => {
+        imageEl.removeEventListener("mousewheel", eventListeners[imageUrl]);
+      });
+    };
+  }, [imageManager.allImages, imageManager.updateImage, imagePanEnabledList]);
+
+  console.log(imagePanEnabledList, imageManager.allImages);
 
   return {
     onImageClick,
     onImageRemove,
     onImageResizeWidth,
     onImageResizeHeight,
-    onImageToggleMove,
+    onImageTogglePan,
   };
 }
 
