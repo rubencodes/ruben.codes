@@ -41,12 +41,6 @@ function useImageManager(
     defaultImages.map(normalizeThumbnailImage),
   );
 
-  // The hero image to use.
-  const previewImage = useMemo(
-    () => normalizeThumbnailImage(defaultPreviewImage),
-    [defaultPreviewImage, normalizeThumbnailImage],
-  );
-
   // Selected image state.
   const [selectedImageIndex, setSelectedImageIndex] = useQueryStringState(
     "selected",
@@ -101,7 +95,6 @@ function useImageManager(
 
   const imageManager = useMemo(
     () => ({
-      previewImage,
       allImages,
 
       selectedImageUrl,
@@ -114,7 +107,6 @@ function useImageManager(
       moveImage,
     }),
     [
-      previewImage,
       allImages,
       selectedImageUrl,
       selectedImageIndex,

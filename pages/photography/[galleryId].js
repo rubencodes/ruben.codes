@@ -113,7 +113,7 @@ const GalleryPage = () => {
       <main className={classnames("page", styles.photography)}>
         <h1 className="heading">{state.name}</h1>
         <b className="subheading">
-          Photography &nbsp;
+          {`Photography${previewImage ? `- ${previewImage.caption}` : ""}`}
           <InstagramLink />
         </b>
         {shouldShowGallery && (

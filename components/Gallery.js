@@ -3,7 +3,6 @@ import Head from "next/head";
 
 import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
-import PhotoGridHero from "./PhotoGridHero";
 import ImageModal from "./ImageModal";
 import ConfigButtonContainer from "./ConfigButtonContainer";
 import ConfigButton from "./ConfigButton";
@@ -96,7 +95,6 @@ const PhotoGridGallery = ({
 
   return (
     <>
-      <PhotoGridHero {...imageManager.previewImage} />
       <PhotoGrid
         gridRef={gridRef}
         images={imageManager.allImages}
