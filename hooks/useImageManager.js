@@ -112,9 +112,6 @@ function useImageManager(
       removeImage,
       updateImage,
       moveImage,
-
-      normalizeThumbnailImage,
-      normalizeFullImage,
     }),
     [
       previewImage,
@@ -126,8 +123,6 @@ function useImageManager(
       removeImage,
       updateImage,
       moveImage,
-      normalizeThumbnailImage,
-      normalizeFullImage,
     ],
   );
 

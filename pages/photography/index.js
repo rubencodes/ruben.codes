@@ -25,7 +25,7 @@ const Photography = () => {
     onSuccess: setPhotographyState,
   });
 
-  // Handle updainge the photography config.
+  // Handle updating the photography config.
   const uploader = useS3Uploader(AWS_CREDENTIALS);
   const onCreateGallery = useCallback(
     async (galleryType, galleryId, caption, file) => {
@@ -70,7 +70,23 @@ const Photography = () => {
           },
         },
         uploader,
-      }); //.then(() => window.location.reload());
+      }).then(() => window.location.reload());
+    },
+    [uploader, photographyState],
+  );
+  const onUpdateGalleryPreviews = useCallback(
+    async (galleryOrder, galleries) => {
+      // Generate the new config.
+      // We could optimisitcally update here, but the
+      // JSON upload is so fast it's not really worth it.
+      return createConfigUpload({
+        json: {
+          ...photographyState,
+          galleryOrder,
+          galleries,
+        },
+        uploader,
+      }).then(() => window.location.reload());
     },
     [uploader, photographyState],
   );
@@ -106,6 +122,7 @@ const Photography = () => {
           <GalleryPreviews
             {...photographyState}
             onCreateGallery={onCreateGallery}
+            onUpdateGalleryPreviews={onUpdateGalleryPreviews}
             onSelect={onSelect}
           />
         )}

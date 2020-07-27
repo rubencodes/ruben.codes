@@ -73,6 +73,7 @@ const PhotoGridGallery = ({
     }
   })();
 
+  // Handle uploads.
   const uploader = useS3Uploader(AWS_CREDENTIALS);
   const onFileInputChange = ({ target: { files } }) => {
     // Stop if there's a pending upload.

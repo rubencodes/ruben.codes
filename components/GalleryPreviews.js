@@ -4,13 +4,18 @@ import PhotoGrid from "./PhotoGrid";
 import GalleryCreator from "./GalleryCreator";
 import ConfigButtonContainer from "./ConfigButtonContainer";
 import ConfigButton from "./ConfigButton";
+import useGalleryImageManager from "../hooks/useGalleryImageManager";
+import useImageActions from "../hooks/useImageActions";
 import { IS_DEV } from "../utilities/constants";
+
+const noop = () => false;
 
 const GalleryPreviews = ({
   baseUrl,
   galleryOrder,
   galleries,
   onCreateGallery,
+  onUpdateGalleryPreviews,
   onSelect,
 }) => {
   const onSelectGalleryIndex = ({ imageIndex }) =>
@@ -18,12 +23,20 @@ const GalleryPreviews = ({
   const [showCreateModal, setShowCreateModal] = useState(false);
   const onToggleShowModal = () => setShowCreateModal(!showCreateModal);
 
+  // Provide advanced image utilities.
+  const imageManager = useGalleryImageManager(galleryOrder, galleries);
+  const imageActions = useImageActions(imageManager);
+
   // Optionally, allow editing the layout.
   const [isSaving, setIsSaving] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const onToggleEditMode = () => {
     if (isEditMode) {
       setIsSaving(true);
+      return onUpdateGalleryPreviews(
+        imageManager.galleryOrder,
+        imageManager.galleries,
+      );
     }
 
     setIsEditMode(true);
@@ -43,8 +56,8 @@ const GalleryPreviews = ({
   return (
     <>
       <PhotoGrid
-        images={galleryOrder
-          .map((key) => galleries[key])
+        images={imageManager.galleryOrder
+          .map((key) => imageManager.galleries[key])
           .filter(({ isPublished }) => isPublished || IS_DEV)
           .map(({ thumbnailPath, previewImage }) => ({
             imageUrl: `${baseUrl}${thumbnailPath}${previewImage.fileName}`,
@@ -55,7 +68,14 @@ const GalleryPreviews = ({
             spanHeight: previewImage.spanHeight,
           }))}
         onImageClick={onSelectGalleryIndex}
+        onImageResizeWidth={imageActions.onImageResizeWidth}
+        onImageResizeHeight={imageActions.onImageResizeHeight}
+        onImageToggleMove={imageActions.onImageToggleMove}
+        onImageRemove={imageActions.onImageRemove}
         isEditMode={isEditMode}
+        axis="xy"
+        onSortEnd={imageManager.moveImage}
+        shouldCancelStart={noop}
         useWindowAsScrollContainer
         useDragHandle
       />
