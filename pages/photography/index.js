@@ -29,12 +29,19 @@ const Photography = () => {
   const uploader = useS3Uploader(AWS_CREDENTIALS);
   const onCreateGallery = useCallback(
     async (galleryType, galleryId, caption, file) => {
-      const fullPath = `photography/${galleryType}/${galleryId}`;
-      const thumbnailPath = `photography/${galleryType}_small/${galleryId}`;
+      // Prevent overwrites.
+      if (photographyState.galleryOrder.includes(galleryId)) {
+        throw new Error(
+          `Gallery '${galleryId}' already exists. Choose a new name.`,
+        );
+      }
+
+      const fullPath = `photography/${galleryType}/${galleryId}/`;
+      const thumbnailPath = `photography/${galleryType}_small/${galleryId}/`;
       const [imageFileName] = await createPhotoUploads({
         fullPath,
         thumbnailPath,
-        file,
+        files: [file],
         uploader,
       });
 
@@ -63,7 +70,7 @@ const Photography = () => {
           },
         },
         uploader,
-      }).then(() => window.location.reload());
+      }); //.then(() => window.location.reload());
     },
     [uploader, photographyState],
   );

@@ -25,8 +25,8 @@ export const AWS_CREDENTIALS = {
 };
 
 export const PHOTO_FOLDERS = {
-  Landscape: "landscape",
-  Portrait: "portrait",
+  Landscape: "landscapes",
+  Portrait: "portraits",
 };
 
 export const FULL_IMAGE_SIZE = 2000;

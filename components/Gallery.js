@@ -8,7 +8,8 @@ import PhotoGridHero from "./PhotoGridHero";
 import PhotoGridPlaceholder from "./PhotoGridPlaceholder";
 import PhotoGridUploader from "./PhotoGridUploader";
 import ImageModal from "./ImageModal";
-import Icon from "./Icon";
+import ConfigButtonContainer from "./ConfigButtonContainer";
+import ConfigButton from "./ConfigButton";
 import useImageManager from "../hooks/useImageManager";
 import useImageUploadManager from "../hooks/useImageUploadManager";
 import useImageActions from "../hooks/useImageActions";
@@ -25,8 +26,9 @@ const PhotoGridGallery = ({
   images,
   previewImage,
   isPublished,
-  onTogglePublish,
   onUpdateImages,
+  onTogglePublish,
+  onDelete,
 }) => {
   // Ref to the grid DOM node.
   const gridRef = useRef();
@@ -126,26 +128,24 @@ const PhotoGridGallery = ({
         )}
       </PhotoGrid>
       {IS_DEV && (
-        <div className={styles.photoGrid__ConfigButtonContainer}>
-          <button
-            className={classnames(
-              styles.photoGrid__ConfigButton,
-              styles.photoGrid__ConfigButtonEdit,
-            )}
+        <ConfigButtonContainer>
+          <ConfigButton
+            className={classnames(styles.photoGrid__ConfigButtonEdit)}
+            iconType={iconType}
+            iconClassName={styles[`photoGrid__ConfigButtonEdit__${iconType}`]}
             onClick={onToggleEditMode}
-          >
-            <Icon
-              className={styles[`photoGrid__ConfigButtonEdit__${iconType}`]}
-              type={iconType}
-            />
-          </button>
-          <button
+          />
+          <ConfigButton
             className={styles.photoGrid__ConfigButton}
+            iconType={isPublished ? "eye-slash" : "eye"}
             onClick={onTogglePublish}
-          >
-            <Icon type={isPublished ? "eye-slash" : "eye"} />
-          </button>
-        </div>
+          />
+          <ConfigButton
+            className={styles.photoGrid__ConfigButton}
+            iconType="trash"
+            onClick={onDelete}
+          />
+        </ConfigButtonContainer>
       )}
     </>
   );

@@ -26,8 +26,10 @@ const createPhotoUploads = async ({
         }),
       );
     }),
-  ).then(([{ Location }]) => {
-    return Location.match(new RegExp(`${fullPath}(.*)`))[1];
+  ).then((results) => {
+    return results.map(
+      ([{ Location }]) => Location.match(new RegExp(`${fullPath}(.*)`))[1],
+    );
   });
 };
 

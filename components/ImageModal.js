@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useMemo } from "react";
 
 import Carousel from "./Carousel";
+import ModalBackdrop from "./ModalBackdrop";
 import useBodyClassList from "../hooks/useBodyClassList";
 
 import styles from "./ImageModal.module.css";
@@ -23,7 +24,7 @@ const ImageModal = ({
   });
 
   return (
-    <div className={styles.imageModal} onClick={close}>
+    <ModalBackdrop onClick={close}>
       <div
         className={styles.imageModal__Inner}
         onClick={(e) => e.preventDefault() || e.stopPropagation()}
@@ -45,7 +46,7 @@ const ImageModal = ({
           hidePageNavigationButtons
         />
       </div>
-    </div>
+    </ModalBackdrop>
   );
 };
 

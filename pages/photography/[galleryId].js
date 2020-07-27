@@ -75,6 +75,28 @@ const GalleryPage = () => {
       uploader,
     }).then(() => window.location.reload());
   }, [uploader, photographyState]);
+  const onDeleteGallery = useCallback(() => {
+    const confirmationMessage = `Are you sure you want to delete this gallery?`;
+    if (!confirm(confirmationMessage)) {
+      return;
+    }
+
+    // Generate the new config.
+    // We could optimisitcally update here, but the
+    // JSON upload is so fast it's not really worth it.
+    const newConfig = {
+      ...photographyState,
+      galleryOrder: photographyState.galleryOrder.filter(
+        (id) => id !== galleryId,
+      ),
+    };
+    delete newConfig.galleries[galleryId];
+
+    return createConfigUpload({
+      json: newConfig,
+      uploader,
+    }).then(() => window.location.reload());
+  }, [uploader, photographyState]);
 
   // Extract the relevant info.
   const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
@@ -102,8 +124,9 @@ const GalleryPage = () => {
             images={images}
             previewImage={previewImage}
             isPublished={isPublished}
-            onTogglePublish={onToggleGalleryPublish}
             onUpdateImages={onUpdateGalleryImages}
+            onTogglePublish={onToggleGalleryPublish}
+            onDelete={onDeleteGallery}
           />
         )}
         {shouldShow404 && <h2>404 not found :(</h2>}

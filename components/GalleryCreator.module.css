@@ -1,29 +1,23 @@
 .galleryCreator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  all: unset;
-  background-color: #eee;
-  border: 4px dashed black;
-  text-align: center;
-  cursor: pointer;
-}
-
-.galleryCreator__Title {
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 0;
-}
-
-.galleryCreator__Icon {
-  font-size: 50px;
+  overflow: auto;
+  z-index: 2;
+  user-select: none;
 }
 
 .galleryCreatorForm {
-  grid-column: span 3;
-  grid-row: span 2;
+  width: 100%;
+  margin: auto auto;
+  max-width: 800px;
+  height: 500px;
 
   display: grid;
   grid-gap: 12px;
@@ -34,7 +28,6 @@
   justify-content: flex-start;
 
   background-color: #eee;
-  border: 4px dashed black;
   font-weight: bold;
   padding: 20px;
 }
