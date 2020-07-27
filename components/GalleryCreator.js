@@ -15,7 +15,7 @@ const GalleryCreator = ({ onCreateGallery }) => {
   const [galleryType, onGalleryTypeChange] = useInputState(
     PHOTO_FOLDERS.Landscape,
   );
-  const [uniqueId, onUniqueIdChange] = useInputState("");
+  const [folderName, onFolderNameChange] = useInputState("");
   const [caption, onCaptionChange] = useInputState("");
   const [filePath, onFilePathChange, fileList] = useInputState(null);
   const [fileAsDataUrl, setFileAsDataUrl] = useState(null);
@@ -32,7 +32,7 @@ const GalleryCreator = ({ onCreateGallery }) => {
       return;
     }
 
-    onCreateGallery(galleryType, uniqueId, caption, fileList[0]);
+    onCreateGallery(galleryType, folderName, caption, fileList[0]);
   };
 
   return (
@@ -66,8 +66,8 @@ const GalleryCreator = ({ onCreateGallery }) => {
             <input
               className={style.galleryCreatorForm__Input}
               type="text"
-              value={uniqueId}
-              onChange={onUniqueIdChange}
+              value={folderName}
+              onChange={onFolderNameChange}
               required
             />
           </label>
