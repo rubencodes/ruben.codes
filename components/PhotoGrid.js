@@ -28,6 +28,8 @@ export const PhotoGrid = ({
     ({ imageInfo, elementRef }) => (
       <>
         <ConfigButton
+          tooltipText="Pan Image"
+          tooltipDirection="top"
           iconType="arrows-alt"
           onClick={(e) =>
             onImageToggleMove(
@@ -37,16 +39,26 @@ export const PhotoGrid = ({
             )
           }
         />
-        <ConfigButtonSortable iconType="hand-rock" />
+        <ConfigButtonSortable
+          tooltipText="Move Image"
+          tooltipDirection="top"
+          iconType="hand-rock"
+        />
         <ConfigButton
+          tooltipText="Horizontal Resize"
+          tooltipDirection="top"
           iconType="arrows-alt-h"
           onClick={() => onImageResizeWidth(imageInfo)}
         />
         <ConfigButton
+          tooltipText="Vertical Resize"
+          tooltipDirection="top"
           iconType="arrows-alt-v"
           onClick={() => onImageResizeHeight(imageInfo)}
         />
         <ConfigButton
+          tooltipText="Delete Image"
+          tooltipDirection="top"
           iconType="times"
           onClick={() => onImageRemove(imageInfo)}
         />
