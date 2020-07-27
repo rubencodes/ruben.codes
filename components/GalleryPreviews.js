@@ -18,6 +18,7 @@ const GalleryPreviews = ({
     <PhotoGrid
       images={galleryOrder
         .map((key) => galleries[key])
+        .filter(({ isPublished }) => isPublished || IS_DEV)
         .map(({ thumbnailPath, previewImage }) => ({
           imageUrl: `${baseUrl}${thumbnailPath}${previewImage.fileName}`,
           fileName: previewImage.fileName,

@@ -8,7 +8,7 @@ import PhotoGrid from "./PhotoGrid";
 
 const { metaUrl, metaDescription, metaTitle } = state.photography;
 
-const PhotoGridHero = ({ children, ...previewImage }) => {
+const PhotoGridHero = (previewImage) => {
   const {
     query: { galleryId },
   } = useRouter();
@@ -39,7 +39,6 @@ const PhotoGridHero = ({ children, ...previewImage }) => {
       </Head>
       <div className="hero">
         <PhotoGrid images={images} useDragHandle />
-        {children}
       </div>
     </>
   );

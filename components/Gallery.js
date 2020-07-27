@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Head from "next/head";
+import classnames from "classnames";
 
 import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
@@ -23,7 +24,9 @@ const PhotoGridGallery = ({
   thumbnailPath,
   images,
   previewImage,
-  updatePhotographyConfig,
+  isPublished,
+  onTogglePublish,
+  onUpdateImages,
 }) => {
   // Ref to the grid DOM node.
   const gridRef = useRef();
@@ -53,7 +56,7 @@ const PhotoGridGallery = ({
         // eslint-disable-next-line no-unused-vars
         ({ imageUrl: _, ...image }) => image,
       );
-      return updatePhotographyConfig(galleryImages);
+      return onUpdateImages(galleryImages);
     }
 
     setIsEditMode(true);
@@ -73,19 +76,7 @@ const PhotoGridGallery = ({
 
   return (
     <>
-      <PhotoGridHero {...imageManager.previewImage}>
-        {IS_DEV && (
-          <button
-            className={styles.photoGrid__HeroButton}
-            onClick={onToggleEditMode}
-          >
-            <Icon
-              className={styles[`photoGrid__HeroButton__${iconType}`]}
-              type={iconType}
-            />
-          </button>
-        )}
-      </PhotoGridHero>
+      <PhotoGridHero {...imageManager.previewImage} />
       <PhotoGrid
         gridRef={gridRef}
         images={imageManager.allImages}
@@ -134,6 +125,28 @@ const PhotoGridGallery = ({
           </>
         )}
       </PhotoGrid>
+      {IS_DEV && (
+        <div className={styles.photoGrid__ConfigButtonContainer}>
+          <button
+            className={classnames(
+              styles.photoGrid__ConfigButton,
+              styles.photoGrid__ConfigButtonEdit,
+            )}
+            onClick={onToggleEditMode}
+          >
+            <Icon
+              className={styles[`photoGrid__ConfigButtonEdit__${iconType}`]}
+              type={iconType}
+            />
+          </button>
+          <button
+            className={styles.photoGrid__ConfigButton}
+            onClick={onTogglePublish}
+          >
+            <Icon type={isPublished ? "eye-slash" : "eye"} />
+          </button>
+        </div>
+      )}
     </>
   );
 };

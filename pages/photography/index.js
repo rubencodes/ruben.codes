@@ -58,6 +58,7 @@ const Photography = () => {
                 customStyles: {},
               },
               images: [],
+              isPublished: false,
             },
           },
         },
