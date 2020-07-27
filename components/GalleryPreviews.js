@@ -18,6 +18,28 @@ const GalleryPreviews = ({
   const [showCreateModal, setShowCreateModal] = useState(false);
   const onToggleShowModal = () => setShowCreateModal(!showCreateModal);
 
+  // Optionally, allow editing the layout.
+  const [isSaving, setIsSaving] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const onToggleEditMode = () => {
+    if (isEditMode) {
+      setIsSaving(true);
+    }
+
+    setIsEditMode(true);
+  };
+  const iconType = (() => {
+    if (isSaving) {
+      return "spinner";
+    }
+
+    if (isEditMode) {
+      return "save";
+    } else {
+      return "edit";
+    }
+  })();
+
   return (
     <>
       <PhotoGrid
@@ -39,6 +61,7 @@ const GalleryPreviews = ({
       {IS_DEV && (
         <>
           <ConfigButtonContainer>
+            <ConfigButton iconType={iconType} onClick={onToggleEditMode} />
             <ConfigButton iconType="plus" onClick={onToggleShowModal} />
           </ConfigButtonContainer>
           {showCreateModal && (

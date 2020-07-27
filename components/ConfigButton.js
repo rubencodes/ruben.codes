@@ -7,7 +7,13 @@ import styles from "./ConfigButton.module.css";
 
 const ConfigButton = ({ className, iconType, iconClassName, ...props }) => (
   <button className={classnames(styles.configButton, className)} {...props}>
-    <Icon className={iconClassName} type={iconType} />
+    <Icon
+      className={classnames(
+        styles[`configButton__Icon--${iconType}`],
+        iconClassName,
+      )}
+      type={iconType}
+    />
   </button>
 );
 

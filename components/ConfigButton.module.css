@@ -12,3 +12,22 @@
   align-items: center;
   justify-content: center;
 }
+
+.configButton__Icon--edit {
+  position: relative;
+  left: 2px;
+  bottom: 1px;
+}
+
+.configButton__Icon--spinner {
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

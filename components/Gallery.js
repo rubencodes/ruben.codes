@@ -15,8 +15,6 @@ import useImageUploadManager from "../hooks/useImageUploadManager";
 import useImageActions from "../hooks/useImageActions";
 import { IS_DEV } from "../utilities/constants";
 
-import styles from "./Gallery.module.css";
-
 const noop = () => false;
 
 const PhotoGridGallery = ({
@@ -63,7 +61,6 @@ const PhotoGridGallery = ({
 
     setIsEditMode(true);
   };
-
   const iconType = (() => {
     if (isSaving) {
       return "spinner";
@@ -129,22 +126,12 @@ const PhotoGridGallery = ({
       </PhotoGrid>
       {IS_DEV && (
         <ConfigButtonContainer>
+          <ConfigButton iconType={iconType} onClick={onToggleEditMode} />
           <ConfigButton
-            className={classnames(styles.photoGrid__ConfigButtonEdit)}
-            iconType={iconType}
-            iconClassName={styles[`photoGrid__ConfigButtonEdit__${iconType}`]}
-            onClick={onToggleEditMode}
-          />
-          <ConfigButton
-            className={styles.photoGrid__ConfigButton}
             iconType={isPublished ? "eye-slash" : "eye"}
             onClick={onTogglePublish}
           />
-          <ConfigButton
-            className={styles.photoGrid__ConfigButton}
-            iconType="trash"
-            onClick={onDelete}
-          />
+          <ConfigButton iconType="trash" onClick={onDelete} />
         </ConfigButtonContainer>
       )}
     </>
