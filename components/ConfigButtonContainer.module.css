@@ -1,6 +1,11 @@
 .configButtonContainer {
+  position: absolute;
+  right: -20px;
+  height: 100%;
+}
+
+.configButtonContainer__Inner {
   position: fixed;
-  right: 20px;
   top: 30px;
 
   display: flex;

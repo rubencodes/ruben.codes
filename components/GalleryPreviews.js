@@ -55,6 +55,7 @@ const GalleryPreviews = ({
             spanHeight: previewImage.spanHeight,
           }))}
         onImageClick={onSelectGalleryIndex}
+        isEditMode={isEditMode}
         useWindowAsScrollContainer
         useDragHandle
       />

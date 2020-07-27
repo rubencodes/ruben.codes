@@ -15,7 +15,7 @@ function useImageUploadManager(callback, callbackDependencies) {
       onStartUpload,
       onFinishUpload,
     }),
-    [],
+    [isUploading, onStartUpload, onFinishUpload],
   );
 
   return imageUploadManager;

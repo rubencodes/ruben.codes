@@ -1,19 +1,19 @@
 import React, { useRef, useState } from "react";
 import Head from "next/head";
-import classnames from "classnames";
 
 import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
 import PhotoGridHero from "./PhotoGridHero";
-import PhotoGridPlaceholder from "./PhotoGridPlaceholder";
-import PhotoGridUploader from "./PhotoGridUploader";
 import ImageModal from "./ImageModal";
 import ConfigButtonContainer from "./ConfigButtonContainer";
 import ConfigButton from "./ConfigButton";
+import FileInput from "./FileInput";
 import useImageManager from "../hooks/useImageManager";
 import useImageUploadManager from "../hooks/useImageUploadManager";
 import useImageActions from "../hooks/useImageActions";
-import { IS_DEV } from "../utilities/constants";
+import useS3Uploader from "../hooks/useS3Uploader";
+import createPhotoUploads from "../utilities/createPhotoUploads";
+import { AWS_CREDENTIALS, IS_DEV } from "../utilities/constants";
 
 const noop = () => false;
 
@@ -73,6 +73,26 @@ const PhotoGridGallery = ({
     }
   })();
 
+  const uploader = useS3Uploader(AWS_CREDENTIALS);
+  const onFileInputChange = ({ target: { files } }) => {
+    // Stop if there's a pending upload.
+    if (imageUploadManager.isUploading) {
+      return;
+    }
+
+    // Make sure we're in edit mode first.
+    setIsEditMode(true);
+
+    // Upload the file.
+    imageUploadManager.onStartUpload();
+    return createPhotoUploads({
+      files,
+      fullPath,
+      thumbnailPath,
+      uploader,
+    }).then((fileNames) => imageUploadManager.onFinishUpload(fileNames));
+  };
+
   return (
     <>
       <PhotoGridHero {...imageManager.previewImage} />
@@ -91,19 +111,6 @@ const PhotoGridGallery = ({
         useWindowAsScrollContainer
         useDragHandle
       >
-        {isEditMode && (
-          <>
-            <PhotoGridPlaceholder show={imageUploadManager.isUploading} />
-            <PhotoGridUploader
-              dropZoneRef={gridRef}
-              fullPath={fullPath}
-              thumbnailPath={thumbnailPath}
-              onStartUpload={imageUploadManager.onStartUpload}
-              onFinishUpload={imageUploadManager.onFinishUpload}
-              disabled={imageUploadManager.isUploading}
-            />
-          </>
-        )}
         {imageManager.selectedImageUrl && (
           <>
             <Head>
@@ -127,6 +134,19 @@ const PhotoGridGallery = ({
       {IS_DEV && (
         <ConfigButtonContainer>
           <ConfigButton iconType={iconType} onClick={onToggleEditMode} />
+          <FileInput
+            onChange={onFileInputChange}
+            disabled={imageUploadManager.isUploading}
+            accept=".jpg,.jpeg"
+            multiple
+          >
+            {({ open }) => (
+              <ConfigButton
+                iconType={imageUploadManager.isUploading ? "spinner" : "plus"}
+                onClick={open}
+              />
+            )}
+          </FileInput>
           <ConfigButton
             iconType={isPublished ? "eye-slash" : "eye"}
             onClick={onTogglePublish}
