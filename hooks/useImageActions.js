@@ -137,8 +137,6 @@ function useImageActions(imageManager) {
     };
   }, [imageManager.allImages, imageManager.updateImage, imagePanEnabledList]);
 
-  console.log(imagePanEnabledList, imageManager.allImages);
-
   return {
     onImageClick,
     onImageRemove,
