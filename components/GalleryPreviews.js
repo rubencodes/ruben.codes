@@ -36,14 +36,18 @@ const GalleryPreviews = ({
         useWindowAsScrollContainer
         useDragHandle
       />
-      <ConfigButtonContainer>
-        <ConfigButton iconType="plus" onClick={onToggleShowModal} />
-      </ConfigButtonContainer>
-      {showCreateModal && (
-        <GalleryCreator
-          onCreateGallery={onCreateGallery}
-          onExit={onToggleShowModal}
-        />
+      {IS_DEV && (
+        <>
+          <ConfigButtonContainer>
+            <ConfigButton iconType="plus" onClick={onToggleShowModal} />
+          </ConfigButtonContainer>
+          {showCreateModal && (
+            <GalleryCreator
+              onCreateGallery={onCreateGallery}
+              onExit={onToggleShowModal}
+            />
+          )}
+        </>
       )}
     </>
   );
