@@ -26,6 +26,16 @@ const GalleryPage = () => {
     onSuccess: setPhotographyState,
   });
 
+  // Extract the relevant info.
+  const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
+    photographyState || {};
+  const { fullPath, thumbnailPath, previewImage, images, isPublished } =
+    selectedGallery || {};
+  const shouldShowGallery =
+    photographyState && selectedGallery && (isPublished || IS_DEV);
+  const shouldShow404 =
+    photographyState && (!selectedGallery || (!isPublished && !IS_DEV));
+
   // Handle updainge the photography config.
   const uploader = useS3Uploader(AWS_CREDENTIALS);
   const onUpdateGalleryImages = useCallback(
@@ -97,16 +107,6 @@ const GalleryPage = () => {
       uploader,
     }).then(() => window.location.reload());
   }, [uploader, photographyState]);
-
-  // Extract the relevant info.
-  const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
-    photographyState || {};
-  const { fullPath, thumbnailPath, previewImage, images, isPublished } =
-    selectedGallery || {};
-  const shouldShowGallery =
-    photographyState && selectedGallery && (isPublished || IS_DEV);
-  const shouldShow404 =
-    photographyState && (!selectedGallery || (!isPublished && !IS_DEV));
 
   return (
     <>
