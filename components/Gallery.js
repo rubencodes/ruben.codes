@@ -8,7 +8,6 @@ import ConfigButtonContainer from "./ConfigButtonContainer";
 import ConfigButton from "./ConfigButton";
 import FileInput from "./FileInput";
 import useImageManager from "../hooks/useImageManager";
-import useImageUploadManager from "../hooks/useImageUploadManager";
 import useImageActions from "../hooks/useImageActions";
 import useS3Uploader from "../hooks/useS3Uploader";
 import createPhotoUploads from "../utilities/createPhotoUploads";
@@ -24,6 +23,7 @@ const PhotoGridGallery = ({
   previewImage,
   isPublished,
   onUpdateImages,
+  onUpdatePreviewImage,
   onTogglePublish,
   onDelete,
 }) => {
@@ -37,10 +37,6 @@ const PhotoGridGallery = ({
     thumbnailPath,
     previewImage,
     images,
-  );
-  const imageUploadManager = useImageUploadManager(
-    (fileName) => imageManager.appendImage({ fileName }),
-    [imageManager.appendImage],
   );
   const imageActions = useImageActions(imageManager);
 
@@ -74,23 +70,40 @@ const PhotoGridGallery = ({
 
   // Handle uploads.
   const uploader = useS3Uploader(AWS_CREDENTIALS);
-  const onFileInputChange = ({ target: { files } }) => {
-    // Stop if there's a pending upload.
-    if (imageUploadManager.isUploading) {
-      return;
-    }
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const onUploadImageInput = ({ target: { files } }) => {
+    // Upload the new image.
+    setIsUploadingImage(true);
 
-    // Make sure we're in edit mode first.
-    setIsEditMode(true);
-
-    // Upload the file.
-    imageUploadManager.onStartUpload();
-    return createPhotoUploads({
+    const payload = {
       files,
       fullPath,
       thumbnailPath,
       uploader,
-    }).then((fileNames) => imageUploadManager.onFinishUpload(fileNames));
+    };
+    return createPhotoUploads(payload).then((fileNames) => {
+      setIsUploadingImage(false);
+      setIsEditMode(true); // Make sure we're in edit mode.
+
+      fileNames.forEach((fileName) => imageManager.appendImage({ fileName }));
+    });
+  };
+  const [isUploadingPreviewImage, setIsUploadingPreviewImage] = useState(false);
+  const onUploadPreviewImageInput = ({ target: { files } }) => {
+    // Upload the new image.
+    setIsUploadingPreviewImage(true);
+
+    const payload = {
+      files,
+      fullPath,
+      thumbnailPath,
+      uploader,
+    };
+    return createPhotoUploads(payload).then(([fileName]) => {
+      setIsUploadingPreviewImage(false);
+
+      onUpdatePreviewImage(fileName);
+    });
   };
 
   return (
@@ -139,8 +152,8 @@ const PhotoGridGallery = ({
             onClick={onToggleEditMode}
           />
           <FileInput
-            onChange={onFileInputChange}
-            disabled={imageUploadManager.isUploading}
+            onChange={onUploadImageInput}
+            disabled={isUploadingPreviewImage || isUploadingImage}
             accept=".jpg,.jpeg"
             multiple
           >
@@ -148,7 +161,21 @@ const PhotoGridGallery = ({
               <ConfigButton
                 tooltipText="New Image"
                 tooltipDirection="right"
-                iconType={imageUploadManager.isUploading ? "spinner" : "plus"}
+                iconType={isUploadingImage ? "spinner" : "plus"}
+                onClick={open}
+              />
+            )}
+          </FileInput>
+          <FileInput
+            onChange={onUploadPreviewImageInput}
+            disabled={isUploadingPreviewImage || isUploadingImage}
+            accept=".jpg,.jpeg"
+          >
+            {({ open }) => (
+              <ConfigButton
+                tooltipText="Update Preview Image"
+                tooltipDirection="right"
+                iconType={isUploadingPreviewImage ? "spinner" : "crown"}
                 onClick={open}
               />
             )}

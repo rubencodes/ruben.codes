@@ -56,6 +56,9 @@ function useGalleryImageManager(_galleryOrder, _galleries) {
     () => ({
       galleryOrder,
       galleries,
+      allImages: galleryOrder.map(
+        (galleryId) => galleries[galleryId].previewImage,
+      ),
 
       removeImage,
       updateImage,

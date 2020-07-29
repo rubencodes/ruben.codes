@@ -18,6 +18,7 @@ import styles from "./index.module.css";
 const GalleryPage = () => {
   const {
     query: { galleryId },
+    push,
   } = useRouter();
 
   // Load the photography config.
@@ -107,6 +108,31 @@ const GalleryPage = () => {
       uploader,
     }).then(() => window.location.reload());
   }, [uploader, photographyState]);
+  const onUpdateGalleryPreviewImage = useCallback(
+    async (fileName) => {
+      // Generate the new config.
+      // We could optimisitcally update here, but the
+      // JSON upload is so fast it's not really worth it.
+      return createConfigUpload({
+        json: {
+          ...photographyState,
+          galleries: {
+            ...photographyState.galleries,
+            [galleryId]: {
+              ...photographyState.galleries[galleryId],
+              previewImage: {
+                ...photographyState.galleries[galleryId].previewImage,
+                fileName,
+                customStyles: {},
+              },
+            },
+          },
+        },
+        uploader,
+      }).then(() => push("/photography"));
+    },
+    [uploader, photographyState],
+  );
 
   return (
     <>
@@ -125,6 +151,7 @@ const GalleryPage = () => {
             previewImage={previewImage}
             isPublished={isPublished}
             onUpdateImages={onUpdateGalleryImages}
+            onUpdatePreviewImage={onUpdateGalleryPreviewImage}
             onTogglePublish={onToggleGalleryPublish}
             onDelete={onDeleteGallery}
           />
