@@ -27,18 +27,6 @@ export const PhotoGrid = ({
   const renderButtons = useCallback(
     ({ imageInfo, elementRef }) => (
       <>
-        <ConfigButton
-          tooltipText="Pan Image"
-          tooltipDirection="top"
-          iconType="arrows-alt"
-          onClick={(e) =>
-            onImageTogglePan(
-              imageInfo,
-              e.target.closest("button"),
-              elementRef.current,
-            )
-          }
-        />
         <ConfigButtonSortable
           tooltipText="Move Image"
           tooltipDirection="top"
@@ -55,6 +43,18 @@ export const PhotoGrid = ({
           tooltipDirection="top"
           iconType="arrows-alt-v"
           onClick={() => onImageResizeHeight(imageInfo)}
+        />
+        <ConfigButton
+          tooltipText="Pan Image"
+          tooltipDirection="top"
+          iconType="arrows-alt"
+          onClick={(e) =>
+            onImageTogglePan(
+              imageInfo,
+              e.target.closest("button"),
+              elementRef.current,
+            )
+          }
         />
         <ConfigButton
           tooltipText="Delete Image"
