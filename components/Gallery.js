@@ -146,7 +146,7 @@ const PhotoGridGallery = ({
       {IS_DEV && (
         <ConfigButtonContainer>
           <ConfigButton
-            tooltipText="Edit Images"
+            tooltipText={isEditMode ? "Save Changes" : "Edit Images"}
             tooltipDirection="right"
             iconType={iconType}
             onClick={onToggleEditMode}

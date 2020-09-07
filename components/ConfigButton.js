@@ -14,7 +14,7 @@ const ConfigButton = ({
   tooltipDirection,
   ...props
 }) => (
-  <Tooltip text={tooltipText} direction={tooltipDirection}>
+  <Tooltip text={tooltipText} preferredDirection={tooltipDirection}>
     <button className={classnames(styles.configButton, className)} {...props}>
       <Icon
         className={classnames(
