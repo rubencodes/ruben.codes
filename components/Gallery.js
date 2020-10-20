@@ -108,6 +108,9 @@ const PhotoGridGallery = ({
 
   return (
     <>
+      <Head>
+        <meta key="image" property="og:image" content={previewImage.imageUrl} />
+      </Head>
       <PhotoGrid
         gridRef={gridRef}
         images={imageManager.allImages}
