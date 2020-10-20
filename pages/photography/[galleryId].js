@@ -171,7 +171,7 @@ const GalleryPage = ({ photographyState }) => {
         {shouldShow404 && <h2>404 not found :(</h2>}
         <div className={styles.buttonContainer}>
           <Link href="/photography">
-            <a>← Go Back</a>
+            <a>← All Galleries</a>
           </Link>
           <button onClick={scrollToTop}>↑ Scroll to Top</button>
         </div>
