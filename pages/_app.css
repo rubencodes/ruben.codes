@@ -39,6 +39,10 @@ b.subheading {
   margin: 16px 0 8px;
 }
 
+div.loader-container {
+  padding: 100px;
+}
+
 div.hero {
   position: relative;
 

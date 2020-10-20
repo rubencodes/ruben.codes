@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
 import Gallery from "../../components/Gallery";
+import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
 import useS3Uploader from "../../hooks/useS3Uploader";
 import fetchConfig from "../../utilities/fetchConfig";
@@ -155,6 +156,11 @@ const GalleryPage = () => {
             onTogglePublish={onToggleGalleryPublish}
             onDelete={onDeleteGallery}
           />
+        )}
+        {!photographyState && (
+          <div className="loader-container">
+            <Loader />
+          </div>
         )}
         {shouldShow404 && <h2>404 not found :(</h2>}
         <div className={styles.buttonContainer}>

@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
 import GalleryPreviews from "../../components/GalleryPreviews";
+import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
 import useS3Uploader from "../../hooks/useS3Uploader";
 import fetchConfig from "../../utilities/fetchConfig";
@@ -125,6 +126,11 @@ const Photography = () => {
             onUpdateGalleryPreviews={onUpdateGalleryPreviews}
             onSelect={onSelect}
           />
+        )}
+        {!photographyState && (
+          <div className="loader-container">
+            <Loader />
+          </div>
         )}
       </main>
       <Footer />
