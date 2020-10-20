@@ -131,6 +131,9 @@ const GalleryPage = ({ photographyState }) => {
   return (
     <>
       <Head>
+        <title>
+          {state.photography.metaTitle} - {previewImage.caption}
+        </title>
         <meta
           key="title"
           property="og:title"
