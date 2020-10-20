@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import classnames from "classnames";
 import Link from "next/link";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
@@ -129,6 +130,19 @@ const GalleryPage = ({ photographyState }) => {
 
   return (
     <>
+      <Head>
+        <meta
+          key="title"
+          property="og:title"
+          content={state.photography.metaTitle}
+        />
+        <meta
+          key="description"
+          property="og:description"
+          content={state.photography.metaDescription}
+        />
+        <meta key="image" property="og:image" content={previewImage.imageUrl} />
+      </Head>
       <main className={classnames("page", styles.photography)}>
         <h1 className="heading">{state.name}</h1>
         <b className="subheading">

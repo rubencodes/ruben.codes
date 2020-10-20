@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import Head from "next/head";
 
 import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";
@@ -108,9 +107,6 @@ const PhotoGridGallery = ({
 
   return (
     <>
-      <Head>
-        <meta key="image" property="og:image" content={previewImage.imageUrl} />
-      </Head>
       <PhotoGrid
         gridRef={gridRef}
         images={imageManager.allImages}
