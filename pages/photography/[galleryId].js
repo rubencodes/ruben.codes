@@ -1,7 +1,6 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import classnames from "classnames";
 import Link from "next/link";
-import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
@@ -9,24 +8,17 @@ import Gallery from "../../components/Gallery";
 import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
 import useS3Uploader from "../../hooks/useS3Uploader";
-import fetchConfig from "../../utilities/fetchConfig";
 import scrollToTop from "../../utilities/scrollToTop";
 import createConfigUpload from "../../utilities/createConfigUpload";
 import { state, AWS_CREDENTIALS, IS_DEV } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 
-const GalleryPage = () => {
+const GalleryPage = ({ photographyState }) => {
   const {
     query: { galleryId },
     push,
   } = useRouter();
-
-  // Load the photography config.
-  const [photographyState, setPhotographyState] = useState(null);
-  useSWR(state.photography.metaConfig, fetchConfig, {
-    onSuccess: setPhotographyState,
-  });
 
   // Extract the relevant info.
   const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
@@ -176,9 +168,13 @@ const GalleryPage = () => {
 };
 
 export async function getServerSideProps(context) {
+  const res = await fetch(state.photography.metaConfig, { mode: "cors" });
+  const data = await res.json();
+
   return {
     props: {
       params: context.params,
+      photographyState: data,
     },
   };
 }

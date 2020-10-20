@@ -1,7 +1,6 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import Head from "next/head";
 import classnames from "classnames";
-import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import InstagramLink from "../../components/InstagramLink";
@@ -9,22 +8,15 @@ import GalleryPreviews from "../../components/GalleryPreviews";
 import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
 import useS3Uploader from "../../hooks/useS3Uploader";
-import fetchConfig from "../../utilities/fetchConfig";
 import createPhotoUploads from "../../utilities/createPhotoUploads";
 import createConfigUpload from "../../utilities/createConfigUpload";
 import { state, AWS_CREDENTIALS } from "../../utilities/constants";
 
 import styles from "./index.module.css";
 
-const Photography = () => {
+const Photography = ({ photographyState }) => {
   const router = useRouter();
   const onSelect = (gallery) => router.push(`/photography/${gallery}`);
-
-  // Load the photography config.
-  const [photographyState, setPhotographyState] = useState(null);
-  useSWR(state.photography.metaConfig, fetchConfig, {
-    onSuccess: setPhotographyState,
-  });
 
   // Handle updating the photography config.
   const uploader = useS3Uploader(AWS_CREDENTIALS);
@@ -137,5 +129,16 @@ const Photography = () => {
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await fetch(state.photography.metaConfig, { mode: "cors" });
+  const data = await res.json();
+
+  return {
+    props: {
+      photographyState: data,
+    },
+  };
+}
 
 export default Photography;
