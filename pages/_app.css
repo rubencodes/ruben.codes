@@ -31,10 +31,13 @@ h1.heading {
   margin-bottom: 20px;
 }
 
-img.heading-image {
+div.heading-image {
   width: 153px;
   height: 92px;
   margin-right: 20px;
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 div.heading-actions {
@@ -146,6 +149,17 @@ main.page {
   position: relative;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 @media (max-width: 880px) {
   html,
   body,
@@ -183,7 +197,7 @@ main.page {
     text-align: center;
   }
 
-  img.heading-image {
+  div.heading-image {
     width: 140px;
     height: 85px;
   }

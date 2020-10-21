@@ -16,13 +16,12 @@ const PhotographyHeader = ({ subheader }) => {
   return (
     <>
       <h1 className="heading">
-        <img
+        <div
           className="heading-image"
-          src={RMJLogo}
-          alt="RMJ Photography"
-          height="92"
-          width="153"
-        />
+          style={{ backgroundImage: `url(${RMJLogo})` }}
+        >
+          <span className="sr-only">RMJ Photography</span>
+        </div>
         <div className="heading-actions">
           <InstagramLink />
           <ContactLink />
