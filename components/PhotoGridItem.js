@@ -7,6 +7,7 @@ import ImageLicenseData from "./ImageLicenseData";
 import styles from "./PhotoGridItem.module.css";
 
 const PhotoGridItem = ({
+  ariaLabel,
   imageIndex,
   imageUrl,
   fileName,
@@ -53,6 +54,7 @@ const PhotoGridItem = ({
         onClick={() => onClick(imageInfo)}
         disabled={isDisabled}
         style={customContainerStyles}
+        aria-label={ariaLabel}
       >
         <ImageLicenseData imageUrl={imageUrl} />
         <div

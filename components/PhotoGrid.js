@@ -73,6 +73,7 @@ export const PhotoGrid = ({
         <PhotoGridItemSortable
           key={image.fileName}
           index={index}
+          ariaLabel={`Image ${index + 1} of ${images.length}`}
           imageIndex={index}
           {...image}
           onClick={onImageClick}
