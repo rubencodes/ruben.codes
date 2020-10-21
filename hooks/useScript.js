@@ -3,9 +3,13 @@ const { useState, useEffect } = require("react");
 // Ensure we don't load more than once.
 const loadedScriptsMap = new Map();
 
-function useScript(scriptUrl) {
+function useScript(scriptUrl, { shouldLoadScript } = {}) {
   const [ready, setReady] = useState(false);
   useEffect(() => {
+    if (!shouldLoadScript) {
+      return;
+    }
+
     const loadingScript = loadedScriptsMap.get(scriptUrl);
     if (loadingScript) {
       loadingScript.then(() => setReady(true));
@@ -24,7 +28,7 @@ function useScript(scriptUrl) {
         document.head.appendChild(script);
       }),
     );
-  }, [scriptUrl]);
+  }, [scriptUrl, shouldLoadScript]);
 
   return ready;
 }
