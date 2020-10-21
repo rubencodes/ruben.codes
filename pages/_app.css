@@ -32,8 +32,8 @@ h1.heading {
 }
 
 img.heading-image {
-  width: 200px;
-  height: 120px;
+  width: 153px;
+  height: 92px;
   margin-right: 20px;
 }
 
@@ -192,5 +192,10 @@ main.page {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  button,
+  a {
+    padding: 5px 10px;
   }
 }
