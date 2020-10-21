@@ -33,6 +33,7 @@ h1.heading {
 
 img.heading-image {
   width: 200px;
+  height: 120px;
   margin-right: 20px;
 }
 
@@ -183,6 +184,7 @@ main.page {
 
   img.heading-image {
     width: 140px;
+    height: 85px;
   }
 
   b.subheading {
