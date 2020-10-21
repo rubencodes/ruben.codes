@@ -110,6 +110,14 @@
 }
 
 @media (max-width: 400px) {
+  .photoGridItemActive:hover .photoGridItem__Inner {
+    transform: scale(1.05);
+  }
+
+  .photoGridItemActive:hover {
+    transform: scale(1);
+  }
+
   .photoGridItemSpanWidth2,
   .photoGridItemSpanWidth3 {
     grid-column: span 1;
