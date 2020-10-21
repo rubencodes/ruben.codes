@@ -20,11 +20,29 @@ body.no_scroll {
 }
 
 h1.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
   font-family: "IBM Plex Serif", serif;
   font-weight: 700;
   font-size: 2.5em;
   margin: 0;
   margin-bottom: 20px;
+}
+
+img.heading-image {
+  width: 200px;
+}
+
+div.heading-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+div.heading-actions > *:not(:first-child) {
+  margin-top: 4px;
 }
 
 b.subheading {

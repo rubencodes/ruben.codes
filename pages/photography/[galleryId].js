@@ -4,7 +4,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import InstagramLink from "../../components/InstagramLink";
+import PhotographyHeader from "../../components/PhotographyHeader";
 import Gallery from "../../components/Gallery";
 import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
@@ -147,11 +147,7 @@ const GalleryPage = ({ photographyState }) => {
         <meta key="image" property="og:image" content={previewImage.imageUrl} />
       </Head>
       <main className={classnames("page", styles.photography)}>
-        <h1 className="heading">{state.name}</h1>
-        <b className="subheading">
-          {`Photography${previewImage ? ` - ${previewImage.caption}` : ""}`}
-          <InstagramLink />
-        </b>
+        <PhotographyHeader subheader={previewImage.caption} />
         {shouldShowGallery && (
           <Gallery
             baseUrl={baseUrl}

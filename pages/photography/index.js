@@ -3,7 +3,7 @@ import Head from "next/head";
 import classnames from "classnames";
 import { useRouter } from "next/router";
 
-import InstagramLink from "../../components/InstagramLink";
+import PhotographyHeader from "../../components/PhotographyHeader";
 import GalleryPreviews from "../../components/GalleryPreviews";
 import Loader from "../../components/Loader";
 import Footer from "../../components/Footer";
@@ -106,11 +106,7 @@ const Photography = ({ photographyState }) => {
         />
       </Head>
       <main className={classnames("page", styles.photography)}>
-        <h1 className="heading">{state.name}</h1>
-        <b className="subheading">
-          Photography &nbsp;
-          <InstagramLink />
-        </b>
+        <PhotographyHeader />
         {photographyState && (
           <GalleryPreviews
             {...photographyState}
