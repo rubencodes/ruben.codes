@@ -171,6 +171,7 @@ main.page {
 @media (max-width: 440px) {
   main.page {
     padding: 28px 20px;
+    box-shadow: none;
   }
 
   div.hero {
