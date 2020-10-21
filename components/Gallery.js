@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import Head from "next/head";
 
 import ImageLicenseData from "./ImageLicenseData";
 import PhotoGrid from "./PhotoGrid";

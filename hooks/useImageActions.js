@@ -67,7 +67,7 @@ function useImageActions(imageManager) {
   // Image was clicked.
   const onImageClick = useCallback(
     ({ imageIndex }) => imageManager.setSelectedImageIndex(imageIndex),
-    [imageManager.setSelectedImageInde],
+    [imageManager.setSelectedImageIndex],
   );
 
   // Remove Image button clicked.
