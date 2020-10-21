@@ -11,7 +11,7 @@ function useWindowSize(defaultSize) {
     const onResize = () => setSize(getWindowSize());
 
     onResize(); // Set for initial render.
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", onResize, false);
     return () => window.removeEventListener("resize", onResize);
   }, []);
 

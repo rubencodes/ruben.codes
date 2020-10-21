@@ -16,7 +16,13 @@ const PhotographyHeader = ({ subheader }) => {
   return (
     <>
       <h1 className="heading">
-        <img className="heading-image" src={RMJLogo} alt="RMJ Photography" />
+        <img
+          className="heading-image"
+          src={RMJLogo}
+          alt="RMJ Photography"
+          height="92"
+          width="153"
+        />
         <div className="heading-actions">
           <InstagramLink />
           <ContactLink />

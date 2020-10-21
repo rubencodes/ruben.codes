@@ -127,7 +127,7 @@ function useImageActions(imageManager) {
       const image = imageManager.allImages[imageIndex];
       eventListeners[imageUrl] = (event) =>
         onImagePan(event, { imageIndex, ...image }, imageManager.updateImage);
-      imageEl.addEventListener("mousewheel", eventListeners[imageUrl]);
+      imageEl.addEventListener("mousewheel", eventListeners[imageUrl], false);
     });
 
     return () => {

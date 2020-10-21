@@ -37,7 +37,7 @@ function useElementVisibility() {
     };
 
     eventListener();
-    window.addEventListener("resize", eventListener);
+    window.addEventListener("resize", eventListener, false);
     return () => window.removeEventListener("resize", eventListener);
   }, []);
 
