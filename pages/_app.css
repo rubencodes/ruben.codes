@@ -123,7 +123,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 24px;
+  min-height: 28px;
   font-family: "IBM Plex Sans", sans;
   font-weight: bold;
   font-size: small;
@@ -210,6 +210,7 @@ main.page {
 
   button,
   a {
+    min-height: 26px;
     padding: 5px 10px;
   }
 }
