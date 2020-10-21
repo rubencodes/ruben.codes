@@ -27,7 +27,7 @@ const PhotographyHeader = ({ subheader }) => {
           )}
         </div>
       </h1>
-      <b className="subheading">{subheader}</b>
+      {subheader && <b className="subheading">{subheader}</b>}
     </>
   );
 };
