@@ -20,6 +20,10 @@ const AppContainer = ({ Component, pageProps }) => (
       <meta name="theme-color" content={state.metaThemeColor} />
       <link rel="icon" type="image/png" href={state.metaFavicon} />
       <link
+        href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400"
+        rel="stylesheet"
+      />
+      <link
         href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,700"
         rel="stylesheet"
       />
