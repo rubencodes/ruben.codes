@@ -157,6 +157,7 @@ main.page {
   main.page {
     padding: 44px 40px;
     margin: 0;
+    box-shadow: none;
   }
 
   div.hero {
@@ -171,7 +172,6 @@ main.page {
 @media (max-width: 440px) {
   main.page {
     padding: 28px 20px;
-    box-shadow: none;
   }
 
   div.hero {
