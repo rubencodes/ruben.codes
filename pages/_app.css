@@ -59,6 +59,7 @@ b.subheading {
   font-family: "IBM Plex Sans", sans;
   font-weight: bold;
   font-size: small;
+  line-height: 14px;
   text-transform: uppercase;
   margin: 0 0 8px;
 }
