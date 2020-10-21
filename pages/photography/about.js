@@ -12,6 +12,7 @@ const About = () => (
   <>
     <Head>
       <title>{state.photography.metaTitle}</title>
+      <meta name="description" content={state.photography.metaDescription} />
       <meta
         key="title"
         property="og:title"

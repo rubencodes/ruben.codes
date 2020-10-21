@@ -13,6 +13,7 @@ const Home = () => (
   <>
     <Head>
       <title>{state.home.metaTitle}</title>
+      <meta name="description" content={state.home.metaDescription} />
       <meta key="title" property="og:title" content={state.home.metaTitle} />
       <meta
         key="description"
