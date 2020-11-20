@@ -1,11 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import classnames from "classnames";
 
 import { state } from "../utilities/constants";
 import Footer from "../components/Footer";
-
-import styles from "./index.module.css";
 
 const Home = () => (
   <>
@@ -21,7 +18,7 @@ const Home = () => (
       <meta key="url" property="og:url" content={state.home.metaUrl} />
       <meta key="image" property="og:image" content={state.home.metaImage} />
     </Head>
-    <main className={classnames("page", styles.resumeContainer)}>
+    <main className="page">
       <h1 className="heading">Privacy Policy</h1>
 
       <p>
