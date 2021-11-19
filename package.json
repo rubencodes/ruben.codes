@@ -21,7 +21,7 @@
     "eslint-plugin-react": "^7.20.3",
     "image-blob-reduce": "^1.0.4",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.4.4",
+    "next": "^11.1.1",
     "next-images": "^1.6.0",
     "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
