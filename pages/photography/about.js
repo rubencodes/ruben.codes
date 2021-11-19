@@ -33,7 +33,7 @@ const About = () => (
     <main className={classnames("page", styles.photography)}>
       <PhotographyHeader subheader={state.photography.pageTitle} />
       <p className="text">
-        {state.photograpy.pageText}
+        {state.photography.pageText}
       </p>
     </main>
     <Footer />
