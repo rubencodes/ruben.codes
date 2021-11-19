@@ -31,16 +31,9 @@ const About = () => (
       />
     </Head>
     <main className={classnames("page", styles.photography)}>
-      <PhotographyHeader subheader="About" />
+      <PhotographyHeader subheader={state.photography.pageTitle} />
       <p className="text">
-        My name is Ruben Martinez Jr. I'm a New York City based photographer and
-        software engineer. My artistic interests are mainly around capturing
-        human portraits, both in the studio and out in the real world. I most
-        often shoot with my Sony A7RIV mirrorless camera, and I prefer to shoot
-        with a macro lens to capture more intimately framed shots. Check out my
-        photo galleries via the link above, and feel free to contact me if you
-        see anything you like or if you'd be interested in collaborating on a
-        shoot.
+        {state.photography.pageText}
       </p>
     </main>
     <Footer />
