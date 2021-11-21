@@ -126,9 +126,4 @@
   .photoGridItemSpanWidth3 {
     grid-column: span 1;
   }
-
-  .photoGridItemSpanHeight2,
-  .photoGridItemSpanHeight3 {
-    grid-row: span 1;
-  }
 }
