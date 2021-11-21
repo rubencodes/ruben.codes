@@ -3,7 +3,11 @@
     "browser": true,
     "node": true
   },
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:react/recommended"
+  ],
   "plugins": [
     "@typescript-eslint"
   ],

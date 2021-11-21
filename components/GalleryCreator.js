@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import classnames from "classnames";
 
 import ModalBackdrop from "./ModalBackdrop";
@@ -104,7 +105,10 @@ const GalleryCreator = ({ onCreateGallery, onExit }) => {
             required
           />
         </label>
-        <img className={style.galleryCreatorForm__Image} src={fileAsDataUrl} />
+        <Image
+          className={style.galleryCreatorForm__Image}
+          src={fileAsDataUrl}
+        />
         <div className={style.galleryCreatorForm__ButtonContainer}>
           <button
             type="submit"

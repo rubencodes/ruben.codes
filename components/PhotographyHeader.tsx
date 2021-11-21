@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import RMJLogo from "./RMJLogo.svg";
 import InstagramLink from "./InstagramLink";
 import ContactLink from "./ContactLink";
 
@@ -22,7 +21,9 @@ const PhotographyHeader: React.FC<Props> = ({ subheader }) => {
       <h1 className="heading">
         <div
           className="heading-image"
-          style={{ backgroundImage: `url(${RMJLogo})` }}
+          style={{
+            backgroundImage: `url(/static/RMJLogo.svg)`,
+          }}
         >
           <span className="sr-only">RMJ Photography</span>
         </div>
