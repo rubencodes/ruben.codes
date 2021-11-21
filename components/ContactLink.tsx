@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactLink = ({ children }) => (
+const ContactLink: React.FC = ({ children }) => (
   <a href="mailto:ruben@rmj.photography" target="_blank" rel="noreferrer">
     {children || "Contact Me"}
   </a>

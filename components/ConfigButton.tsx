@@ -2,11 +2,19 @@ import React from "react";
 import classnames from "classnames";
 
 import Icon from "./Icon";
-import Tooltip from "./Tooltip";
+import Tooltip, { TOOLTIP_DIRECTIONS } from "./Tooltip";
 
 import styles from "./ConfigButton.module.css";
 
-const ConfigButton = ({
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  iconType: string;
+  iconClassName?: string;
+  tooltipText: string;
+  tooltipDirection: TOOLTIP_DIRECTIONS;
+}
+
+const ConfigButton: React.FC<Props> = ({
   className,
   iconType,
   iconClassName,

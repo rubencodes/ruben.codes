@@ -3,8 +3,11 @@
     "browser": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "parser": "babel-eslint",
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -18,8 +21,5 @@
     "Map": true,
     "AWS": true,
     "Promise": true
-  },
-  "rules": {
-    "react/prop-types": [0]
   }
 }

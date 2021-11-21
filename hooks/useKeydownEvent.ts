@@ -3,7 +3,7 @@ import useEvent from "./useEvent";
 function useKeydownEvent(
   func: (event: KeyboardEvent) => void,
   deps: any[],
-  bindToElement: boolean,
+  bindToElement?: boolean,
 ) {
   useEvent("keydown", func as (event: Event) => void, [...deps], bindToElement);
 }

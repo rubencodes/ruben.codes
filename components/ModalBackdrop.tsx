@@ -3,7 +3,11 @@ import classnames from "classnames";
 
 import styles from "./ModalBackdrop.module.css";
 
-const ModalBackdrop = ({ className, ...props }) => (
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
+
+const ModalBackdrop: React.FC<Props> = ({ className, ...props }) => (
   <div className={classnames(styles.modalBackdrop, className)} {...props} />
 );
 

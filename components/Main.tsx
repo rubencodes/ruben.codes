@@ -4,8 +4,29 @@ import MainItem from "./MainItem";
 import InlineGallery from "./InlineGallery";
 
 import styles from "./Main.module.css";
+import { Item } from "../types/Item";
 
-const Main = ({
+interface Props {
+  name: string;
+  about: string;
+  art: {
+    baseURL: string;
+    largePrefix: string;
+    thumbPrefix: string;
+    images: string[];
+  };
+  design: {
+    baseURL: string;
+    largePrefix: string;
+    thumbPrefix: string;
+    images: string[];
+  };
+  experience: Item[];
+  education: Item[];
+  projects: Item[];
+}
+
+const Main: React.FC<Props> = ({
   name,
   about,
   art,

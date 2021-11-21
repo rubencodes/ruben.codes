@@ -9,7 +9,11 @@ import ContactLink from "./ContactLink";
 const GALLERIES_PATH = "/photography";
 const ABOUT_PAGE_PATH = "/photography/about";
 
-const PhotographyHeader = ({ subheader }) => {
+interface Props {
+  subheader?: React.ReactNode;
+}
+
+const PhotographyHeader: React.FC<Props> = ({ subheader }) => {
   const { pathname } = useRouter();
   const isAboutPage = pathname === ABOUT_PAGE_PATH;
 

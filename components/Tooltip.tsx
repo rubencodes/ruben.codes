@@ -5,28 +5,29 @@ import useElementVisibility from "../hooks/useElementVisibility";
 
 import styles from "./Tooltip.module.css";
 
-export const TOOLTIP_DIRECTIONS = {
-  TOP: "top",
-  BOTTOM: "bottom",
-  LEFT: "left",
-  RIGHT: "right",
-};
+export enum TOOLTIP_DIRECTIONS {
+  TOP = "top",
+  BOTTOM = "bottom",
+  LEFT = "left",
+  RIGHT = "right",
+}
 
-const Tooltip = ({ text, children, preferredDirection }) => {
-  const [ref, visibility] = useElementVisibility();
+interface Props {
+  text: string;
+  preferredDirection: TOOLTIP_DIRECTIONS;
+}
+
+const Tooltip: React.FC<Props> = ({ text, children, preferredDirection }) => {
+  const [ref, visibility] = useElementVisibility<HTMLDivElement>();
   if (!text) {
-    return children;
+    return <>{children}</>;
   }
 
   // Change preferred direction if necessary.
   const [direction, setDirection] = useState(preferredDirection);
   useEffect(() => {
-    const {
-      isTopVisible,
-      isBottomVisible,
-      isLeftVisible,
-      isRightVisible,
-    } = visibility;
+    const { isTopVisible, isBottomVisible, isLeftVisible, isRightVisible } =
+      visibility;
 
     switch (direction) {
       case TOOLTIP_DIRECTIONS.TOP: {

@@ -1,7 +1,11 @@
 import React from "react";
 import Head from "next/head";
 
-const ImageLicenseData = ({ imageUrl }) => (
+interface Props {
+  imageUrl: string;
+}
+
+const ImageLicenseData: React.FC<Props> = ({ imageUrl }) => (
   <Head>
     <script
       key={imageUrl}

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-function useLazyEffect(
-  effectFunction: (el: Element | null) => void,
+function useLazyEffect<El extends Element>(
+  effectFunction: (el: El | null) => void,
   deps: any[],
 ) {
-  const [targetElement, setTargetElement] = useState<Element | null>(null);
+  const [targetElement, setTargetElement] = useState<El | null>(null);
   useEffect(() => {
     // No target element or effect function yet, just give up.
     if (!targetElement || typeof effectFunction !== "function") {
@@ -24,14 +24,14 @@ function useLazyEffect(
           return;
         }
 
-        effectFunction(entry.target);
+        effectFunction(entry.target as El);
       });
     });
 
     targetElementObserver.observe(targetElement);
   }, [targetElement, ...deps]);
 
-  return (ref: Element) => setTargetElement(ref);
+  return (ref: El) => setTargetElement(ref);
 }
 
 export default useLazyEffect;

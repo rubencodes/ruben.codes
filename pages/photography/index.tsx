@@ -11,12 +11,17 @@ import useS3Uploader from "../../hooks/useS3Uploader";
 import createPhotoUploads from "../../utilities/createPhotoUploads";
 import createConfigUpload from "../../utilities/createConfigUpload";
 import { state, AWS_CREDENTIALS } from "../../utilities/constants";
+import { GalleryConfig } from "../../types/Gallery";
 
 import styles from "./index.module.css";
 
-const Photography = ({ photographyState }) => {
+interface Props {
+  photographyState: GalleryConfig;
+}
+
+const Photography: React.FC<Props> = ({ photographyState }) => {
   const router = useRouter();
-  const onSelect = (gallery) => router.push(`/photography/${gallery}`);
+  const onSelect = (gallery: string) => router.push(`/photography/${gallery}`);
 
   // Handle updating the photography config.
   const uploader = useS3Uploader(AWS_CREDENTIALS);

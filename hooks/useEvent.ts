@@ -4,7 +4,7 @@ function useEvent<EventName extends string>(
   eventName: EventName,
   func: EventListener,
   deps: any[],
-  bindToElement: boolean,
+  bindToElement?: boolean,
 ) {
   useEffect(() => {
     document.addEventListener(eventName, func, bindToElement);

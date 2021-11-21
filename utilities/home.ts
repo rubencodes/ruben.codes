@@ -50,13 +50,20 @@ export default {
   ],
   experience: [
     {
+      name: "OkCupid",
+      location: "New York, New York",
+      detail: "Senior Software Engineer",
+      startDate: "October 2021",
+      endDate: "Present",
+      text: "",
+    },
+    {
       name: "Slack",
       location: "New York, New York",
       detail: "Senior Software Engineer",
       startDate: "April 2020",
-      endDate: "Present",
-      text:
-        "I work on the frontend team creating insightful data visualizations for our enterprise customers.",
+      endDate: "October 2021",
+      text: "I work on the frontend team creating insightful data visualizations for our enterprise customers.",
     },
     {
       name: "OkCupid",
@@ -64,8 +71,7 @@ export default {
       detail: "Senior Software Engineer",
       startDate: "June 2018",
       endDate: "April 2020",
-      text:
-        "I worked on the web and iOS teams at OkCupid, helping come up with new and interesting ways for people to get to know each other online. I got the opportunity to work on several major projects, including reworking the web experience into a Single Page App, and rewriting OkCupid's instant messenger using React.",
+      text: "I worked on the web and iOS teams at OkCupid, helping come up with new and interesting ways for people to get to know each other online. I got the opportunity to work on several major projects, including reworking the web experience into a Single Page App, and rewriting OkCupid's instant messenger using React.",
     },
     {
       name: "Well Health Inc",
@@ -73,8 +79,7 @@ export default {
       detail: "Lead Frontend Eng",
       startDate: "September 2015",
       endDate: "June 2018",
-      text:
-        "Designed and built a HIPAA-compliant encrypted messaging web app with real-time push notifications & offline support, that allows hospitals and clinics to communicate securely and reliably with their patients.",
+      text: "Designed and built a HIPAA-compliant encrypted messaging web app with real-time push notifications & offline support, that allows hospitals and clinics to communicate securely and reliably with their patients.",
     },
     {
       name: "All-Star Code",
@@ -82,8 +87,7 @@ export default {
       detail: "Lead Instructor",
       startDate: "June 2015",
       endDate: "August 2016",
-      text:
-        "Introduced a class of 20 high school students to web & mobile app development, robotics and physical computing, while teaching them to use languages like Python, JS, and C.",
+      text: "Introduced a class of 20 high school students to web & mobile app development, robotics and physical computing, while teaching them to use languages like Python, JS, and C.",
     },
     {
       name: "Apress Media",
@@ -91,8 +95,7 @@ export default {
       detail: "Writer",
       startDate: "February 2015",
       endDate: "June 2015",
-      text:
-        "Co-authored a book on teaching Swift development of Apple Watch apps using WatchKit 1.0.",
+      text: "Co-authored a book on teaching Swift development of Apple Watch apps using WatchKit 1.0.",
     },
   ],
   education: [
@@ -117,80 +120,67 @@ export default {
     {
       name: "Recal",
       detail: "React Component",
-      text:
-        "Built a ~6kb reusable React/Preact Calendar component using CSS Grid. Reached #12 on the global trending repositories on GitHub.",
+      text: "Built a ~6kb reusable React/Preact Calendar component using CSS Grid. Reached #12 on the global trending repositories on GitHub.",
     },
     {
       name: "Piggy",
       detail: "Mac App",
-      text:
-        "Developed a Mac menu bar app for viewing up-to-date cryptocurrency prices and Coinbase wallet data.",
+      text: "Developed a Mac menu bar app for viewing up-to-date cryptocurrency prices and Coinbase wallet data.",
     },
     {
       name: "Muzee",
       detail: "iOS App",
-      text:
-        "Created an iOS app for capturing photos of paintings, correcting skewed perspectives, and viewing them in AR.",
+      text: "Created an iOS app for capturing photos of paintings, correcting skewed perspectives, and viewing them in AR.",
     },
     {
       name: "Avivore",
       detail: " Chrome Extension",
-      text:
-        'Built an extension that uses Google’s Perspective API to auto-hide "toxic" tweets on Twitter.com in real time.',
+      text: 'Built an extension that uses Google’s Perspective API to auto-hide "toxic" tweets on Twitter.com in real time.',
     },
     {
       name: "Recloud",
       detail: "NPM Package",
-      text:
-        "Created a React mixin for memoizing results from API calls given prop or state dependencies.",
+      text: "Created a React mixin for memoizing results from API calls given prop or state dependencies.",
     },
     {
       name: "Archive",
       detail: "Chrome Extension",
-      text:
-        "Developed an extension that allows you to archive websites to the Wayback Machine with just a click.",
+      text: "Developed an extension that allows you to archive websites to the Wayback Machine with just a click.",
     },
     {
       name: "Flat.Style",
       detail: "JavaScript PWA",
-      text:
-        "Created an offline-ready web app for generating icons with shadow effects given any image using the HTML Canvas API.",
+      text: "Created an offline-ready web app for generating icons with shadow effects given any image using the HTML Canvas API.",
     },
     {
       name: "GroupCodes",
       detail: "JavaScript SPA",
-      text:
-        "Built a real-time collaborative web-based code editor aimed at students working together on projects.",
+      text: "Built a real-time collaborative web-based code editor aimed at students working together on projects.",
     },
     {
       name: "Infinitweet",
       detail: "Chrome Extension, iOS & Android apps",
-      text:
-        "Created a social media tool for sending “infinitely” long tweets, by converting text into images optimized for Twitter. 3.6k downloads.",
+      text: "Created a social media tool for sending “infinitely” long tweets, by converting text into images optimized for Twitter. 3.6k downloads.",
     },
     {
       name: "DUCK!",
       detail: "iOS app",
-      text:
-        "TouchID/FaceID-secured photo locker, with a responsive layout for iPhone & iPad compatibility. 3.4k downloads.",
+      text: "TouchID/FaceID-secured photo locker, with a responsive layout for iPhone & iPad compatibility. 3.4k downloads.",
     },
     {
       name: "LittleData",
       detail: "Chrome app",
-      text:
-        "Designed a JavaScript app that used WebAudio API and WebRTC to attempt to translate visual input into a unique, identifiable sound.",
+      text: "Designed a JavaScript app that used WebAudio API and WebRTC to attempt to translate visual input into a unique, identifiable sound.",
     },
     {
       name: "Bowdoin Dining",
       detail: "JavaScript SPA, iOS & Android apps",
-      text:
-        "Developed a suite of apps for Bowdoin College Dining used by over 5.6k students and faculty.",
+      text: "Developed a suite of apps for Bowdoin College Dining used by over 5.6k students and faculty.",
     },
     {
       name: "WBOR Radio",
       detail: "Chrome Extension, iOS & Android apps",
-      text:
-        "Developed apps to allow anyone to stream WBOR Radio, the Bowdoin College student radio station, from their phone or laptop. 3.8k downloads.",
+      text: "Developed apps to allow anyone to stream WBOR Radio, the Bowdoin College student radio station, from their phone or laptop. 3.8k downloads.",
     },
   ],
   art: {

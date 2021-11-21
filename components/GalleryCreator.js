@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useRef, useState, useEffect } from "react";
 import classnames from "classnames";
 

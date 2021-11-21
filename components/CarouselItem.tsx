@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 
 import Loader from "./Loader";
 import useImageLoader from "../hooks/useImageLoader";
@@ -7,10 +6,25 @@ import useLazyEffect from "../hooks/useLazyEffect";
 
 import styles from "./CarouselItem.module.css";
 
-const CarouselItem = ({ image, tabIndex, ariaLabel, onClickOutside }) => {
-  const [imageToLoad, setImageToLoad] = useState(null);
+interface Props {
+  image: string;
+  tabIndex?: number;
+  ariaLabel?: string;
+  onClickOutside?: React.MouseEventHandler;
+}
+
+const CarouselItem: React.FC<Props> = ({
+  image,
+  tabIndex,
+  ariaLabel,
+  onClickOutside,
+}) => {
+  const [imageToLoad, setImageToLoad] = useState<string | null>(null);
   const { imageSource, isLoading } = useImageLoader(imageToLoad);
-  const elementRef = useLazyEffect(() => setImageToLoad(image), [image]);
+  const elementRef = useLazyEffect<HTMLButtonElement>(
+    () => setImageToLoad(image),
+    [image],
+  );
 
   return (
     <button
@@ -28,23 +42,12 @@ const CarouselItem = ({ image, tabIndex, ariaLabel, onClickOutside }) => {
         <img
           className={styles.carouselPageItemImage}
           alt={ariaLabel}
-          src={imageSource}
+          src={imageSource ?? undefined}
           onClick={(event) => event.stopPropagation()}
         />
       )}
     </button>
   );
-};
-
-CarouselItem.propTypes = {
-  image: PropTypes.string.isRequired,
-  ariaLabel: PropTypes.string.isRequired,
-  tabIndex: PropTypes.number.isRequired,
-  onSelectImage: PropTypes.func,
-};
-
-CarouselItem.defaultProps = {
-  onSelectImage: null,
 };
 
 export default CarouselItem;

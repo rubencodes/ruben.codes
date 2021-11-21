@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useImageLoader(src: string) {
+function useImageLoader(src: string | null) {
   const [imageSource, setImageSource] = useState<string | null>(null);
   const [imageSize, setImageSize] = useState<{
     width: number;
@@ -16,8 +16,10 @@ function useImageLoader(src: string) {
     image.onload = function () {
       setImageSource(src);
       setImageSize({
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         width: this.width,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         height: this.height,
       });

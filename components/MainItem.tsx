@@ -1,6 +1,14 @@
 import React from "react";
+import { Item } from "../types/Item";
 
-const MainItem = ({ name, location, detail, startDate, endDate, text }) => (
+const MainItem: React.FC<Item> = ({
+  name,
+  location,
+  detail,
+  startDate,
+  endDate,
+  text,
+}) => (
   <>
     <p className="text large">
       <b>{name}</b>

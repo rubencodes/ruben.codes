@@ -14,12 +14,18 @@ import createConfigUpload from "../../utilities/createConfigUpload";
 import { state, AWS_CREDENTIALS, IS_DEV } from "../../utilities/constants";
 
 import styles from "./index.module.css";
+import { GalleryConfig } from "../../types/Gallery";
 
-const GalleryPage = ({ photographyState }) => {
+interface Props {
+  photographyState: GalleryConfig;
+}
+
+const GalleryPage: React.FC<Props> = ({ photographyState }) => {
   const {
-    query: { galleryId },
+    query: { _galleryId },
     push,
   } = useRouter();
+  const galleryId = `${_galleryId}`;
 
   // Extract the relevant info.
   const { baseUrl, galleries: { [galleryId]: selectedGallery } = {} } =
@@ -181,13 +187,12 @@ const GalleryPage = ({ photographyState }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const res = await fetch(state.photography.metaConfig, { mode: "cors" });
   const data = await res.json();
 
   return {
     props: {
-      params: context.params,
       photographyState: data,
     },
   };

@@ -5,8 +5,17 @@ import ModalBackdrop from "./ModalBackdrop";
 import useBodyClassList from "../hooks/useBodyClassList";
 
 import styles from "./ImageModal.module.css";
+import { GalleryImage } from "../types/Gallery";
 
-const ImageModal = ({
+interface Props {
+  baseUrl: string;
+  fullPath: string;
+  images: GalleryImage[];
+  selectedImageIndex: number;
+  setSelectedImageIndex: (index: number | null) => void;
+}
+
+const ImageModal: React.FC<Props> = ({
   baseUrl,
   fullPath,
   images,
@@ -14,20 +23,25 @@ const ImageModal = ({
   setSelectedImageIndex,
 }) => {
   useBodyClassList("no_scroll");
-  const close = useCallback(() => setSelectedImageIndex(null), [
-    setSelectedImageIndex,
-  ]);
+  const close = useCallback(
+    () => setSelectedImageIndex(null),
+    [setSelectedImageIndex],
+  );
   const formattedImageList = useMemo(() => {
     return images.map(({ fileName }) => ({
       url: `${baseUrl}${fullPath}${fileName}`,
+      altText: "",
     }));
-  });
+  }, [images]);
 
   return (
     <ModalBackdrop onClick={close}>
       <div
         className={styles.imageModal__Inner}
-        onClick={(e) => e.preventDefault() || e.stopPropagation()}
+        onClick={(event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        }}
         style={{
           width: "100%",
           height: "100%",

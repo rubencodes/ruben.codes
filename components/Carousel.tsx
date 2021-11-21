@@ -1,5 +1,4 @@
 import React, { useRef, useMemo, useLayoutEffect, useCallback } from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 
 import CarouselItem from "./CarouselItem";
@@ -10,13 +9,21 @@ import useArrayNavigator from "../hooks/useArrayNavigator";
 import styles from "./Carousel.module.css";
 
 // Scroll to a page in a scroll area.
-const scrollToPage = (
-  scrollArea,
-  page,
-  { isScrolling, setIsScrolling, immediate = false },
-) => {
+function scrollToPage<El extends Element>(
+  scrollArea: El,
+  page: number,
+  {
+    isScrolling,
+    setIsScrolling,
+    immediate = false,
+  }: {
+    isScrolling: boolean;
+    setIsScrolling: (newValue: boolean) => void;
+    immediate: boolean;
+  },
+) {
   // Check to make sure we're not actively scrolling.
-  if (isScrolling) return;
+  if (isScrolling || !scrollArea) return;
 
   // Check to make sure we're not already scrolled to that page.
   const scrolledPage = scrollArea.scrollLeft / scrollArea.clientWidth;
@@ -30,10 +37,10 @@ const scrollToPage = (
     behavior: immediate ? "auto" : "smooth",
   });
   setTimeout(() => setIsScrolling(false), immediate ? 10 : 1000);
-};
+}
 
 // Split an array into chunks of a given size.
-const arrayToChunks = (arr, chunkSize) => {
+function arrayToChunks<Item>(arr: Item[], chunkSize: number) {
   return arr.reduce(
     (chunks, item) => {
       const lastChunk = chunks[chunks.length - 1];
@@ -42,16 +49,28 @@ const arrayToChunks = (arr, chunkSize) => {
         ? [...chunks.slice(0, chunks.length - 1), [...lastChunk, item]]
         : [...chunks, [item]];
     },
-    [[]],
+    [[]] as Item[][],
   );
-};
+}
 
-const Carousel = ({
+interface Props {
+  className?: string;
+  currentPage: number;
+  setCurrentPage: (page: number | null) => void;
+  images: { url: string; altText?: string }[];
+  onClickOutside: (event: React.MouseEvent) => void;
+  verticalCount: number;
+  horizontalCount: number;
+  spacing: number;
+  hidePageIndicators: boolean;
+  hidePageNavigationButtons: boolean;
+}
+
+const Carousel: React.FC<Props> = ({
   className,
   currentPage,
   setCurrentPage,
   images,
-  onSelectImage,
   onClickOutside,
   verticalCount,
   horizontalCount,
@@ -61,10 +80,10 @@ const Carousel = ({
 }) => {
   // Split the image array in pages.
   const pageSize = verticalCount * horizontalCount;
-  const pagedImages = useMemo(() => arrayToChunks(images, pageSize), [
-    images,
-    pageSize,
-  ]);
+  const pagedImages = useMemo(
+    () => arrayToChunks(images, pageSize),
+    [images, pageSize],
+  );
   const pageCount = pagedImages.length;
   const pageWrapperStyle = {
     margin: `0 ${-spacing / 2}px`,
@@ -144,9 +163,10 @@ const Carousel = ({
   );
 
   // When the current page state changes, make sure we're scrolled to the correct page.
-  const scrollAreaRef = useRef(null);
+  const scrollAreaRef = useRef<HTMLDivElement | null>(null);
   const isFirstRender = useIsFirstRender();
   useLayoutEffect(() => {
+    if (!scrollAreaRef.current) return;
     scrollToPage(scrollAreaRef.current, currentPage, {
       isScrolling: isScrollingRef.current,
       setIsScrolling: (val) => (isScrollingRef.current = val),
@@ -184,7 +204,6 @@ const Carousel = ({
                 key={url}
                 image={url}
                 ariaLabel={altText}
-                onSelectImage={onSelectImage}
                 onClickOutside={onClickOutside}
               />
             ))}
@@ -230,33 +249,6 @@ const Carousel = ({
       )}
     </section>
   );
-};
-
-Carousel.propTypes = {
-  className: PropTypes.string,
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string,
-      altText: PropTypes.string,
-    }),
-  ),
-  onSelectImage: PropTypes.func,
-  verticalCount: PropTypes.number,
-  horizontalCount: PropTypes.number,
-  spacing: PropTypes.number,
-  hidePageIndicators: PropTypes.bool,
-  initialPage: PropTypes.number,
-};
-
-Carousel.defaultProps = {
-  className: "",
-  images: [],
-  onSelectImage: null,
-  verticalCount: 1,
-  horizontalCount: 1,
-  spacing: 8,
-  hidePageIndicators: false,
-  initialPage: 0,
 };
 
 export default Carousel;

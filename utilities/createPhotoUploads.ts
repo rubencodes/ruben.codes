@@ -8,8 +8,8 @@ const SIZES = [FULL_IMAGE_SIZE, THUMBNAIL_IMAGE_SIZE] as const;
 interface UploadInfo {
   fullPath: string;
   thumbnailPath: string;
-  files: File[];
-  uploader: (path: string, file: File) => Promise<any>;
+  files: FileList | File[];
+  uploader: (path: string, file: File) => Promise<{ Location: string }>;
 }
 
 const createPhotoUploads = async ({
@@ -25,7 +25,7 @@ const createPhotoUploads = async ({
   const reduce = new ImageBlobReduce();
 
   return Promise.all(
-    [...files].map((file) => {
+    Array.from(files).map((file) => {
       if (!file) return null;
 
       return Promise.all(

@@ -25,8 +25,8 @@ function checkElementVisibility(el: Element) {
   };
 }
 
-function useElementVisibility(): [
-  React.MutableRefObject<Element | undefined>,
+function useElementVisibility<El extends Element>(): [
+  React.MutableRefObject<El | null>,
   {
     isLeftVisible?: boolean;
     isRightVisible?: boolean;
@@ -34,7 +34,7 @@ function useElementVisibility(): [
     isBottomVisible?: boolean;
   },
 ] {
-  const ref = useRef<Element>();
+  const ref = useRef<El>(null);
   const [isVisible, setIsVisible] = useState({});
   useLayoutEffect(() => {
     const eventListener = () => {

@@ -12,10 +12,25 @@ import useImageActions from "../hooks/useImageActions";
 import useS3Uploader from "../hooks/useS3Uploader";
 import createPhotoUploads from "../utilities/createPhotoUploads";
 import { AWS_CREDENTIALS, IS_DEV } from "../utilities/constants";
+import { GalleryImage, PreviewImage } from "../types/Gallery";
+import { TOOLTIP_DIRECTIONS } from "./Tooltip";
 
 const noop = () => false;
 
-const PhotoGridGallery = ({
+interface Props {
+  baseUrl: string;
+  fullPath: string;
+  thumbnailPath: string;
+  images: GalleryImage[];
+  previewImage: PreviewImage;
+  isPublished: boolean;
+  onUpdateImages: (galleryImages: GalleryImage[]) => void;
+  onUpdatePreviewImage: (previewImage: string) => void;
+  onTogglePublish: () => void;
+  onDelete: () => void;
+}
+
+const PhotoGridGallery: React.FC<Props> = ({
   baseUrl,
   fullPath,
   thumbnailPath,
@@ -48,7 +63,7 @@ const PhotoGridGallery = ({
       setIsSaving(true);
 
       const galleryImages = imageManager.allImages.map(
-        // eslint-disable-next-line no-unused-vars
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         ({ imageUrl: _, ...image }) => image,
       );
       return onUpdateImages(galleryImages);
@@ -71,7 +86,9 @@ const PhotoGridGallery = ({
   // Handle uploads.
   const uploader = useS3Uploader(AWS_CREDENTIALS);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
-  const onUploadImageInput = ({ target: { files } }) => {
+  const onUploadImageInput = ({
+    target: { files },
+  }: React.ChangeEvent<HTMLInputElement>) => {
     // Upload the new image.
     setIsUploadingImage(true);
 
@@ -89,7 +106,9 @@ const PhotoGridGallery = ({
     });
   };
   const [isUploadingPreviewImage, setIsUploadingPreviewImage] = useState(false);
-  const onUploadPreviewImageInput = ({ target: { files } }) => {
+  const onUploadPreviewImageInput = ({
+    target: { files },
+  }: React.ChangeEvent<HTMLInputElement>) => {
     // Upload the new image.
     setIsUploadingPreviewImage(true);
 
@@ -147,7 +166,7 @@ const PhotoGridGallery = ({
         <ConfigButtonContainer>
           <ConfigButton
             tooltipText={isEditMode ? "Save Changes" : "Edit Images"}
-            tooltipDirection="right"
+            tooltipDirection={TOOLTIP_DIRECTIONS.RIGHT}
             iconType={iconType}
             onClick={onToggleEditMode}
           />
@@ -160,7 +179,7 @@ const PhotoGridGallery = ({
             {({ open }) => (
               <ConfigButton
                 tooltipText="New Image"
-                tooltipDirection="right"
+                tooltipDirection={TOOLTIP_DIRECTIONS.RIGHT}
                 iconType={isUploadingImage ? "spinner" : "plus"}
                 onClick={open}
               />
@@ -174,7 +193,7 @@ const PhotoGridGallery = ({
             {({ open }) => (
               <ConfigButton
                 tooltipText="Update Preview Image"
-                tooltipDirection="right"
+                tooltipDirection={TOOLTIP_DIRECTIONS.RIGHT}
                 iconType={isUploadingPreviewImage ? "spinner" : "crown"}
                 onClick={open}
               />
@@ -182,13 +201,13 @@ const PhotoGridGallery = ({
           </FileInput>
           <ConfigButton
             tooltipText={isPublished ? "Unpublish Gallery" : "Publish Gallery"}
-            tooltipDirection="right"
+            tooltipDirection={TOOLTIP_DIRECTIONS.RIGHT}
             iconType={isPublished ? "eye-slash" : "eye"}
             onClick={onTogglePublish}
           />
           <ConfigButton
             tooltipText="Delete Gallery"
-            tooltipDirection="right"
+            tooltipDirection={TOOLTIP_DIRECTIONS.RIGHT}
             iconType="trash"
             onClick={onDelete}
           />

@@ -1,4 +1,5 @@
 import { state } from "./constants";
+import { GalleryConfig } from "../types/Gallery";
 
 const { metaConfigPath: path, metaConfigFileName: fileName } =
   state.photography;
@@ -7,7 +8,7 @@ const createConfigUpload = ({
   json,
   uploader,
 }: {
-  json: JSON;
+  json: GalleryConfig;
   uploader: (path: string, file: File) => Promise<any>;
 }) => {
   // Create a JSON file.
