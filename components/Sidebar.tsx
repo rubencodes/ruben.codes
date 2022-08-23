@@ -12,7 +12,7 @@ export function Sidebar() {
       {skills && (
         <Section>
           <Subheading>Skills</Subheading>
-          <p className="text-gray-800">{skills.join(" • ")}</p>
+          <p className="text-gray-800 text-justify">{skills.join(" • ")}</p>
         </Section>
       )}
       {links && (
