@@ -18,7 +18,7 @@ class Document extends NextDocument {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700&display=swap"
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&display=swap"
             rel="stylesheet"
           />
         </Head>

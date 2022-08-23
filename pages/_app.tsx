@@ -23,6 +23,17 @@ function AppContainer<PageProps>({ Component, pageProps }: Props<PageProps>) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={state.metaTwitter} />
         <meta name="theme-color" content={state.metaThemeColor} />
+
+        <title>{state.home.metaTitle}</title>
+        <meta name="description" content={state.home.metaDescription} />
+        <meta key="title" property="og:title" content={state.home.metaTitle} />
+        <meta
+          key="description"
+          property="og:description"
+          content={state.home.metaDescription}
+        />
+        <meta key="url" property="og:url" content={state.home.metaUrl} />
+        <meta key="image" property="og:image" content={state.home.metaImage} />
       </Head>
       <Component {...pageProps} />
     </>

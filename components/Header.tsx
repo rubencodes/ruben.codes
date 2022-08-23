@@ -2,14 +2,12 @@ import React from "react";
 
 import { Heading } from "./styled/Heading";
 import { Nav } from "./styled/Nav";
-import { NavItem } from "./styled/NavItem";
 import { NavLink } from "./styled/NavLink";
 import { SectionType } from "../types/SectionType";
 import { state } from "../utilities/constants";
 
 interface Props {
   activeSection: SectionType;
-  setActiveSection: (section: SectionType) => void;
 }
 
 const sectionOrder = [
@@ -19,19 +17,19 @@ const sectionOrder = [
   SectionType.Projects,
 ];
 
-export function Header({ activeSection, setActiveSection }: Props) {
+export function Header({ activeSection }: Props) {
   return (
     <header>
       <Heading>{state.name}</Heading>
       <Nav>
         {sectionOrder.map((section) => (
-          <NavItem
+          <NavLink
             key={section}
-            onClick={() => setActiveSection(section)}
+            to={`/${section.toLowerCase()}`}
             isActive={section === activeSection}
           >
             {section}
-          </NavItem>
+          </NavLink>
         ))}
         <NavLink to="https://rmj.photography" isActive={false} isExternal>
           Photography

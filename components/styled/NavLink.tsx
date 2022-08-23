@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-no-target-blank */
 import classNames from "classnames";
+import Link from "next/link";
 import React from "react";
 import Icon from "../Icon";
 
@@ -11,14 +13,18 @@ interface Props {
 
 export function NavLink({ children, to, isActive, isExternal }: Props) {
   return (
-    <a
-      className={classNames("text-indigo-600", {
-        "text-indigo-700 font-bold": isActive,
-      })}
-      href={to}
-    >
-      {children}
-      {isExternal && <Icon type="link" />}
-    </a>
+    <Link href={to} passHref>
+      <a
+        className={classNames({
+          "text-indigo-600 font-semibold": !isActive,
+          "text-indigo-700 font-bold": isActive,
+        })}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+      >
+        {children}
+        {isExternal && <Icon type="link" />}
+      </a>
+    </Link>
   );
 }

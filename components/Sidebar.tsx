@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Subheading } from "./styled/Subheading";
-import { state } from "../utilities/constants";
 import { Section } from "./styled/Section";
+import { state } from "../utilities/constants";
+import { ExternalLink } from "./styled/ExternalLink";
 
 export function Sidebar() {
   const { skills, links } = state.home;
@@ -20,9 +21,9 @@ export function Sidebar() {
           <ul>
             {links.map(({ title, href }, i) => (
               <li key={i}>
-                <a href={href} target="_blank" rel="noreferrer">
+                <ExternalLink className="text-indigo-500" to={href}>
                   {title}
-                </a>
+                </ExternalLink>
               </li>
             ))}
           </ul>

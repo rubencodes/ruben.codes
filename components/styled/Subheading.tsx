@@ -5,5 +5,5 @@ interface Props {
 }
 
 export function Subheading({ children }: Props) {
-  return <h2 className="text-md font-semibold font-sans pb-2">{children}</h2>;
+  return <h2 className="text-lg font-semibold font-sans pb-2">{children}</h2>;
 }
