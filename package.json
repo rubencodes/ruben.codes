@@ -7,35 +7,38 @@
     "build": "next build",
     "start": "next start",
     "prettier:check": "prettier --check .",
+    "typecheck": "tsc",
     "eslint": "eslint .",
     "eslint:fix": "eslint --fix ."
   },
   "author": "Ruben Martinez Jr. <ruben.martinez93@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
-    "classnames": "^2.3.1",
-    "image-blob-reduce": "^1.0.4",
-    "isomorphic-unfetch": "^3.0.0",
-    "next": "^12.0.4",
-    "next-images": "^1.8.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-sortable-hoc": "^1.11.0",
-    "swr": "^1.0.1"
+    "@fortawesome/fontawesome-free": "6.1.2",
+    "classnames": "2.3.1",
+    "isomorphic-unfetch": "3.1.0",
+    "next": "12.2.5",
+    "next-images": "1.8.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "1.3.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rubencodes/ruben.codes"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^12.0.4",
-    "@types/react": "^17.0.35",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@zeit/next-sass": "^1.0.1",
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.27.1",
-    "prettier": "^2.4.1",
-    "typescript": "^4.5.2"
+    "@next/eslint-plugin-next": "12.2.5",
+    "@types/node": "18.7.11",
+    "@types/react": "18.0.17",
+    "@typescript-eslint/eslint-plugin": "5.34.0",
+    "@zeit/next-sass": "1.0.1",
+    "autoprefixer": "10.4.8",
+    "eslint": "8.22.0",
+    "eslint-plugin-react": "7.30.1",
+    "postcss": "8.4.16",
+    "prettier": "2.7.1",
+    "tailwindcss": "3.1.8",
+    "typescript": "4.7.4"
   }
 }

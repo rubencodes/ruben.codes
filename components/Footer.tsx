@@ -1,10 +1,8 @@
 import React from "react";
 
-import styles from "./Footer.module.css";
-
 const Footer = () => (
-  <footer className={styles.footer}>
-    <p className={styles.footerInner}>
+  <footer className="w-full text-center mt-auto py-8">
+    <p className="font-mono font-semibold">
       Copyright © {new Date().getFullYear()} Ruben Martinez Jr.
     </p>
   </footer>

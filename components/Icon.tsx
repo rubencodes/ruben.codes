@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 
 interface Props {
-  className: string;
+  className?: string;
   type: string;
 }
 

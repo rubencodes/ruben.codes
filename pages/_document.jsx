@@ -10,20 +10,16 @@ class Document extends NextDocument {
         <Head>
           <link rel="icon" type="image/png" href={state.metaFavicon} />
           <link
-            href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400&display=optional"
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400&display=swap"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,700&display=optional"
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,700&display=swap"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700&display=optional"
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700&display=swap"
             rel="stylesheet"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
           />
         </Head>
         <body>
