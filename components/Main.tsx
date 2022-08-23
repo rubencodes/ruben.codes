@@ -23,9 +23,11 @@ export function Main({ activeSection }: Props) {
           <Section>
             <Subheading>About</Subheading>
             <p className="text light">
-              Hello! I&apos;m Ruben. I&apos;m a developer, designer, and
-              photographer, who&apos;s passionate about building cool stuff. I
-              currently work as a Staff Engineer at{" "}
+              Hello! I&apos;m Ruben. My pronouns are he/him/his. I&apos;m a
+              developer, designer, and photographer, who&apos;s passionate about
+              building cool stuff.
+              <br />
+              <br />I currently work as a Staff Engineer at{" "}
               <ExternalLink className="text-pink-500" to="https://okcupid.com">
                 OkCupid
               </ExternalLink>
@@ -40,6 +42,8 @@ export function Main({ activeSection }: Props) {
               frontend and API, and added end-to-end test coverage using
               Cypress, all of which resulted in significant improvements to
               developer productivity and reductions in overall downtime.
+              <br />
+              <br />
               Previously, I worked at{" "}
               <ExternalLink className="text-green-600" to="https://slack.com">
                 Slack
@@ -58,9 +62,11 @@ export function Main({ activeSection }: Props) {
               </ExternalLink>{" "}
               in 2015 with a degree in Computer Science and Visual Arts. That
               summer, I was selected to attend WWDC as a Student Scholar. I also
-              wrote a book on building Swift apps for WatchOS v1. If you&apos;d
-              like to get to know more about me, check out the rest of my site,
-              or feel free to reach out.
+              wrote a book on building Swift apps for WatchOS v1.
+              <br />
+              <br />
+              If you&apos;d like to get to know more about me, check out the
+              rest of my site, or feel free to reach out.
             </p>
           </Section>
           <Sidebar />
