@@ -19,11 +19,9 @@ export function Page() {
 
   return (
     <div className="h-screen w-full max-w-[800px] mx-auto pt-20 px-4 flex flex-col">
-      <div className="h-screen w-full max-w-[800px] mx-auto pt-20 px-4 flex flex-col">
-        <Header activeSection={activeSection} />
-        <Main activeSection={activeSection} />
-        <Footer />
-      </div>
+      <Header activeSection={activeSection} />
+      <Main activeSection={activeSection} />
+      <Footer />
     </div>
   );
 }

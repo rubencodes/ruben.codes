@@ -27,18 +27,27 @@ export function Main({ activeSection }: Props) {
               developer, designer, and photographer, who&apos;s passionate about
               building cool stuff.
               <br />
-              <br />I currently work as a Staff Engineer at{" "}
+              <br />I work as a Staff Engineer at{" "}
               <ExternalLink className="text-pink-500" to="https://okcupid.com">
                 OkCupid
               </ExternalLink>
-              , in New York City. I work on the Web Core team, empowering other
-              developers to be productive with the data, tools, and abstractions
-              to do their jobs most effectively. I&apos;ve had the opportunity
-              to work on several major projects during my time at OkCupid,
-              including a major refactor of the Desktop and Mobile Web platforms
-              from a legacy home-rolled static HTML framework into a React-based
-              Single Page App. I&apos;ve also converted major chunks of
-              application logic to TypeScript, added Honeycomb tracing to our
+              , in New York City. I&apos;m currently on the iOS team, focused on
+              launching our new{" "}
+              <ExternalLink
+                className="text-purple-500"
+                to="https://archerapp.com"
+              >
+                Archer
+              </ExternalLink>{" "}
+              dating app, which I helped build from the ground up with SwiftUI.
+              Previously, I worked on the Web Core team, empowering other
+              developers to be productive by building out tools and abstractions
+              to help them do their jobs most effectively. I&apos;ve had the
+              opportunity to work on several major projects during my time at
+              OkCupid, including a major refactor of the Desktop and Mobile Web
+              platforms from a legacy home-rolled static HTML framework into a
+              React-based Single Page App. I&apos;ve also converted major chunks
+              of application logic to TypeScript, added Honeycomb tracing to our
               frontend and API, and added end-to-end test coverage using
               Cypress, all of which resulted in significant improvements to
               developer productivity and reductions in overall downtime.
@@ -51,8 +60,8 @@ export function Main({ activeSection }: Props) {
               , building data visualizations for our enterprise customers to
               help them understand how best to take advantage of the Slack
               product. Prior to that, I was employee #2 at{" "}
-              <ExternalLink className="text-blue-500" to="https://wellapp.com">
-                WELL Health
+              <ExternalLink className="text-blue-800" to="https://artera.io/">
+                Artera
               </ExternalLink>
               , a Techstars-funded startup dedicated to improving the patient
               healthcare experience, where I designed and developed their
